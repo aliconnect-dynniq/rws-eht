@@ -1,0 +1,31 @@
+<div id="content"></div>
+<script>
+  window.addEventListener('paste', (event)=> {
+    for (var i = 0, clipboardData = event.clipboardData || event.originalEvent.clipboardData, clipboarditems = clipboardData.items, clipboarditem; clipboarditem = clipboarditems[i]; i++) {
+      console.log(clipboarditem.kind, clipboarditem.type);
+      if (clipboarditem.type === 'text/html') {
+        clipboarditem.getAsString((html) => {
+          html = html.split('</head>').pop();
+          console.log(html);
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var data = [];
+          (function(node) {
+            if (node.tagName === 'P' && node.innerText.trim()) {
+              data.push({
+                tagName:node.tagName,
+                innerText:node.innerText.trim(),
+                innerHTML:node.innerHTML.replace(/<o:p>|<\/o:p>|&nbsp;/g,'').replace(/ style="[^"]*"/g,''),
+                className:node.className,
+              });
+            }
+            if (node.children) {
+              [...node.children].forEach(arguments.callee);
+            }
+          })(doc);
+          console.log(data);
+        });
+      }
+    }
+  });
+</script>

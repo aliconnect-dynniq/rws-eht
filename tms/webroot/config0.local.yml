@@ -1,0 +1,2526 @@
+info:
+  title: RWS A2M...
+  description: .
+  termsOfService: http://rws.aliconnect.nl/terms/
+  contact:
+    email: max.van.kampen@alicon.nl
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.2
+config:
+  oauth2:
+    protocol: https
+    hostname: login.aliconnect.nl
+    basePath: /api/oauth2
+  aim:
+    client_id: 71BED2B1-E21C-4EFF-9881-2D3960A0523E
+    protocol: https
+    hostname: rws.aliconnect.nl
+    basePath: /tms/a2m/webroot/api
+    domain: rws
+om:
+  nav:
+    items:
+    - title: Start
+      className: start
+      href: '#/start()'
+      items:
+      - title: Favorieten
+        className: fav
+        href: '#/fav()'
+      - title: Recent
+        className: History
+        href: '#/his()'
+      - title: Gedeeld
+        className: group
+        href: '#/shared()'
+      - title: Prullenbak
+        className: trash
+        href: '#/trash()'
+    - title: Website
+      className: Website
+      items:
+      - title: Web sites
+        className: WebSite
+        href: '#/Website?filter=hostID<>1'
+      - title: Web pages
+        className: WebPage
+        href: '#/Webpage?filter=hostID<>1'
+      - title: Help pages
+        className: HelpPage
+        href: '#/Helppage'
+    - title: Organisatie
+      className: crm
+      items:
+      - title: Contacts
+        className: person
+        href: '#/Contact?filter=hostID ne 1'
+      - title: Companies
+        className: company
+        href: '#/Company?filter=hostID ne 1'
+      - title: Mailgroups
+        className: group
+        href: '#/mailgroup?filter=hostID ne 1'
+      - title: Outlook Contacts
+        className: person
+        href: '#/Contact'
+      - title: Outlook Tasks
+        className: company
+        href: '#/Company'
+    - title: Engineering
+      className: se
+      items:
+      - title: Signal
+        className: signal
+        href: '#/Signal'
+      - title: SoftwareFunction
+        className: softwarefunction
+        href: '#/SoftwareFunction'
+      - title: Instruments
+        href: '#/Signal'
+      - title: Products
+        href: '#/System?filter=hostID<>1+AND+srcID=masterID+AND+id+NOT+IN+(SELECT+masterID+FROM+api.items+WHERE+masterid=srcid)'
+      - title: Systems
+        href: '#/System'
+      - title: IO
+        href: '#/IO'
+      - title: Document
+        className: document
+        href: '#/Document'
+      # - title: Asset: { get: { folder: 'product', href: #/System },//filter: hostID<>1, q: '' } },
+      - title: Locations
+        className: location
+        href: '#/Location'
+    - title: Work
+      className: taskboard
+      items:
+      - title: Taken
+        className: task
+        href: '#/Task'
+      - title: Mijn taken
+        className: task
+        href: '#/Task?filter=ownerID+eq+me'
+      - title: Alicon support
+        className: support
+        href: '#/Task?filter=ownerID+eq+support'
+    - title: Outlook
+      className: crm
+      items:
+      - title: Contacts
+        className: person
+        href: '#/mse/Contacts/find'
+      - title: Messages
+        className: messages
+        href: '#/mse/Messages/find'
+      - title: Events
+        className: event
+        href: '#/mse/Events/find'
+      - title: Calendar
+        className: calender
+        href: '#/mse/Calendarview/find'
+    - title: Admin
+      className: admin
+      items:
+      - title: Publish
+        href: '#/admin/publish'
+      - title: Groups
+        className: crm
+        href: '#/groups'
+      - title: Keys
+        className: keys
+        href: '#/keys'
+      - title: License
+        className: License
+        href: '#/License'
+css:
+  rules:
+    .row.top.bar: background-color:#F9E11E; color:#154273;
+externalDocs:
+  description: Find out more about Aliconnect
+  url: https://aliconnect.nl
+servers:
+- url: https://rws.aliconnect.nl/api
+tags: []
+paths: []
+components:
+  schemas:
+    Verkeersgeleiding-functies: []
+    Verkeersbuis-functies: []
+    Dienstgebouw-functies: []
+    Veiligeruimte-functies: []
+    Tunnel-functies: []
+    lfv_HoogteDetector_Verkeersbuis: []
+    lfv_SOS_Verkeersbuis: []
+    lfv_Omroepsectie_Verkeersbuis: []
+    lfv_Verlichtingszone_Verkeersbuis: []
+    lfv_Noodtelefoon_Verkeersbuis: []
+    lfv_Ventilatie_Verkeersbuis: []
+    lfv_Luchtkwaliteitsmeter_Verkeersbuis: []
+    lfv_KoppelingWisselbaansysteem_Verkeersbuis: []
+    lfv_Camera_Verkeerbuis: []
+    lfv_Geluidsbaken_VeiligeRuimte: []
+    lfv_Overdrukventilator_VeiligeRuimte: []
+    lfv_Omroepcompartiment_VeiligeRuimte: []
+    lfv_DynamischeVluchtrouteIndicatie_VeiligeRuimte: []
+    lfv_Omroep_VeiligeRuimte: []
+    lfv_Kopdeur_MiddenTunnelKanaal_VeiligeRuimte: []
+    lfv_Geluidsbaken_Verkeersbuis: []
+    lfv_Ventilator_Verkeersbuis: []
+    sf_Geluidsbaken_Verkeersbuis: []
+    lfv_Noodtelefoontoestel_Verkeersbuis: []
+    lfv_Contourverlichting_Verkeersbuis: []
+    sf_Contourverlichting_Verkeersbuis: []
+    lfv_RijVanVluchtdeuren_Verkeersbuis: []
+    lfv_Vluchtdeurindicatie_Verkeersbuis: []
+    bf_RijVanVluchtdeuren_Verkeersbuis: []
+    lfv_CCTV_Dienstgebouw: []
+    lfv_Toegang_Dienstgebouw: []
+    lfv_Blusvoorziening_Dienstgebouw: []
+    lfv_Verlichting_Dienstgebouw: []
+    lfv_Klimaatregeling_Dienstgebouw: []
+    lfv_Inbraakalarm_Dienstgebouw: []
+    lfv_Camera_Dienstgebouw: []
+    lfv_C2000_Tunnel: []
+    lfv_Intercom_Tunnel: []
+    lfv_Blusvoorziening_Tunnel: []
+    lfv_Energie_Tunnel: []
+    lfv_Telefoonvoorziening_Tunnel: []
+    lfv_Vloeistofpompinstallatie_Tunnel: []
+    lfv_CADO_Tunnel: []
+    lfv_VEVA_Tunnel: []
+    lfv_BEBA_Tunnel: []
+    lfv_Bediening_Tunnel: []
+    lfv_BeeldvoorzieningMeldkamer_Tunnel: []
+    lfv_OverdrukvoorzieningGrensruimte_Tunnel: []
+    lfv_KoppelingExterneSystemen_Tunnel: []
+    lfv_Noodbediening_Tunnel: []
+    lfv_Terreinverlichting_Tunnel: []
+    lfv_WaarschuwingsinstallatieDienstruimtes_Tunnel: []
+    lfv_BrandmeldOntruimingsinstallatie_Tunnel: []
+    lfv_Eventrecorder_Tunnel: []
+    lfv_Overdrukventilator_Tunnel: []
+    lfv_BluswaterReservoir_Tunnel: []
+    lfv_Brandbluspomp_Tunnel: []
+    lfv_Jockeypomp_Tunnel: []
+    lfv_BluswaterDistributieleiding_Tunnel: []
+    lfv_Energiedistributienetwerk_Tunnel: []
+    lfv_NSA_Tunnel: []
+    lfv_Transformator_Tunnel: []
+    lfv_Netaansluiting_Tunnel: []
+    lfv_Nobreak_Tunnel: []
+    lfv_Afvoerpomp_Tunnel: []
+    lfv_Afvoerkeuze_Tunnel: []
+    lfv_Omroep_Verkeersbuis: []
+    lfv_HF_Verkeersbuis: []
+    lfv_Verlichting_Verkeersbuis: []
+    lfv_Verkeerslichten_Verkeersbuis:
+      hoortbij: lfv/Verkeersbuis/Verkeerslichten_Verkeersbuis
+      title: LFV Verkeerslichten
+      cm: 1
+      wss:
+        onerror(): >
+          this.observeerbaar = 'nee';
+          this.bestuurbaar = 'nee';
+          this.storingen.set('STORING_COMMUNICATIE_UITGEVALLEN');
+          //this.reden_niet_bestuurbaar.set('storing');
+          //Object.assign(this, { observeerbaar: 'nee', bestuurbaar: 'nee', storingen: ['STORING_COMMUNICATIE_UITGEVALLEN'], reden_niet_bestuurbaar: ['storing'] });
+        onconnect(): >
+          this.storingen.unset('STORING_COMMUNICATIE_UITGEVALLEN');
+          //this.reden_niet_bestuurbaar.set('storing');
+          //Object.assign(this, { observeerbaar: 'nee', bestuurbaar: 'nee', storingen: ['STORING_COMMUNICATIE_UITGEVALLEN'], reden_niet_bestuurbaar: ['storing'] });
+      properties:
+        _lfv_Verkeerslicht_Verkeersbuis:
+          stereotype: configuratie_element
+          title: ""
+          description: ""
+          ref: ""
+          type: selectitem
+        lfv_J32_Verkeersbuis:
+          stereotype: configuratie_element
+          title: ""
+          description: ""
+          ref: ""
+          type: selectitem
+        tijd_j32:
+          stereotype: configuratie_element
+          title: Tijd J32
+          description: De tijdsduur dat de J32 borden aan moeten staan voordat de
+            Verkeerslichten aan mogen. Deze waarde dient (minimaal) 10 seconden te
+            zijn. Als de LFV wordt toegepast voor een verkeersbuis die kan worden
+            gebruikt als ondersteunende buis bij vluchten door een middenwand moet
+            de waarde bij uitzondering (minimaal) 3 seconden zijn. Dit configuratie-element
+            moet instelbaar zijn van 0.0 t/m 15.0 seconden.
+          ref: BSTTI#16913
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "10"
+        tijd_groen:
+          stereotype: configuratie_element
+          title: Tijd stand groen
+          description: De tijdsduur die de Verkeerslichten op groen moeten staan voordat
+            deze naar gedoofd, geel knipperen of geel mogen.
+          ref: BSTTI#16914
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "6"
+        tijd_geel_knipperen:
+          stereotype: configuratie_element
+          title: Tijd stand geel knipperen
+          description: De tijdsduur die de Verkeerslichten op geel knipperen moeten
+            staan voordat deze naar gedoofd, groen of naar geel mogen.
+          ref: BSTTI#16915
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "6"
+        tijd_geel:
+          stereotype: configuratie_element
+          title: Tijd stand geel
+          description: De tijdsduur die de Verkeerslichten op geel staan voordat deze
+            naar rood of geel knipperen mogen.
+          ref: BSTTI#16916
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "6"
+        tijd_rood:
+          stereotype: configuratie_element
+          title: Tijd stand rood
+          description: De tijdsduur die de Verkeerslichten op rood moeten staan voordat
+            deze naar geel knipperen of groen mogen.
+          ref: BSTTI#16917
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "6"
+        tijd_rood_voor_vrijgave_signaal:
+          stereotype: configuratie_element
+          title: Tijd vrijgave signaal
+          description: 'De tijdsduur die de Verkeerslichten op rood moeten staan voordat
+            een vrijgavesignaal wordt afgegeven. Let op: de waarde van dit element
+            moet afgestemd zijn op de waarde van het gerelateerde element uit het
+            besturingssysteem(BSTTI#15962).'
+          ref: BSTTI#16918
+          type: number
+          unit: s
+          min: "0"
+          max: "15"
+          step: "1"
+          init: "4"
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: "De LFV Verkeerslichten dient de volgende generieke storingen
+            te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd. ; De LFV Verkeerslichten dient de volgende specifieke
+            storingen te detecteren: ; STORING_ROOD_ACTIEVE_LICHTEN: De Verkeerslichten
+            zijn ingesteld om rood te tonen, maar geen van de actieve Verkeerslichten
+            kan \u2018rood\u2019 tonen. Merk op: #stand wordt geel_knipperen(zie BSTTI#16901).
+            ; STORING_J32: Een of meer J32 borden tonen niet de gewenste stand of
+            er is een storing in de terugmelding. "
+          ref: BSTTI#16850
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+            STORING_ROOD_ACTIEVE_LICHTEN: Storing rood actieve Verkeerslichten
+            STORING_J32: Storing J32 borden
+          type: array
+        stand_gewenst:
+          stereotype: hulpvariabele
+          title: Gewenste stand verkeerslichten
+          description: De stand die de Verkeerslichten moeten aannemen.
+          ref: ""
+          comment: ""
+          enum:
+            rood: Rood
+            geel: Geel
+            geel_knipperen: Geel knipperen
+            groen: Groen
+            gedoofd: Gedoofd
+        stand:
+          stereotype: toestandsvariabele
+          title: Stand Verkeerslichten
+          description: De stand die de Verkeerslichten tonen (met uitzondering van
+            lichten die niet actief zijn of wegens storing gedoofd zijn). Als er geen
+            actieve Verkeerslichten zijn is dit de stand die een Verkeerslicht zal
+            tonen wanneer deze actief wordt.
+          ref: BSTTI#16848
+          comment: '#stand: rood | geel | geel_knipperen | groen | gedoofd'
+          enum:
+            rood: Rood
+            geel: Geel
+            geel_knipperen: Geel knipperen
+            groen: Groen
+            gedoofd: Gedoofd
+        stand_j32_gewenst:
+          stereotype: hulpvariabele
+          title: Gewenste stand J32 borden
+          description: De stand die de J32-borden moeten aannemen.
+          ref: ""
+          comment: ""
+          enum:
+            aan: Aan
+            uit: Uit
+        stand_j32:
+          stereotype: toestandsvariabele
+          title: Stand J32 borden
+          description: "De stand van de signaalgever op signaleringsraai s (1 \u2264
+            s \u2264 3) van rijstrook r (1 \u2264 r \u2264 n), waarbij n overeenkomt
+            met het aantal rijstroken minus \xE9\xE9n, met een minimum van 1. De nummering
+            van signaleringsraaien dient oplopend te zijn in de rijrichting, overeenkomend
+            met de nummering zoals gebruikt bij de MTM-koppeling (BSTTI#1209). Merk
+            op dat ook de rijstroken worden genummerd volgens de definitie in ref.
+            [BPS]. storing: geeft aan dat terugmelding faalt, waardoor de stand van
+            het bord onbekend is."
+          ref: BSTTI#16848
+          comment: '#stand_j32[1..3, 1..n]: aan | uit | storing'
+          enum:
+            aan: Aan
+            uit: Uit
+            storing: Storing
+      operations:
+        SetStand:
+          stereotype: commando
+          title: Set Stand
+          description: Stelt de stand van de Verkeerslichten in. De LFV moet deze
+            stand in stappen realiseren, in overeenstemming met eis BSTTI#16902.
+          ref: BSTTI#16849
+          comment: SetStand( rood | geel_knipperen | groen | gedoofd )
+          conditie(): >
+            return true;
+          arguments: []
+          publish: true
+      statemodel:
+        init:
+          entry(): >
+            console.debug('init entry');
+            this.bestuurbaar = 'ja';
+            this.ingestelde_stand = 'gedoofd';
+            //console.debug('>>>>', this.lfv_Verkeerslicht_Verkeersbuis);
+            //forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "geel_knipperen");
+          do(): >
+            //console.debug('init do');
+            //forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "rood");
+          exit(): >
+            console.debug('init exit');
+        gedoofd:
+          trigger:
+            init(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "gedoofd");
+            groen(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand_gewenst", "gedoofd") && this.timerPassed;
+            geel_knipperen(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand_gewenst", "gedoofd") && this.timerPassed;
+          entry(): >
+            console.debug('gedoofd entry');
+            //forAll(this.lfv_J32_Verkeersbuis, "SetStand", "uit");
+            forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "gedoofd");
+          do(): >
+            console.debug('gedoofd do');
+          exit(): >
+            console.debug('gedoofd exit');
+        j32_aan:
+          trigger:
+            gedoofd(): >
+              return this.stand_gewenst != "gedoofd";
+          entry(): >
+            console.debug('j32_aan entry');
+            forAll(this.lfv_J32_Verkeersbuis, "SetStand", "aan");
+            this.timerSet(this.tijd_j32);
+          do(): >
+            console.debug('j32_aan do');
+          exit(): >
+            console.debug('j32_aan exit');
+        geel_knipperen:
+          trigger:
+            init(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "geel_knipperen");
+            j32_aan(): >
+              return checkAll(this.lfv_J32_Verkeersbuis, "stand", "aan") && this.timerPassed;
+            groen(): >
+              return this.stand_gewenst == "geel_knipperen" && this.timerPassed
+              //return
+              this.lfv_Verkeerslichten_Verkeersbuis.stand_gewenst == "geel_knipperen" && this.timerPassed;
+            geel(): >
+              //console.debug('TRIGGER GEEL', this, this.stand_gewenst);
+              //return
+              this.lfv_Verkeerslichten_Verkeersbuis.stand_gewenst == "geel_knipperen" && this.timerPassed
+              return this.stand_gewenst == "geel_knipperen" && this.timerPassed;
+            rood(): >
+              //return this.lfv_Verkeerslichten_Verkeersbuis.stand_gewenst == "gedoofd" && this.timerPassed || this.lfv_Verkeerslichten_Verkeersbuis.STORING_ROOD_ACTIEVE_LICHTEN == true
+              return this.stand_gewenst == "gedoofd" && this.timerPassed || this.STORING_ROOD_ACTIEVE_LICHTEN == true
+          entry(): >
+            console.debug('geel_knipperen entry');
+            forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "geel_knipperen");
+            this.timerSet(this.tijd_geel_knipperen);
+            // tijd pas starten als de gewenste stand is bereikt????
+          do(): >
+            console.debug('geel_knipperen do');
+          exit(): >
+            console.debug('geel_knipperen exit');
+        geel:
+          trigger:
+            init(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "geel");
+            geel_knipperen(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "geel_knipperen") && this.timerPassed;
+            groen(): >
+              return this.stand_gewenst == "rood" && this.timerPassed;
+          entry(): >
+            console.debug('geel entry');
+            forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "geel");
+            this.timerSet(this.tijd_geel);
+          do(): >
+            console.debug('geel do');
+          exit(): >
+            console.debug('geel exit');
+        rood:
+          trigger:
+            init(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "rood");
+            geel(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "geel") && this.timerPassed;
+            vrijgave_afsluitboom(): >
+              return this.stand_gewenst == "gedoofd" || this.stand_gewenst == "geel_knipperen" || this.stand_gewenst == "groen"
+          entry(): >
+            //console.debug('rood entry', this.lfv_Verkeerslicht_Verkeersbuis);
+            forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "rood");
+            this.timerSet(this.tijd_rood);
+            // Tweede timer nodig, tbv afsluitboom vrijgave!!!
+          do(): >
+            console.debug('rood do');
+          exit(): >
+            console.debug('rood exit');
+        groen:
+          trigger:
+            init(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "groen");
+            geel_knipperen(): >
+              //return this.lfv_Verkeerslichten_Verkeersbuis.stand_gewenst == "groen" && this.timerPassed;
+              return this.stand_gewenst == "groen" && this.timerPassed;
+            rood(): >
+              //return this.lfv_Verkeerslichten_Verkeersbuis.stand_gewenst == "groen" && this.timerPassed;
+              return this.stand_gewenst == "groen" && this.timerPassed;
+          entry(): >
+            console.debug('groen entry');
+            forAll(this.lfv_Verkeerslicht_Verkeersbuis, "SetStand", "groen");
+            this.timerSet(this.tijd_groen);
+          do(): >
+            console.debug('groen do');
+          exit(): >
+            console.debug('groen exit');
+        vrijgave_afsluitboom:
+          trigger:
+            rood(): >
+              return checkAll(this.lfv_Verkeerslicht_Verkeersbuis, "stand", "rood") && this.timerPassed;
+          entry(): >
+            console.debug('vrijgave_afsluitboom entry');
+            // SetVrijgaveAfsluitboom(aan)
+          do(): >
+            console.debug('vrijgave_afsluitboom do');
+          exit(): >
+            console.debug('vrijgave_afsluitboom exit');
+            // SetVrijgaveAfsluitboom(uit)
+    lfv_Verkeerslicht_Verkeersbuis:
+      hoortbij: lfv/Verkeersbuis/Verkeerslichten_Verkeersbuis
+      shortname: lfv_Verkeerslicht
+      title: LFV Verkeerslicht
+      cm: 1
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elk component Verkeerslicht dient de volgende generieke storingen
+            te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd. ; Elk component Verkeerslicht dient de volgende
+            specifieke storingen te detecteren: ; STORING_ROOD: Het Verkeerslicht
+            kan de stand rood niet tonen. ; STORING_GEEL: Het Verkeerslicht kan de
+            stand geel niet tonen. ; STORING_GEEL_KNIPPEREN: Het Verkeerslicht kan
+            de stand geel knipperen niet tonen. ; STORING_GROEN: Het Verkeerslicht
+            kan de stand groen niet tonen.'
+          ref: BSTTI#4106
+          comment: ""
+          enum:
+            STORING_COMMUNICATIE_UITGEVALLEN:
+              title: Storing uitval communicatie met de LFV
+              shortname: STORING_COMM
+            STORING_EM: []
+            STORING_VELD: []
+            STORING_ALGEMEEN:
+              idx: 1
+              title: Storing algemeen
+              shortname: STORING_ALGEMEEN
+              kritisch: 1
+            STORING_ROOD:
+              idx: 2
+              title: Storing rood
+            STORING_GEEL:
+              idx: 3
+              title: Storing geel
+            STORING_GEEL_KNIPPEREN:
+              idx: 4
+              title: Storing geel knipperen
+            STORING_GROEN:
+              idx: 5
+              title: Storing groen
+          type: array
+        actief:
+          stereotype: toestandsvariabele
+          title: Actief
+          description: Als het Verkeerslicht actief is moet het Verkeerslicht de stand
+            tonen die op de LFV Verkeerslichten is ingesteld. Als het Verkeerslicht
+            niet actief is moet het Verkeerslicht gedoofd zijn (#stand = gedoofd).
+          ref: BSTTI#16853
+          comment: '#actief: ja | nee'
+          enum:
+            ja: Ja
+            nee: Nee
+        stand:
+          stereotype: toestandsvariabele
+          title: Stand
+          description: De stand die het Verkeerslicht toont. Als het Verkeerslicht
+            niet actief is, moet de stand gedoofd zijn. Ook als het Verkeerslicht
+            gedoofd is wegens storing moet deze variabele gedoofd aangeven.
+          ref: BSTTI#16853
+          comment: '#stand: rood | geel | geel_knipperen | groen | gedoofd'
+          enum:
+            rood: Rood
+            geel: Geel
+            geel_knipperen: Geel knipperen
+            groen: Groen
+            gedoofd: Gedoofd
+          external: []
+          initRT: []
+      operations:
+        SetActief:
+          stereotype: commando
+          title: Set Actief
+          description: Maakt het Verkeerslicht actief of niet actief.
+          ref: BSTTI#16852
+          comment: SetActief( ja | nee )
+          cm(stand): >
+            console.debug(stand);
+            this.actief = stand;
+        SetStand:
+          external: []
+          cm(stand): >
+            console.debug('SetStand', this, stand);
+            //console.debug('lfv_Verkeerslicht_Verkeersbuis.SetStand', stand, this, this.lfv_Verkeerslichten_Verkeersbuis);
+            //console.debug('this.lfv_Verkeerslichten_Verkeersbuis', this.lfv_Verkeerslichten_Verkeersbuis);
+            //console.debug('sf_Verkeerslichten_Verkeersbuis', this.sf_Verkeerslichten_Verkeersbuis);
+            this.set('stand', stand); // this.stand = stand;
+        BewaakStand:
+          stereotype: autonoom_proces
+          sim(): >
+            console.debug('VKL bewaakstand');
+            this.lfv_Verkeerslichten_Verkeersbuis.BewaakStand();
+    lfv_J32:
+      properties:
+        stand: []
+      operations:
+        SetStand:
+          sim(stand): >
+            this.stand = stand;
+    lfv_Afsluitboom_Verkeersbuis:
+      title: LFV afsluitboom
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          title: Storingen
+          description: 'Elke afsluitboom dient de volgende generieke storingen te
+            detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd. ; Elke Afsluitboom dient de volgende specifieke
+            storingen te detecteren: ; STORING_OBSTAKELDETECTIE: Er is een storing
+            in de obstakeldetectie gedetecteerd.'
+          ref: BSTTI#10059
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+            STORING_OBSTAKELDETECTIE: Storing obstakeldetectie
+          type: array
+        stand:
+          title: Stand
+          description: 'Representatie van de stand van de boom. ; op: De boom is volledig
+            geopend. ; op_verlaten: De boom is niet geopend en niet volledig gesloten.
+            ; neer: De boom is volledig gesloten'
+          ref: BSTTI#1820
+          comment: '#stand: op | op_verlaten | neer'
+          enum:
+            op: Op
+            op_verlaten: Op verlaten
+            neer: Neer
+        beweging:
+          title: Beweging
+          description: 'Representatie van de actieve beweging van de boom. De boom
+            dient alleen actief te bewegen als gevolg van een ontvangen commando.
+            Zo dient #beweging niet de waarde ''op'' of ''neer'' te krijgen als gevolg
+            van beweging door de wind. ; op: De boom is actief aan het openen ; neer:
+            De boom is actief aan het sluiten ; geen: De boom beweegt niet actief'
+          ref: BSTTI#1820
+          comment: '#beweging: op | neer | geen'
+          enum:
+            op: Op
+            neer: Neer
+            geen: Geen
+        obstakelgedetecteerd:
+          title: Obstakel gedetecteerd
+          description: Er is al dan niet een obstakel gedetecteerd
+          ref: BSTTI#1820
+          comment: '#obstakelgedetecteerd: ja | nee'
+          enum:
+            ja: Ja
+            nee: Nee
+        vrijgavesignaal_ontvangen:
+          title: Vrijgave signaal ontvangen
+          description: Geeft aan of de afsluitboom (interlock) is vrijgegeven vanuit
+            de Verkeerslichten.
+          ref: BSTTI#1820
+          comment: '#vrijgavesignaal_ontvangen: ja | nee'
+          enum:
+            ja: Ja
+            nee: Nee
+      operations:
+        Op:
+          title: Op
+          description: Dit commando zorgt ervoor dat de boom naar de stand op gaat,
+            onafhankelijk van de huidige stand en beweging.
+          ref: BSTTI#1835
+          comment: Op()
+        Neer:
+          title: Neer
+          description: Dit commando maakt het mogelijk dat de boom naar de stand neer
+            gaat, onafhankelijk van de huidige stand en beweging. BSTTI#16830 geeft
+            nader aan onder welke voorwaarden de slagboom neer gaat.
+          ref: BSTTI#1835
+          comment: Neer()
+        NeerOnvoorwaardelijk:
+          title: Neer onvoorwaardelijk
+          description: Laat de boom naar de stand neer gaan, onafhankelijk van de
+            huidige stand en beweging en onafhankelijk van de voorwaarden die specifiek
+            bij het commando Neer() zijn gesteld. Dit commando overbrugt al deze voorwaarden
+            eenmalig en mag alleen worden aangeroepen t.g.v. een handmatige bediening
+            (als bevestiging na beoordeling dat de situatie voldoende veilig is).
+          ref: BSTTI#1835
+          comment: NeerOnvoorwaardelijk()
+        Stop:
+          title: Stop
+          description: "Stop direct het openen of sluiten van de Afsluitboom. De Afsluitboom
+            blijft in de stand waarin deze gestopt werd. Dit commando betreft niet
+            een Noodstop, maar moet wel voorrang hebben op de andere commando\u2019s."
+          ref: BSTTI#1835
+          comment: Stop()
+    lfv_MTMkoppeling_Verkeersbuis:
+      title: LFV MTM-koppeling
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elke MTM-koppeling dient de volgende generieke storingen te
+            detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+        beeld:
+          stereotype: toestandsvariabele
+          title: Beeld
+          description: "Het actuele beeld van de signaalgever op signaleringsraai
+            r (1 \u2264 r \u2264 m) van rijstrook s (1 \u2264 s \u2264 n). ; De nummering
+            van signaleringsraaien dient oplopend te zijn in de rijrichting.Merk op
+            dat ook de rijstroken worden genummerd volgens de definitie in ref. [BPS].
+            De beeldinformatie dient een Groepscode, Beeldcode en Variatiecode te
+            bevatten, volgens de beelden bibliotheek van RWS(ref. [MTMBB]). ; Als
+            er fysiek geen signaleringsraai 1, moeten er bij het opvragen van de beelden
+            van signaleringsraai 1 default waarden worden teruggegeven."
+          ref: BSTTI#1209
+          comment: '#beeld[1..m, 1..n]'
+          type: array
+      operations:
+        SetMaatregel:
+          stereotype: commando
+          title: Set Maatregel
+          description: 'aan: Vraag de geconfigureerde MTM maatregel ten behoeve van
+            het afsluiten van de verkeersbuis aan. ; uit: Verwijder een eerder aangevraagde
+            snelheidsbeperking.'
+          ref: BSTTI#1211
+          comment: SetMaatregel(aan | uit)
+        SetKruizenInBuis:
+          stereotype: commando
+          title: Set Kruizen In Buis
+          description: 'aan: Vraag kruizen aan in de verkeersbuis conform BSTTI#17158.
+            ; uit: Verwijder eerder via dit commando aangevraagde kruizen(voor zover
+            die kruizen er niet ook om andere redenen staan).'
+          ref: BSTTI#1211
+          comment: SetKruizenInBuis(aan | uit)
+    lfv_CCTV_Verkeersbuis:
+      title: LFV CCTV Verkeersbuis
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elke CCTV Verkeersbuis dient de volgende generieke storingen
+            te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+      operations: []
+    lfv_Camera_Verkeersbuis:
+      title: LFV component Camera Verkeersbuis
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elke CCTV Verkeersbuis dient de volgende generieke storingen
+            te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+        identificatie_code:
+          stereotype: toestandsvariabele
+          title: Identificatie code
+          description: De camera's moeten elk voorzien zijn van een unieke identificatiecode
+            die zichtbaar is in het geproduceerde beeld.
+          ref: BSTTI#1620
+          comment: ""
+        identificatiecode_weergave:
+          stereotype: toestandsvariabele
+          title: Identificatiecode weergave
+          description: Geeft de weergave van de camerapositie-identificatiecode in
+            het camerabeeld aan. Zie BSTTI#16702.
+          ref: BSTTI#1620
+          comment: ""
+          enum:
+            normaal: Normaal
+            inverse: Inverse
+        pan_stand:
+          stereotype: toestandsvariabele
+          title: Pan stand
+          description: De pan stand van de camera.
+          ref: BSTTI#1620
+          comment: ""
+        tilt_stand:
+          stereotype: toestandsvariabele
+          title: Tilt stand
+          description: De tilt stand van de camera.
+          ref: BSTTI#1620
+        zoom_stand:
+          stereotype: toestandsvariabele
+          title: Zoom stand
+          description: De zoom stand van de camera.
+          ref: BSTTI#1620
+        focus_stand:
+          stereotype: toestandsvariabele
+          title: Focus stand
+          description: De focus stand van de camera.
+          ref: BSTTI#1620
+        diafragma_stand:
+          stereotype: toestandsvariabele
+          title: Diafragme stand
+          description: De diafragma stand van de camera.
+          ref: BSTTI#1620
+        preset:
+          stereotype: toestandsvariabele
+          title: Presets
+          description: De lijst van preset-waarden zoals ingesteld voor deze camera.
+            Elke preset bevat een pan, tilt, zoom, focus, diafragma waarde.
+          ref: BSTTI#1620
+          type: array
+        kanalen:
+          stereotype: toestandsvariabele
+          title: Kanalen
+          description: De lijst van kanalen waarop deze camera zichtbaar is.
+          ref: BSTTI#1620
+          type: array
+      operations:
+        SetPan:
+          stereotype: commando
+          title: Set Pan
+          description: Laat de camera draaien tot hoek p.
+          ref: BSTTI#1621
+          comment: SetPan(p)
+        SetTilt:
+          stereotype: commando
+          title: Set Tilt
+          description: Laat de camera kantelen tot hoek t.
+          ref: BSTTI#1621
+          comment: SetTilt(t)
+        SetZoom:
+          stereotype: commando
+          title: Set Zoom
+          description: Laat de camera inzoomen tot z.
+          ref: BSTTI#1621
+          comment: SetZoom(z)
+        SetFocus:
+          stereotype: commando
+          title: Set Focus
+          description: Wijzig de focus van de camera tot f. De autofocus stand kan
+            ingeschakeld worden met de gereserveerde AUTOFOCUS waarde.
+          ref: BSTTI#1621
+          comment: SetFocus(f)
+        SetDiafragma:
+          stereotype: commando
+          title: Set Diafragma
+          description: Zet de diafragma instelling van de camera in stand d. Met de
+            waarde AUTODIAFRAGMA kan het autodiafragma mechanisme ingeschakeld worden.
+          ref: BSTTI#1621
+          comment: SetDiafragma(d)
+        DefinieerPreset:
+          stereotype: commando
+          title: Definieer Preset
+          description: Voer voor de camera een preset positie i in.
+          ref: BSTTI#1621
+          comment: DefinieerPreset(i, p, t, z, f, d)
+        SetToPreset:
+          stereotype: commando
+          title: Set To Preset
+          description: Stel de camera in volgens preset i.
+          ref: BSTTI#1621
+          comment: SetToPreset(i)
+        SetReferentiePreset:
+          stereotype: commando
+          title: Set Referentie Preset
+          description: "Zet een preset i als referentie om te bepalen of de camerapositie-identificatiecode
+            normaal of ge\xEFnverteerd moet worden weergegeven."
+          ref: BSTTI#1621
+          comment: SetReferentiePreset(i)
+        SetIdentificatiecode:
+          stereotype: commando
+          title: Set Identificatiecode
+          description: Voer voor de camera een identificatiecode ic in.
+          ref: BSTTI#1621
+          comment: SetIdentificatiecode(ic)
+        SelectCameraActueelBeeld:
+          stereotype: commando
+          title: Select Camera Actueel Beeld
+          description: Stel het actuele beeld van de camera beschikbaar in kanaal
+            k. Als het beeld niet beschikbaar is dan is dit zwart. Een kanaal wordt
+            door de bediening gekoppeld aan een scherm om het beeld te vertonen. Een
+            camera kan op meerdere kanalen zichtbaar gemaakt worden (minimaal 2).
+          ref: BSTTI#1621
+          comment: SelectCameraActueelBeeld(k)
+        UnselectCameraActueelBeeld:
+          stereotype: commando
+          title: Unselect Camera Actueel Beeld
+          description: Koppel het actuele beeld van de camera los van kanaal k.
+          ref: BSTTI#1621
+          comment: UnselectCameraActueelBeeld(k)
+    lfv_Opslagsysteem_Verkeersbuis:
+      title: LFV component Opslagsysteem Verkeersbuis
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          title: Storingen
+          description: 'Elke CCTV Verkeersbuis dient de volgende generieke storingen
+            te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd.
+            ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+        permanent_opslaan:
+          stereotype: toestandsvariabele
+          title: Permanent opslaan
+          description: Toestandsvariabele die aangeeft of er momenteel permanente
+            opslag plaatsvindt.
+          ref: BSTTI#2812
+          comment: ""
+          enum:
+            gestart: Gestart
+            gestopt: Gestopt
+        opgeslagen_sessie:
+          stereotype: toestandsvariabele
+          title: Opgeslagen sessie
+          description: 'Lijst van achtereenvolgende opslagsessies. Elke opslagsessie
+            bevat alle opgenomen beelden uit een gegeven tijdsperiode, en ook de begin-
+            en eindtijd. Elk element bevat de volgende subvelden: id: Een uniek identificatie
+            nummer per opslagsessie.Dit identificatie nummer mag nooit veranderen.
+            omschrijving: Instelbare tekstuele omschrijving van de sessie.Initieel
+            leeg. begintijd: Eerste opgeslagen tijdsmoment van deze sessie. eindtijd:
+            Laatste opgeslagen tijdsmoment van deze sessie. Dit subveld is leeg zolang
+            de opslag van deze sessie nog gaande is.'
+          ref: BSTTI#2812
+          comment: ""
+          type: array
+        opgenomen_tijdstip:
+          stereotype: toestandsvariabele
+          title: Opgenomen tijdstip
+          description: Per kanaal is dit het tijdsmoment waarop de getoonde beelden
+            oorspronkelijk opgenomen zijn. Als er op een kanaal geen opgenomen beelden
+            getoond worden dan is de waarde voor dat kanaal leeg.
+          ref: BSTTI#2812
+          comment: ""
+        afspeelsnelheid:
+          stereotype: toestandsvariabele
+          title: Afspeelsnelheid
+          description: 'De snelheid waarmee opgeslagen beelden afgespeeld worden;
+            rationaal getal, met de volgende betekenis: 1: nominale afspeelsnelheid,
+            overeenkomend met ''play'' 0: gepauzeerd s: fastforwardsnelheid. - s:
+            fastbackwardsnelheid.'
+          ref: BSTTI#2812
+          comment: ""
+        cots_medium:
+          stereotype: toestandsvariabele
+          title: COTS medium
+          description: 'Lijst met aangekoppelde COTS opslagmedia. #cots_medium is
+            leeg als er geen COTS opslagmedium aangekoppeld is.'
+          ref: BSTTI#2812
+          comment: ""
+          type: array
+      operations:
+        StartPermanenteOpslag:
+          stereotype: commando
+          title: Start permanente opslag
+          description: commando, om van elke camera het vanaf de starttijd opgeslagen
+            beeld in de FIFO en de actuele beelden op te slaan in een nieuwe opslagsessie.
+            Als er al een opslagsessie gaande is wordt dit commando genegeerd. Als
+            de aangegeven starttijd vroeger is dan het begin van de FIFO zal deze
+            afgerond worden naar de begintijd van de FIFO. De gekozen starttijd mag
+            zich niet in de toekomst bevinden. Als de gekozen starttijd zich tussen
+            een begin- en eindtijd van een bestaande en afgeronde opslagsessie bevindt,
+            wordt de eindtijd van de bestaande sessie als starttijd van de nieuwe
+            sessie genomen.
+          ref: BSTTI#1623
+          comment: StartPermanenteOpslag(starttijd)
+        StopPermanenteOpslag:
+          stereotype: commando
+          title: Stop permanente opslag
+          description: "commando, om een opslagsessie te be\xEBindigen op de aangegeven
+            stoptijd, en de normale situatie te hervatten, waarbij alle actuele beelden
+            in de FIFO worden opgeslagen. Als er geen opslagsessie gaande is wordt
+            dit commando genegeerd. De stoptijd moet later zijn dan de begintijd van
+            de huidige sessie. De gekozen stoptijd mag zich niet in de toekomst bevinden,
+            en ook niet tussen een begin- en eindtijd van een bestaande opslagsessie."
+          ref: BSTTI#1623
+          comment: StopPermanenteOpslag(stoptijd)
+        SelectCameraPermanenteOpslagBeeld:
+          stereotype: commando
+          title: Select camera permanente opslag beeld
+          description: commando, om het opgeslagen beeld van camera met index i vanaf
+            tijdstip t beschikbaar te stellen in kanaal k. Als het beeld niet beschikbaar
+            is dan wordt het zwart. Met een herhaald commando met dezelfde i,k waarde
+            kunnen sprongen in de tijd gemaakt worden.
+          ref: BSTTI#1623
+          comment: SelectCameraPermanenteOpslagBeeld(i, k, t)
+        SetSessieOmschrijving:
+          stereotype: commando
+          title: Set sessie omschrijving
+          description: commando, om de omschrijving van de sessie met het opgegeven
+            id te veranderen in de aangegeven tekst.
+          ref: BSTTI#1623
+          comment: SetSessieOmschrijving(id, tekst)
+        WisPermanenteOpslagSessie:
+          stereotype: commando
+          title: Wis permanente opslagsessie
+          description: "commando, om de opslagsessie met het opgegeven id te wissen
+            uit de opgeslagen_sessie lijst. Hierdoor schuiven alle sessies die een
+            hogere index in de lijst hebben dan deze sessie \xE9\xE9n indexpositie
+            omlaag."
+          ref: BSTTI#1623
+          comment: WisPermanenteOpslagSessie(id)
+        KopieerPermanenteOpslagBeeld:
+          stereotype: commando
+          title: Kopieer permanente opslagbeeld
+          description: "commando, om de opslagsessie met het opgegeven id, inclusief
+            subvelden, te kopi\xEBren naar COTS bestemming b."
+          ref: BSTTI#1623
+          comment: KopieerPermanenteOpslagBeeld(id, b)
+        Pauze:
+          stereotype: commando
+          title: Pauze
+          description: commando, om het afspelen van het opgeslagen beeld te pauzeren.
+          ref: BSTTI#1623
+          comment: Pauze(i, k)
+        Play:
+          stereotype: commando
+          title: Play
+          description: commando, om het afspelen van het opgeslagen beeld te continueren.
+          ref: BSTTI#1623
+          comment: Play(i, k)
+        FastForward:
+          stereotype: commando
+          title: Fastforward
+          description: commando, resulterend in versneld vooruit afspelen met snelheid
+            s. 's' geeft de relatieve snelheid weer t.o.v. real-time.
+          ref: BSTTI#1623
+          comment: FastForward(i,k,s)
+        FastBackward:
+          stereotype: commando
+          title: Fastbackward
+          description: commando, resulterend in versneld achteruit afspelen met snelheid
+            s. 's' geeft de relatieve snelheid weer t.o.v. real-time.
+          ref: BSTTI#1623
+          comment: FastBackward(i,k,s)
+        UnselectCameraOpslagBeeld:
+          stereotype: commando
+          title: Unselect camera opslagbeeld
+          description: commando, om de beschikbaarheid van het opgeslagen beeld van
+            camera i op kanaal k op te heffen en het kanaal vrij te geven.
+          ref: BSTTI#1623
+          comment: UnselectCameraOpslagBeeld(i, k)
+    lfv_Hulppost_Verkeersbuis:
+      title: LFV Hulppost Verkeersbuis
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elke Hulppost dient de volgende generieke storingen te detecteren:
+            ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ;
+            STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie
+            met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+        hulppost_type:
+          stereotype: toestandsvariabele
+          title: Hulppost type
+          description: Geeft aan wat voor type hulppost dit is.
+          ref: BSTTI#453
+          comment: ""
+          enum:
+            A: A
+            C: C
+          type: ""
+        deur_open:
+          stereotype: toestandsvariabele
+          title: Deur open
+          description: Geeft aan of de eerst openende deur open is.
+          ref: BSTTI#453
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+            disabled: Disabled
+          type: ""
+        deur_open_enabled:
+          stereotype: hulpvariabele
+          title: Deur open detectie enabled/disabled
+          description: Hulpvariabele om enabled/disabled te onthouden.
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          type: ""
+        blusapparaat_in_houder_enabled:
+          stereotype: hulpvariabele
+          title: Blusapparaat in houder detectie enabled/disabled
+          description: Hulpvariabele om enabled/disabled te onthouden.
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          type: ""
+        spuitmond_enabled:
+          stereotype: hulpvariabele
+          title: Spuitmond detectie enabled/disabled
+          description: Hulpvariabele om enabled/disabled te onthouden.
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          type: ""
+      operations:
+        EnableDetector:
+          stereotype: commando
+          title: Enable detector
+          description: 'Activeert of deactiveert een toestandsvariabele; de toestandsvariabele
+            overeenkomend met sensor_id zal de actuele waarde reflecteren (indien
+            enabled = ''ja'') of krijgt de waarde ''detector_disabled'' (indien enabled
+            = ''nee''). Hierbij identificeert sensor_id een van de toestandsvariabelen(''deur''
+            voor #deur_open, ''blusapparaat'' voor #blusapparaat_in_houder, en ''spuitmond''
+            voor #spuitmond_slanghaspel_in_houder).'
+          ref: BSTTI#10611
+          comment: ""
+          conditie(): >
+            return true;
+          cm(sensor_id, enabled): >
+            // console.debug('LFV Hulppost', 'EnableDetector', 'Sensor_Id: ' & sensor_id ,'Enabled: ' & enabled );
+            sensor_id == "deur" && enabled == "ja" ? this.deur_open_enabled = "ja" : this.deur_open_enabled = "nee";
+            sensor_id == "blusapparaat" && enabled == "ja" ? this.blusapparaat_in_houder_enabled = "ja" : this.blusapparaat_in_houder_enabled = "nee";
+            sensor_id == "spuitmond" && enabled == "ja" ? this.spuitmond_enabled = "ja" : this.spuitmond_enabled = "nee";
+    lfv_Verlichting_VeiligeRuimte:
+      title: LFV Verlichting Veilige Ruimte
+      properties:
+        bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar == "" ? "ja" : "nee";
+        reden_niet_bestuurbaar:
+          stereotype: toestandsvariabele
+          title: Reden niet bestuurbaar
+          description: 'Elke LFV en elke component dienen elk de volgende toestandsvariabelen
+            te ondersteunen: ''#bestuurbaar'', ''#reden_niet_bestuurbaar'', ''#storingen''.'
+          ref: BSTTI#3722
+          comment: ""
+          enum:
+            plaatselijk_bediend: Plaatselijk bediend
+            noodstop: Noodstop
+            werkschakelaar: Werkschakelaar
+            storing: Storing
+            disabled: Disabled
+            opstart: Opstart
+          type: array
+          initvalue: opstart
+        observeerbaar:
+          stereotype: toestandsvariabele
+          title: Observeerbaar
+          description: 'Uit de bij iedere LFV (of component) beschikbare variabelen
+            #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt
+            een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar.
+            Overal waar in het vervolg ''#observeerbaar = ja'' geschreven staat, betekent
+            dit dat voor de LFV(of component) geldt: ofwel ''#bestuurbaar = ja'',
+            ofwel ''#bestuurbaar = nee'' mits #reden_niet_bestuurbaar uitsluitend
+            de volgende waardes bevat: ''plaatselijke_bediening'' en / of ''noodstop''
+            en / of ''werkschakelaar''. Overal waar in het vervolg ''#observeerbaar
+            = nee'' geschreven staat, betekent dit dat voor de LFV(of component) geldt:
+            ''#bestuurbaar = nee'' en bovendien bevat #reden_niet_bestuurbaar uitsluitend
+            waardes die verschillen van ''plaatselijke_bediening'', ''noodstop'' en
+            ''werkschakelaar''.'
+          ref: ""
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return this.reden_niet_bestuurbaar.includes("storing", "disabled", "opstart") ? "nee" : "ja";
+        storingen:
+          stereotype: toestandsvariabele
+          title: Storingen
+          description: 'Elke Verlichting Veilige Ruimte dient de volgende generieke
+            storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke
+            storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing
+            in de communicatie met de LFV gedetecteerd.'
+          ref: ""
+          comment: ""
+          enum:
+            STORING_ALGEMEEN: Storing algemeen
+            STORING_COMMUNICATIE_UITGEVALLEN: Storing uitval communicatie met de LFV
+          type: array
+        stand:
+          title: Stand
+          description: Representatie van de stand van de verlichting.
+          ref: BSTTI#1781
+          comment: '#stand: aan | uit'
+          enum:
+            aan: Aan
+            uit: Uit
+      operations:
+        Aan:
+          stereotype: commando
+          title: Aanschakelen
+          description: Commando voor het aanschakelen verlichting.
+          ref: BSTTI#1784
+          comment: ""
+          conditie(): >
+            return true;
+          cm(): >
+            // logica?
+        Uit:
+          stereotype: commando
+          title: Uitschakelen
+          description: Commando voor het uitschakelen verlichting.
+          ref: BSTTI#1784
+          comment: ""
+          conditie(): >
+            return true;
+          cm(): >
+            // logica?
+    cf_Hoogtedetectie_Verkeersbuis:
+      naam: "Coördinerende functie Hoogtedetectie"
+      hoortbij: Verkeersbuis
+      titel: Hoogtedetectie
+      gui: []
+      properties: []
+    bf_HoogteDetector_Verkeersbuis:
+      naam: Basisfunctie Hoogtedetector
+      hoortbij: Verkeersbuis
+      titel: Hoogtedetector
+    bf_SOS_Verkeersbuis:
+      naam: Basisfunctie SOS-detectie
+      hoortbij: Verkeersbuis
+      titel: SOS
+    sf_SOSSectie_Verkeersbuis:
+      naam: Subfunctie SOSsectie
+      hoortbij: Verkeersbuis
+      titel: SOS-sectie
+      gui: []
+      properties: []
+    cf_OmroepMonitor_Verkeersbuis:
+      naam: "Coördinerende functie Omroepmonitor"
+      hoortbij: Verkeersbuis
+      titel: Omroep monitor
+    cf_GeluidsbakenMonitor_Verkeerbuis:
+      naam: "Coördinerende functie GeluidsbakenMonitor"
+      hoortbij: Verkeersbuis
+      titel: Geluidsbaken monitor
+    bf_Omroep_Verkeersbuis:
+      naam: Basisfunctie Omroep Verkeersbuis
+      hoortbij: Verkeersbuis
+      titel: Omroep
+      gui: []
+      properties: []
+    sf_Omroepsectie_Verkeersbuis:
+      naam: Subfunctie Omroepsectie
+      hoortbij: Verkeersbuis
+      titel: Omroepsectie
+      gui: []
+      properties: []
+    bf_HF_Verkeersbuis:
+      naam: Basisfunctie HF Verkeersbuis
+      hoortbij: Verkeersbuis
+      titel: HF
+      gui: []
+      properties: []
+    bf_Verlichting_Verkeersbuis:
+      naam: Basisfunctie VerkeersbuisVerlichting
+      hoortbij: Verkeersbuis
+      titel: Verlichting
+      gui: []
+      properties: []
+    sf_Deelverlichting_Verkeersbuis:
+      naam: Subfunctie DeelVerlichting
+      hoortbij: Verkeersbuis
+      titel: Deelverlichting
+    sf_VerlichtingsZone_Verkeersbuis:
+      naam: Subfunctie Verlichtingszone
+      hoortbij: Verkeersbuis
+      titel: Zone
+    cf_Afsluiter_Verkeersbuis:
+      naam: "Coördinerende functie VerkeersbuisAfsluiter"
+      hoortbij: Verkeersbuis
+      titel: Verkeersbuisafsluiter
+      mnu:
+        children:
+          VRI_Afsluitboom:
+            title: VRI Afsluitboom
+          Cado_Hekken:
+            title: Cado Hekken
+          Veva_Beba:
+            title: Veva Beba
+          Tunnelbuis_Wi:
+            title: Tunnelbuis Wi
+      properties:
+        bf_Verkeerslichten_Verkeersbuis:
+          stereotype: configuratie_element
+          title: Verkeerslichten
+          description: De basisfunctie Verkeerslichten voor deze verkeersbuisafsluiter.
+            Bij een wisselbuis zijn dit enkel de Verkeerslichten die aanwezig zijn
+            bij de ingang die deze verkeersbuisafsluiter afsluit.
+          ref: BSTTI#16885
+          type: selectitem
+          class: Verkeerslichten
+        bf_MTMkoppeling_Verkeersbuis:
+          stereotype: configuratie_element
+          title: MTM koppeling
+          description: De basisfunctie MTM-Koppeling voor de rijrichting van deze
+            verkeersbuisafsluiter.
+          ref: BSTTI#6109
+          type: selectitem
+          class: MTM koppeling
+        bf_Afsluitboom_Verkeersbuis:
+          stereotype: configuratie_element
+          title: ""
+          description: De basisfuncties Afsluitboom voor de rijbaan en de vluchtstrook
+            van deze verkeersbuis. Een afsluitboom kan mogelijk meerdere rijstroken
+            tegelijk afsluiten. Bij een wisselbuis zijn dit enkel de afsluitbomen
+            die aanwezig zijn bij de ingang die deze verkeersbuisafsluiter afsluit.
+          ref: BSTTI#6111
+          type: selectitem
+          class: Afsluitboom
+        sf_Rijstrook_Verkeersbuis:
+          stereotype: configuratie_element
+          title: Rijstrook
+          description: De subfuncties Rijstrook voor de rijbaan van deze verkeersbuis.
+            Let op dat een eventuele vluchtstrook hier niet bij hoort. Bij een wisselbuis
+            heeft elke verkeersbuisafsluiter zijn eigen subfuncties Rijstrook.
+          ref: BSTTI#16145
+          type: selectitem
+          class: Rijstrook
+        bf_CCTV_Verkeersbuis:
+          stereotype: configuratie_element
+          title: CCTV
+          description: De basisfunctie CCTV.
+          ref: BSTTI#9682
+          type: selectitem
+          class: CCTV
+        sf_Verkeerslichten_Camera:
+          stereotype: configuratie_element
+          title: Camera nabij de Verkeerslichten
+          description: De camera die de Verkeerslichten en het verkeer daarvoor in
+            beeld kan brengen. Dit configuratie-element moet instelbaar zijn via een
+            onderhoudskoppelvlak.
+          ref: BSTTI#9680
+          type: selectitem
+          class: sf_Camera_Verkeersbuis
+        verkeerslichten_camera_preset:
+          stereotype: configuratie_element
+          title: Camera preset voor zicht op de Verkeerslichten
+          description: De preset voor _sf_Verkeerslichten_camera zodat de Verkeerslichten
+            en het verkeer daarvoor zichtbaar zijn. Dit configuratie-element moet
+            instelbaar zijn via een onderhoudskoppelvlak.
+          ref: BSTTI#9681
+          type: selectitem
+          class: Preset
+        sf_Afsluitbomen_Camera:
+          stereotype: configuratie_element
+          title: Camera nabij de afsluitbomen
+          description: De camera die de afsluitbomen en het verkeer daarvoor in beeld
+            kan brengen. Dit configuratie - element moet instelbaar zijn via een onderhoudskoppelvlak.
+          ref: BSTTI#14106
+          type: selectitem
+          class: sf_Camera_Verkeersbuis
+        afsluitbomen_camera_preset:
+          stereotype: configuratie_element
+          title: Camera preset voor zicht op de afsluitbomen
+          description: De preset voor _sf_afsluitbomen_camera die de afsluitbomen
+            en het verkeer daarvoor in beeld brengt. Dit configuratie-element moet
+            instelbaar zijn via een onderhoudskoppelvlak.
+          ref: BSTTI#14107
+          type: selectitem
+          class: Preset
+        tijd_rood_voor_afsluitbomen_dicht:
+          stereotype: configuratie_element
+          title: Tijd rood voor afsluitbomen dicht
+          description: 'De tijdsduur die de Verkeerslichten op rood moeten staan voordat
+            de afsluitbomen dicht mogen. Dit configuratie-element moet instelbaar
+            zijn via een onderhoudskoppelvlak. De instelling van dit configuratie-element
+            mag alleen i.s.m.een verkeerskundige en tunnelveiligheidsdeskundige van
+            RWS worden aangepast. Let op: de waarden van dit configuratie-element
+            en het gerelateerde element van de LFV Verkeerslichten(BSTTI#16918) moeten
+            op elkaar zijn afgestemd.'
+          ref: BSTTI#15962
+          type: number
+          unit: s
+          min: 0
+          max: 60
+          step: 1
+        tijd_aansturing_afsluitbomen:
+          stereotype: configuratie_element
+          title: Tijd aansturing afsluitbomen
+          description: De maximale tijdsduur die LFV's Afsluitboom autonoom worden
+            aangestuurd (bij enkele specifieke opdrachten aan de Verkeersbuisafsluiter,
+            m.n. automatisch neer sturen bij calamiteit of uitval bediening). De waarde
+            van dit configuratie-element moet zo worden gekozen dat voldoende zeker
+            is dat de afsluitbomen de 'neer' stand zullen bereiken, maar ook zo dat
+            overgangen van de afsluitboomstanden als voldoende bumpless kunnen worden
+            gezien (i.v.m. Machinerichtlijn), ook bij overgang van niet bestuurbaar
+            naar bestuurbaar na een tijdelijke storing, en ook rekening houdend met
+            tijden benodigd om Verkeerslichten naar rood te sturen en maximale reactietijden
+            van de betrokken LFV's. Dit configuratie-element moet instelbaar zijn
+            via een onderhoudskoppelvlak.
+          ref: BSTTI#16943
+          type: number
+          unit: m
+          min: 0
+          max: 60
+          step: 1
+        beschikbaarheid_afsluitbomen:
+          stereotype: variabele
+          title: Beschikbaarheid afsluitbomen
+          description: Geeft de beschikbaarheid van de afsluitbomen voor de verkeersbuis
+            aan.
+          ref: BSTTI#9388
+          comment: 'Conditie: _bf_Afsluitboom[].#beschikbaarheid = beschikbaar ; Waarde:
+            beschikbaar ; Conditie: _bf_Afsluitboom[].#beschikbaarheid = niet_beschikbaar
+            ; Waarde: niet_beschikbaar ; Conditie: overige situaties ; Waarde: beperkt_beschikbaar'
+          enum:
+            niet_beschikbaar: Niet beschikbaar
+            beperkt_beschikbaar: Beperkt beschikbaar
+            beschikbaar: Beschikbaar
+          get(): >
+            return checkAll(this.bf_Afsluitboom_Verkeersbuis, "beschikbaarheid", "beschikbaar") ? "beschikbaar" : checkAll(this.bf_Afsluitboom_Verkeersbuis, "beschikbaarheid", "niet_beschikbaar") ? "niet_beschikbaar" : "beperkt_beschikbaar";
+        doel_stand:
+          stereotype: variabele
+          title: Gewenste stand
+          description: De doel-stand voor de Verkeerslichten en afsluitbomen van deze
+            verkeersbuis. Via de autonome processen worden MTM, Verkeerslichten en
+            afsluitbomen stapsgewijs in de juiste stand gezet. Zie BSTTI#16963 voor
+            de initialisatie van deze variabele.
+          ref: BSTTI#9399
+          comment: ""
+          enum:
+            afsluitbomen_dicht: Afsluitbomen dicht
+            afsluitbomen_stop: Afsluitbomen stop
+            rood: Rood
+            geel_knipperen: Geel knipperen
+            gedoofd: Gedoofd
+        verkeersbuisafsluiter_status:
+          stereotype: variabele
+          title: Status
+          description: Geeft de status van de verkeersbuisafsluiter voor de verkeersbuis
+            aan.
+          ref: BSTTI#8107
+          comment: "Conditie: _sf_Rijstrook[].#status = open ; Waarde: open ; Conditie:
+            _sf_Rijstrook[].#status = dicht ; Waarde: dicht ; Conditie: _sf_Rijstrook[i].#status
+            = ongeldig ;\tWaarde: ongeldig ; Conditie: overige situaties ; Waarde:
+            deels_afgesloten"
+          enum:
+            open: Open
+            deels_afgesloten: Deels afgesloten
+            dicht: Dicht
+          get(): >
+            return checkAll(this.sf_Rijstrook_Verkeersbuis, "status", "open") ? "open"
+            : checkAll(this.sf_Rijstrook_Verkeersbuis, "status", "dicht") ? "dicht"
+            : checkOne(this.sf_Rijstrook_Verkeersbuis, "status", "ongeldig") ? "ongeldig" : "deels_afgesloten";
+        meest_afgesloten_stand:
+          stereotype: variabele
+          title: Meest afgesloten stand
+          description: De samengevatte stand van de afsluitbomen en Verkeerslichten,
+            waarbij de afsluitbomen leidend zijn. Als niet alle afsluitbomen de stand
+            'op' hebben of niet alle afsluitbomen de stand 'neer' hebben, is de stand
+            'afsluitbomen_onbepaald'; dit is ook het geval als een afsluitboom niet
+            observeerbaar is of gestopt is.
+          ref: BSTTI#15961
+          comment: 'Conditie: _bf_Afsluitboom[].#stand = neer ; Waarde: afsluitbomen_dicht
+            ; Conditie: _bf_Afsluitboom[i].#stand <> op && _bf_Afsluitboom[j].#stand
+            <> neer ; Waarde: afsluitbomen_onbepaald ; Conditie: _bf_Afsluitboom[].#stand
+            = op ; Waarde: _bf_Verkeerslichten.#stand'
+          enum:
+            afsluitbomen_dicht: Afsluitbomen dicht
+            afsluitbomen_onbepaald: Afsluitbomen onbepaald
+            rood: Rood
+            geel: Geel
+            geel_knipperen: Geel knipperen
+            groen: Groen
+            gedoofd: Gedoofd
+          get(): >
+            return checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "neer") ? "afsluitbomen_dicht"
+            : checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op") ? this.bf_Verkeerslichten_Verkeersbuis.stand
+            : "afsluitbomen_onbepaald";
+        voldoende_rood_voor_afsluitbomen:
+          stereotype: variabele
+          title: Afsluitbomen mogen neer
+          description: Geeft aan of de afsluitbomen mogen worden neergelaten.
+          ref: BSTTI#16890
+          comment: 'Conditie: * ; Waarde: huidige_tijd > #tijdstip_rood_bereikt +
+            _tijd_rood_voor_afsluitbomen_dicht'
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return huidige_tijd > this.tijdstip_rood_bereikt + ms(this.tijd_rood_voor_afsluitbomen_dicht);
+        in_gebruik:
+          stereotype: variabele
+          title: In gebruik
+          description: 'Geeft voor toepassing in wisselbuizen aan of deze instantie
+            van functie verkeersbuisafsluiter wel of niet in gebruik moet zijn. Voor
+            toepassing in verkeersbuizen die geen wisselbuizen zijn, dient de waarde
+            van #in_gebruik altijd ''ja'' te zijn. N.B.: de waarde van #in_gebruik
+            representeert een streven.Of de verkeersbuisafsluiter daadwerkelijk in
+            gebruik is wordt weergegeven door de variabele #daadwerkelijk_in_gebruik.'
+          ref: BSTTI#16550
+          comment: ""
+          enum:
+            ja: Ja
+            nee: Nee
+        daadwerkelijk_in_gebruik:
+          stereotype: variabele
+          title: Daadwerkelijk in gebruik
+          description: Geeft aan of deze instantie van functie verkeersbuisafsluiter
+            daadwerkelijk in gebruik is.
+          ref: BSTTI#16551
+          comment: 'Conditie: _bf_Verkeerslichten.#daadwerkelijk_in_gebruik = ja &&
+            _bf_mtm.#daadwerkelijk_in_gebruik = ja && _bf_Afsluitboom[].#daadwerkelijk_in_gebruik
+            = ja && #in_gebruik = ja ; Waarde: ja ; Conditie: _bf_Verkeerslichten.#daadwerkelijk_in_gebruik
+            = nee && _bf_mtm.#daadwerkelijk_in_gebruik = nee && _bf_Afsluitboom[].#daadwerkelijk_in_gebruik
+            = nee && #in_gebruik = nee ; Waarde: nee ; Conditie: overige situaties
+            ; Waarde: gedeeltelijk'
+          enum:
+            ja: Ja
+            nee: Nee
+            gedeeltelijk: Gedeeltelijk
+          get(): >
+            // console.debug(this.naam, this.in_gebruik);
+            return
+              this.bf_Verkeerslichten_Verkeersbuis.daadwerkelijk_in_gebruik == "ja"
+              && this.bf_MTMkoppeling_Verkeersbuis.daadwerkelijk_in_gebruik == "ja"
+              && checkAll(this.bf_Afsluitboom_Verkeersbuis, "daadwerkelijk_in_gebruik", "ja")
+              && this.in_gebruik == "ja" ? "ja"
+              : this.bf_Verkeerslichten_Verkeersbuis.daadwerkelijk_in_gebruik == "nee"
+              && this.bf_MTMkoppeling_Verkeersbuis.daadwerkelijk_in_gebruik == "nee"
+              && checkAll(this.bf_Afsluitboom_Verkeersbuis, "daadwerkelijk_in_gebruik", "nee")
+              && this.in_gebruik == "nee" ? "nee" : "gedeeltelijk";
+        mtm_snelheidsbeperking:
+          stereotype: variabele
+          title: Snelheidsbeperking actief
+          description: Geeft aan of een snelheidsbeperking ingesteld moet worden (ja)
+            of opgeheven mag worden (nee).
+          ref: BSTTI#16886
+          comment: 'Conditie: #doel_stand = (afsluitbomen_stop | afsluitbomen_dicht
+            | rood | geel_knipperen) || (#meest_afgesloten_stand <> gedoofd && #meest_afgesloten_stand
+            <> ongeldig) ; Waarde: ja ; Conditie: #doel_stand = gedoofd && #meest_afgesloten_stand
+            = gedoofd ; Waarde: nee'
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return
+              this.doel_stand == "afsluitbomen_stop"
+              || this.doel_stand == "afsluitbomen_dicht"
+              || this.doel_stand == "rood"
+              || this.doel_stand == "geel_knipperen"
+              || (this.meest_afgesloten_stand != "gedoofd" && this.meest_afgesloten_stand != "ongeldig") ? "ja"
+              : this.doel_stand == "gedoofd" && this.meest_afgesloten_stand == "gedoofd" ? "nee"
+              : "";
+        tijdstip_rood_bereikt:
+          stereotype: variabele
+          title: Tijdstip stand rood bereikt
+          description: Tijdstip waarop voor alle rijstroken van de Verkeersbuisafsluiter
+            de stand rood is bereikt. Zie het autonome proces *BepaalTijdstipRoodBereikt.
+          ref: BSTTI#16888
+          comment: ""
+        Verkeerslichtenbedieningen_vrij:
+          stereotype: variabele
+          title: Verkeerslichten bedienbaar
+          description: Geeft aan of via de Verkeerslichten-gerelateerde bedieningen
+            van de Verkeersbuisafsluiter een andere stand mag worden ingesteld. Als
+            dit niet mag, zullen eerst de afsluitbomen geopend moeten worden, via
+            een afsluitbomen-gerelateerde bediening van de verkeersbuisafsluiter of
+            kan de verkeersbuis geheel worden geopend met Hand_Open().
+          ref: BSTTI#16940
+          comment: 'Conditie: * ; Waarde: (#doel_stand = ongeldig && _bf_Afsluitboom[].#stand
+            = (op | ongeldig)) || (#doel_stand = (rood | geel_knipperen | gedoofd))
+            || (#doel_stand = (afsluitbomen_dicht | afsluitbomen_stop) && _bf_Afsluitboom[].#stand
+            = op)'
+          enum:
+            ja: Ja
+            nee: Nee
+          get(): >
+            return
+              this.doel_stand == "ongeldig"
+              && (
+                checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op")
+                || checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "ongeldig")
+              )
+              || this.doel_stand == "rood"
+              || this.doel_stand == "geel_knipperen"
+              || this.doel_stand == "gedoofd"
+              || (
+                this.doel_stand == "afsluitbomen_dicht"
+                || this.doel_stand == "afsluitbomen_stop"
+              )
+              && checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op") ? "Ja"
+              : "Nee";
+        max_tijdstip_aansturing_afsluitbomen:
+          stereotype: variabele
+          title: Tijdstip einde sturing afsluitbomen
+          description: Tijdstip waarna de afsluitbomen niet meer automatisch mogen
+            worden aangestuurd. Ter voorkoming van ongevallen t.g.v. onverwachte bewegingen
+            van afsluitbomen (zie ook Machinerichtlijn); bijvoorbeeld na een overgang
+            van niet bestuurbaar naar bestuurbaar van een afsluitboom na een tijdelijke
+            storing of tijdelijke obstakeldetectie.
+          ref: BSTTI#16942
+          comment: ""
+          initdefaultvalue: "0"
+        BeschikbaarheidAfsluitbomen:
+          stereotype: signalering
+          title: Beschikbaarheid afsluitbomen
+          description: De beschikbaarheid van de afsluitbomen voor de verkeersbuis.
+          ref: BSTTI#9582
+          comment: 'Status: #beschikbaarheid_afsluitbomen'
+          type: status_melding
+          enum:
+            niet_beschikbaar: Niet beschikbaar
+            beschikbaar: Beschikbaar
+            beperkt_beschikbaar: Beperkt beschikbaar
+          get(): >
+            return this.beschikbaarheid_afsluitbomen
+        Alarm_DoelstandVBAOnbepaald:
+          stereotype: signalering
+          title: Alarm doelstand verkeersbuisafsluiter onbepaald
+          description: Er is nog geen beoogde stand voor de verkeersbuisafsluiter
+            geselecteerd.
+          ref: BSTTI#16954
+          comment: 'Conditie: #doel_stand = ongeldig'
+          type: deelsysteem_alarm
+          enum:
+            ja: Verkeersbuisafsluiter doelstand onbepaald
+            nee: ""
+          get(): >
+            return this.doel_stand == "ongeldig";
+      operations:
+        Hand_VerkeerslichtenGedoofd:
+          stereotype: bediening
+          title: Verkeerslichten naar stand gedoofd
+          description: Verkeerslichten gaan naar de toestand gedoofd. Deze bediening
+            mag alleen via de MMI worden aangeroepen.
+          ref: BSTTI#6116
+          comment: 'Conditie: #Verkeerslichtenbedieningen_vrij = ja && #in_gebruik
+            = ja ; Acties: _bf_CCTV.SetControleCameraMetPreset(_sf_Verkeerslichten_camera,
+            _Verkeerslichten_camera_preset) ; _sf_afsluitbomen_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_afsluitbomen_camera,
+            _afsluitbomen_camera_preset) ; #doel_stand := gedoofd SetVerkeerslichtenOpAutobediening()'
+          conditie(): >
+            return this.Verkeerslichtenbedieningen_vrij == "ja" && this.in_gebruik == "ja";
+          em(): >
+            console.debug('Hand_VerkeerslichtenGedoofd', this.schema, this.ID, this.doel_stand);
+            this.doel_stand = "gedoofd";
+            /** @debug mka: */
+            //this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand("groen");
+            return;
+
+            this.bf_CCTV_Verkeersbuis.SetControleCameraMetPreset(this.sf_Verkeerslichten_camera, this.Verkeerslichten_camera_preset);
+            //debug
+            this.sf_afsluitbomen_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_afsluitbomen_camera, this.afsluitbomen_camera_preset);
+            this.SetVerkeerslichtenOpAutobediening();
+        Hand_VerkeerslichtenRood:
+          stereotype: bediening
+          title: Verkeerslichten naar stand rood
+          description: De Verkeerslichten van deze Verkeersbuisafsluiter worden op
+            rood gezet. Deze bediening mag alleen via de MMI worden aangeroepen.
+          ref: BSTTI#6118
+          comment: 'Conditie: #Verkeerslichtenbedieningen_vrij = ja && #in_gebruik
+            = ja ; Acties: _bf_CCTV.SetControleCameraMetPreset(_sf_Verkeerslichten_camera,
+            _Verkeerslichten_camera_preset) ; _sf_Verkeerslichten_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_Verkeerslichten_camera,_Verkeerslichten_camera_preset)
+            ; _sf_afsluitbomen_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_afsluitbomen_camera,
+            _afsluitbomen_camera_preset) ; #doel_stand := rood ; SetVerkeerslichtenOpAutobediening()'
+          arguments: []
+          conditie(): >
+            return this.Verkeerslichtenbedieningen_vrij == "ja" && this.in_gebruik == "ja";
+          em(): >
+            console.debug('Hand_VerkeerslichtenRood', this.schema, this.ID, this.doel_stand);
+            this.doel_stand = "rood";
+            /** @debug mka: */
+            //console.debug('Hand_VerkeerslichtenRood');
+            /** @debug onderstaande regel is test*/
+            //this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand("rood");
+            return;
+            /** @debug end */
+            this.bf_CCTV_Verkeersbuis.SetControleCameraMetPreset(this.sf_Verkeerslichten_Camera, this.verkeerslichten_camera_preset);
+            //debug
+            this.sf_Verkeerslichten_Camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_Verkeerslichten_Camera, this.verkeerslichten_camera_preset);
+            //debug
+            this.sf_Afsluitbomen_Camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_Afsluitbomen_Camera, this.afsluitbomen_camera_preset);
+            this.SetVerkeerslichtenOpAutobediening();
+            //Aim.messenger.send({ to: [Aim.client.domain.id], initdefaultvalue: [{ id: 3318018, operations: { SetStand: ['rood'] } }] });
+        AfsluitbomenOpen:
+          stereotype: bediening
+          title: Afsluitbomen openen
+          description: Opent de afsluitbomen voor deze Verkeersbuisafsluiter.
+          ref: BSTTI#6119
+          comment: 'Conditie: #in_gebruik = ja ; Acties: IF #doel_stand = (ongeldig
+            | afsluitbomen_dicht | afsluitbomen_stop) THEN #doel_stand := rood END_IF
+            ; SetAfsluitbomenOpAutobedieningMetContinuSturing(nee) _bf_Afsluitboom[].AutoOpen()'
+          conditie(): >
+            return this.in_gebruik == "ja";
+          em(): >
+            this.doel_stand == "ongeldig" || this.doel_stand == "afsluitbomen_dicht" || this.doel_stand == "afsluitbomen_stop"
+            ? this.doel_stand = "rood" : "";
+            this.SetAfsluitbomenOpAutobedieningMetContinuSturing(nee);
+            forAll(this.bf_Afsluitboom_Verkeersbuis, "AutoOpen");
+        AfsluitbomenVoorwaardelijkSluit:
+          stereotype: bediening
+          title: Afsluitbomen sluiten
+          description: sluit de afsluitbomen voor deze Verkeersbuisafsluiter (voor
+            zover aan alle voorwaarden hiervoor is voldaan, inclusief geen voertuig
+            onder afsluitboom).
+          ref: BSTTI#6120
+          comment: 'Conditie: #voldoende_rood_voor_afsluitbomen = ja && #in_gebruik
+            = ja ; Acties: #doel_stand := afsluitbomen_dicht ; SetAfsluitbomenOpAutobedieningMetContinuSturing(nee)
+            ; _bf_Afsluitboom[].AutoVoorwaardelijkSluit()'
+          conditie(): >
+            return this.voldoende_rood_voor_afsluitbomen == "ja" && this.in_gebruik == "ja";
+          em(): >
+            this.doel_stand = "afsluitbomen_dicht";
+            this.SetAfsluitbomenOpAutobedieningMetContinuSturing("nee");
+            forAll(this.bf_Afsluitboom_Verkeersbuis, "AutoVoorwaardelijkSluit");
+        AfsluitbomenStop:
+          stereotype: bediening
+          title: Afsluitbomen stoppen
+          description: stopt/voorkomt bewegingen van de afsluitbomen voor deze Verkeersbuisafsluiter
+            (tot een volgende opdracht).
+          ref: BSTTI#6123
+          comment: 'Conditie: #in_gebruik = ja ; Acties: IF ( #doel_stand = (afsluitbomen_dicht
+            | ongeldig) || _bf_Afsluitboom[i].#stand <> op) THEN #doel_stand := afsluitbomen_stop
+            END_IF ; SetAfsluitbomenOpAutobedieningMetContinuSturing(nee) ; _bf_Afsluitboom[].AutoStop()'
+          conditie(): >
+            return this.in_gebruik == "ja";
+          em(): >
+            // CHECK no else? this.doel_stand == "afsluitbomen_dicht" || this.doel_stand == "ongeldig" || !checkAll(bf_Afsluitboom_Verkeersbuis, "stand", "op") ? this.doel_stand = "afsluitbomen_stop" : "";
+            this.SetAfsluitbomenOpAutobedieningMetContinuSturing("nee");
+            forAll(this.bf_Afsluitboom_Verkeersbuis, "AutoStop");
+        Hand_Open:
+          stereotype: bediening
+          title: Rijbaan openstellen
+          description: 'Opent de verkeersstroom voor deze Verkeersbuisafsluiter inclusief
+            afsluitbomen. Deze bediening mag alleen via de MMI worden aangeroepen.
+            Merk op: er is geen Hand_Dicht(); Verkeerslichten naar rood brengen (en
+            daarmee eerst MTM snelheidsmaatregel zetten) en voorwaardelijk sluiten
+            met afsluitbomen zijn twee afzonderlijke stappen.'
+          ref: BSTTI#11461
+          comment: 'Conditie: #in_gebruik = ja || #doel_stand = ongeldig ; Acties:
+            _bf_CCTV.SetControleCameraMetPreset(_sf_Verkeerslichten_camera, _Verkeerslichten_camera_preset)
+            ; _sf_afsluitbomen_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_afsluitbomen_camera,
+            _afsluitbomen_camera_preset) ; #doel_stand := gedoofd ; SetAfsluitbomenOpAutobedieningMetContinuSturing(nee)
+            ; _bf_Afsluitboom[].AutoOpen() ; SetVerkeerslichtenOpAutobediening()'
+          conditie(): >
+            return this.in_gebruik == "ja" || this.doel_stand == "ongeldig";
+          em(): >
+            this.bf_CCTV_Verkeersbuis.SetControleCameraMetPreset(this.sf_Verkeerslichten_camera, this.Verkeerslichten_camera_preset);
+            this.sf_afsluitbomen_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_afsluitbomen_camera, this.afsluitbomen_camera_preset);
+            this.doel_stand = "gedoofd";
+            this.SetAfsluitbomenOpAutobedieningMetContinuSturing("nee");
+            forAll(this.bf_Afsluitboom_Verkeersbuis, "AutoOpen");
+            this.SetVerkeerslichtenOpAutobediening();
+        Auto_VerkeerslichtenRood:
+          stereotype: besturing
+          title: Verkeerslichten naar stand rood
+          description: De Verkeerslichten van deze Verkeersbuisafsluiter worden op
+            rood gezet. Alleen via deze besturing mogen de Verkeerslichten automatisch
+            op rood gezet worden.
+          ref: BSTTI#9574
+          comment: 'Conditie: #doel_stand = (gedoofd | geel_knipperen) && #in_gebruik
+            = ja ; Acties: _sf_Verkeerslichten_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_Verkeerslichten_camera,
+            _Verkeerslichten_camera_preset) ; _sf_afsluitbomen_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_afsluitbomen_camera,
+            _afsluitbomen_camera_preset) ; #doel_stand := rood'
+          conditie(): >
+            return (this.doel_stand == "gedoofd" || this.doel_stand == "geel_knipperen") && this.in_gebruik == "ja";
+          em(): >
+            this.sf_Verkeerslichten_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_Verkeerslichten_camera, this.Verkeerslichten_camera_preset);
+            this.sf_afsluitbomen_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_afsluitbomen_camera, this.afsluitbomen_camera_preset);
+            this.doel_stand = "rood";
+        Auto_VerkeerslichtenGeelKnipper:
+          stereotype: besturing
+          title: Verkeerslichten naar stand geel knipperen
+          description: Breng de Verkeerslichten naar geel knipperen, als gedoofd was
+            ingesteld.
+          ref: BSTTI#9575
+          comment: 'Conditie: #doel_stand = gedoofd && #in_gebruik = ja ; Acties:
+            #doel_stand := geel_knipperen'
+          conditie(): >
+            return (this.doel_stand == "gedoofd" && this.in_gebruik == "ja");
+          em(): >
+            this.doel_stand = "geel_knipperen";
+        Auto_Dicht:
+          stereotype: besturing
+          title: Rijbaan afsluiten
+          description: sluit de verkeersstroom van deze Verkeersbuisafsluiter, inclusief
+            afsluitbomen. Alleen via deze besturing mogen afsluitbomen automatisch
+            afgesloten worden.
+          ref: BSTTI#11462
+          comment: 'Conditie: #in_gebruik = ja ; Acties: _sf_Verkeerslichten_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_Verkeerslichten_camera,
+            _Verkeerslichten_camera_preset) ; _sf_afsluitbomen_camera._sf_voorkeurskanaal.SelecteerCameraMetPreset(_sf_afsluitbomen_camera,
+            _afsluitbomen_camera_preset) ; #doel_stand := afsluitbomen_dicht ; SetVerkeerslichtenOpAutobediening()
+            ; SetAfsluitbomenOpAutobedieningMetContinuSturing(ja)'
+          conditie(): >
+            return this.in_gebruik == "ja";
+          em(): >
+            this.sf_Verkeerslichten_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_Verkeerslichten_camera, this.Verkeerslichten_camera_preset);
+            this.sf_afsluitbomen_camera.sf_voorkeurskanaal.SelecteerCameraMetPreset(this.sf_afsluitbomen_camera, this.afsluitbomen_camera_preset);
+            this.doel_stand = "afsluitbomen_dicht";
+            this.SetVerkeerslichtenOpAutobediening();
+            this.SetAfsluitbomenOpAutobedieningMetContinuSturing("ja");
+        SetVerkeerslichtenOpAutobediening:
+          stereotype: besturing
+          title: Verkeerslichten in automode
+          description: Zet de Verkeerslichten op autobediening en zorgt daarbij dat
+            de laatst (via 3B) ingestelde stand wordt overgenomen als auto-stand.
+          ref: BSTTI#16957
+          comment: 'Conditie: * ; Acties: _bf_Verkeerslichten.SetAutoStand(_bf_Verkeerslichten.#ingestelde_stand)
+            ; _bf_Verkeerslichten.SetOpAutobediening()'
+          conditie(): >
+            return true;
+          em(): >
+            console.debug('cf_Afsluiter_Verkeersbuis.SetVerkeerslichtenOpAutobediening', { ingestelde_stand: this.bf_Verkeerslichten_Verkeersbuis.ingestelde_stand });
+            this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand(this.bf_Verkeerslichten_Verkeersbuis.ingestelde_stand);
+            this.bf_Verkeerslichten_Verkeersbuis.SetOpAutobediening();
+        SetAfsluitbomenOpAutobedieningMetContinuSturing:
+          stereotype: besturing
+          title: Afsluitbomen in automode
+          description: Zet de afsluitbomen op autobediening en maakt afhankelijk van
+            de parameter continue aansturing van de afsluitbomen mogelijk of onmogelijk.
+          ref: BSTTI#16958
+          comment: 'Conditie: * ; Acties: IF (continu_sturing = nee) THEN #max_tijdstip_aansturing_afsluitbomen
+            := 0 ELSE #max_tijdstip_aansturing_afsluitbomen := huidige_tijd + _tijd_aansturing_afsluitbomen
+            END_IF ; _bf_Afsluitboom[].SetOpAutobediening()'
+          conditie(): >
+            return true;
+          em(continu_sturing): >
+            // CHECK
+            continu_sturing == "nee" ? this.max_tijdstip_aansturing_afsluitbomen = "0" : this.max_tijdstip_aansturing_afsluitbomen = huidige_tijd + this.tijd_aansturing_afsluitbomen;
+            this.bf_Afsluitboom_Verkeersbuis.SetOpAutobediening();
+        SetInGebruik:
+          stereotype: besturing
+          title: In-uitschakelen verkeersbuisafsluiter
+          description: "Besturing die voor toepassing in wisselbuizen gebruikt wordt
+            om deze instantie van verkeersbuisafsluiter in of uit te schakelen. Wanneer
+            aangeroepen met het argument 'ja', dan moet de verkeersbuisafsluiter functioneren
+            als in een verkeersbuis die geen wisselbuis is. Wanneer aangeroepen met
+            de argument 'nee', dan moet deze verkeersbuisafsluiter de bijbehorende
+            Verkeerslichten op 'gedoofd' houden en de bijbehorende afsluitbomen in
+            stand 'op' houden, maar signaleringen en detecties normaal blijven functioneren.
+            Vanuit veiligheidsoverwegingen mag de verkeersbuisafsluiter enkel in of
+            uit gebruik genomen worden als de afsluitbomen in de 'op' stand staan
+            en de Verkeerslichten gedoofd zijn; hierop is \xE9\xE9n uitzondering:
+            bij initialisatie van 3B kan een verkeersbuisafsluiter ook in gebruik
+            worden genomen als deze niet geheel open is."
+          ref: BSTTI#16525
+          comment: 'Conditie: (#doel_stand = gedoofd && #meest_afgesloten_stand =
+            gedoofd) || (#doel_stand = ongeldig && in_gebruik = ja) ; Acties: #in_gebruik
+            := in_gebruik ; _bf_Afsluitboom[].SetInGebruik(in_gebruik) ; _bf_mtm.SetInGebruik(in_gebruik)
+            ; _bf_Verkeerslichten.SetInGebruik(in_gebruik)'
+          conditie(): >
+            return (this.doel_stand == "gedoofd" && this.meest_afgesloten_stand == "gedoofd") || (this.doel_stand == "ongeldig" && this.in_gebruik == "ja");
+          em(in_gebruik): >
+            this.in_gebruik = in_gebruik;
+            forAll(this.bf_Afsluitboom_Verkeersbuis, "SetInGebruik", [in_gebruik]);
+            this.bf_MTMkoppeling_Verkeersbuis.SetInGebruik(in_gebruik);
+            this.bf_Verkeerslichten_Verkeersbuis.SetInGebruik(in_gebruik);
+        Init:
+          stereotype: autonoom_proces
+          title: Initialisatie
+          description: "Initialiseert de verkeersbuisafsluiter indien de betrokken
+            systemen een voldoende uniforme toestand hebben; als dat niet het geval
+            is moet de verkeersbuisafsluiter via bedieningen worden ge\uFFFDnitialiseerd."
+          ref: BSTTI#16963
+          comment: 'Conditie: #doel_stand = ongeldig && #meest_afgesloten_stand =
+            (afsluitbomen_dicht | rood | geel_knipperen | gedoofd) ; Acties: #doel_stand
+            := #meest_afgesloten_stand ; SetVerkeerslichtenOpAutobediening() ; SetAfsluitbomenOpAutobedieningMetContinuSturing(
+            nee )'
+          js(): >
+            if (this.doel_stand == "ongeldig" && (this.meest_afgesloten_stand == "afsluitbomen_dicht" || this.meest_afgesloten_stand == "rood") || this.meest_afgesloten_stand == "geel_knipperen" || this.meest_afgesloten_stand == "gedoofd")
+            {
+              this.doel_stand = this.meest_afgesloten_stand;
+              this.SetVerkeerslichtenOpAutobediening();
+              this.SetAfsluitbomenOpAutobedieningMetContinuSturing("nee");
+            }
+        SnelheidsbeperkingMtm:
+          stereotype: autonoom_proces
+          title: Snelheidsbeperking MTM systeem
+          description: Stelt een snelheidsbeperking in als de Verkeerslichten gebruikt
+            moeten worden.
+          ref: BSTTI#9396
+          comment: 'Conditie: #mtm_snelheidsbeperking = ja && #in_gebruik = ja ; Acties:
+            _bf_mtm.InstellenSnelheidsBeperking() ; Conditie: #mtm_snelheidsbeperking
+            = nee && #in_gebruik = ja ; Acties: _bf_mtm.OpheffenSnelheidsBeperking()'
+          js(): >
+            if (this.mtm_snelheidsbeperking == "ja" && this.in_gebruik == "ja")
+            {
+              this.bf_MTMkoppeling_Verkeersbuis.InstellenSnelheidsBeperking();
+            }
+            if (this.mtm_snelheidsbeperking == "nee" && this.in_gebruik == "ja")
+            {
+              this.bf_MTMkoppeling_Verkeersbuis.OpheffenSnelheidsBeperking();
+            };
+        HandhaafAfsluitbomenKoppelingVerkeerslichten:
+          stereotype: autonoom_proces
+          title: Handhaven koppeling Verkeerslichten en afsluitbomen
+          description: Geeft aan de afsluitbomen door of vanwege de stand van de Verkeerslichten
+            de afsluitbomen eventueel gesloten mogen worden.
+          ref: BSTTI#9415
+          comment: 'Conditie: #voldoende_rood_voor_afsluitbomen = ja && _bf_Verkeerslichten.#stand
+            = rood && #in_gebruik = ja ; Acties: _bf_Afsluitboom[].Blokkeer( nee )
+            ; Conditie: #voldoende_rood_voor_afsluitbomen <> ja ; Acties: _bf_Afsluitboom[].Blokkeer(
+            ja )'
+          js(): >
+            if (this.voldoende_rood_voor_afsluitbomen == "ja" && this.bf_Verkeerslichten_Verkeersbuis.stand == "rood" && this.in_gebruik == "ja")
+              forAll(this.bf_Afsluitboom_Verkeersbuis, "Blokkeer", ["nee"]);
+            if (this.voldoende_rood_voor_afsluitbomen != "ja")
+              forAll(this.bf_Afsluitboom_Verkeersbuis, "Blokkeer", ["ja"]);
+        BewaakVerkeerslichten:
+          stereotype: autonoom_proces
+          em(): >
+            /**
+              @title Bewaak Verkeerslichten aansturing
+              @description Bepaalt de auto-stand voor de Verkeerslichten.
+              @ref BSTTI#16893
+              @Conditie: #doel_stand = gedoofd && _bf_Afsluitboom[].#stand = op && #in_gebruik = ja ;
+              @Acties: _bf_Verkeerslichten.SetAutoStand( gedoofd ) ;
+            */
+            console.debug(this.schema, this.ID, "BewaakVerkeerslichten");
+            /** @debug mka */
+            forAll(this.bf_Verkeerslichten_Verkeersbuis, "SetAutoStand", this.doel_stand);
+            return;
+            /**
+              @Conditie: #doel_stand = gedoofd && _bf_Afsluitboom[].#stand = op && #in_gebruik = ja ;
+              @Acties: _bf_Verkeerslichten.SetAutoStand( gedoofd ) ;
+            */
+            if (this.doel_stand == "gedoofd" && checkAll(this.bf_Afsluitboom, "stand", "op") && this.in_gebruik == "ja")
+            {
+              this.bf_Verkeerslichten.SetAutoStand("gedoofd");
+            }
+            /**
+              @Conditie: #doel_stand = geel_knipperen && _bf_Afsluitboom[].#stand = op && #in_gebruik = ja ;
+              @Acties: _bf_Verkeerslichten.SetAutoStand( geel_knipperen ) ;
+            */
+            if (this.doel_stand == "geel_knipperen" && checkAll(this.bf_Afsluitboom, "stand", "op") && this.in_gebruik == "ja")
+            {
+              this.bf_Verkeerslichten.SetAutoStand("geel_knipperen");
+            }
+            /**
+              @Conditie: (#doel_stand = (afsluitbomen_dicht | afsluitbomen_stop | rood) || _bf_Afsluitboom[i].#stand <> op ) && #in_gebruik = ja ;
+              @Acties: _bf_Verkeerslichten.SetAutoStand( rood )
+            */
+            if ((["afsluitbomen_dicht", "afsluitbomen_stop", "rood"].includes(this.doel_stand) || !checkOne(this.bf_Afsluitboom, "stand", "op")) && this.in_gebruik == "ja")
+            {
+              this.bf_Verkeerslichten.SetAutoStand("rood");
+            }
+            if (this.doel_stand == "gedoofd" && checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op") && this.in_gebruik == "ja")
+            {
+              this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand("gedoofd");
+            // };
+            // if (this.doel_stand == "geel_knipperen" && checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op") && this.in_gebruik == "ja") {
+            // this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand("geel_knipperen");
+            // };
+            // if (this.doel_stand == "afsluitbomen_dicht" || this.doel_stand == "afsluitbomen_stop" || this.doel_stand == "rood" || !checkAll(this.bf_Afsluitboom_Verkeersbuis, "stand", "op") && this.in_gebruik == "ja") {
+            // Afvraag van stand != op van een gerelateerde afsluitboom!!!
+            // this.bf_Verkeerslichten_Verkeersbuis.SetAutoStand("rood");
+            // };
+          BewaakAfsluitbomen:
+            stereotype: autonoom_proces
+            title: Bewaak afsluitbomen aansturing
+            description: Bepaalt de automatische aansturingen voor de afsluitbomen.
+            ref: BSTTI#16894
+            comment: 'Conditie: #doel_stand = afsluitbomen_dicht && #voldoende_rood_voor_afsluitbomen
+              = ja && huidige_tijd < #max_tijdstip_aansturing_afsluitbomen && #in_gebruik
+              = ja ; Acties: _bf_Afsluitboom[].AutoVoorwaardelijkSluit() ; Conditie:
+              #doel_stand = afsluitbomen_stop && #in_gebruik = ja ; Acties: _bf_Afsluitboom[].AutoStop()'
+            js(): >
+              if (this.doel_stand == "afsluitbomen_dicht" && this.voldoende_rood_voor_afsluitbomen == "ja" && huidige_tijd < this.max_tijdstip_aansturing_afsluitbomen && this.in_gebruik == "ja")
+              {
+                                    forAll(this.bf_Afsluitboom_Verkeersbuis,
+              "AutoVoorwaardelijkSluit");
+                                };
+
+              \                               if (this.doel_stand == "afsluitbomen_stop"
+              && this.in_gebruik == "ja") {
+                                    forAll(this.bf_Afsluitboom_Verkeersbuis,
+              "AutoStop");
+                                };
+          BepaalTijdstipRoodBereikt:
+            stereotype: autonoom_proces
+            title: Bepaal tijdstip stand rood bereikt
+            description: Bepaal vanaf wanneer voor alle rijstroken een (stop)signaal
+              'rood' wordt getoond.
+            ref: BSTTI#16895
+            comment: 'Conditie: _sf_Rijstrook[].#rood = ja && #tijdstip_rood_bereikt
+              = ongeldig ; Acties: #tijdstip_rood_bereikt := huidige_tijd ; Conditie:
+              _sf_Rijstrook[i].#rood <> ja && #tijdstip_rood_bereikt <> ongeldig ;
+              Acties: #tijdstip_rood_bereikt := ongeldig'
+            js(): >
+              if (checkAll(this.sf_Rijstrook_Verkeersbuis, "rood", "ja") && this.tijdstip_rood_bereikt == "ongeldig") {
+                this.tijdstip_rood_bereikt = huidige_tijd;
+              };
+              if (!checkAll(this.sf_Rijstrook_Verkeersbuis, "rood", "ja") && this.tijdstip_rood_bereikt != "ongeldig") {
+                this.tijdstip_rood_bereikt = "ongeldig";
+              };
+    sf_Rijstrook_Verkeersbuis:
+      naam: Subfunctie Rijstrook
+      hoortbij: Verkeersbuis
+      titel: Rijstrook
+      mnu:
+        children:
+          VRI_Afsluitboom:
+            title: VRI Afsluitboom
+          Cado_Hekken:
+            title: Cado Hekken
+          Veva_Beba:
+            title: Veva Beba
+          Tunnelbuis_Wi:
+            title: Tunnelbuis Wi
+      properties:
+        sf_Verkeerslicht_Verkeersbuis:
+          stereotype: configuratie_element
+          title: Verkeerslicht
+          description: "De subfunctie Verkeerslicht voor deze rijstrook. Dit moet
+            \xE9\xE9n van de subfuncties van _bf_Verkeerslichten van coördinerende
+            functie Verkeersbuisafsluiter zijn."
+          ref: BSTTI#16139
+          type: selectitem
+          class: Verkeerslicht
+        bf_Afsluitboom_Verkeersbuis:
+          stereotype: configuratie_element
+          title: Afsluitboom
+          description: "De basisfunctie Afsluitboom die deze rijstrook afsluit als
+            hij neer is. Let op dat \xE9\xE9n afsluitboom meerdere rijstroken kan
+            afsluiten. Dit moet \xE9\xE9n van de afsluitbomen uit _bf_Afsluitboom[]
+            van coördinerende functie Verkeersbuisafsluiter zijn."
+          ref: BSTTI#16140
+          type: selectitem
+          class: Afsluitboom
+        id:
+          stereotype: configuratie_element
+          title: Rijstrook index volgens BPS
+          description: De index van deze rijstrook. Deze indexering moet gelijk zijn
+            aan die van de MTM-signalering.
+          ref: BSTTI#16141
+          type: number
+          unit: ""
+          min: 0
+          max: 5
+          step: 1
+        bf_MTMkoppeling_Verkeersbuis:
+          stereotype: configuratie_element
+          title: MTM koppeling
+          description: De basisfunctie MTM-Koppeling voor deze verkeersbuisafsluiter.
+          ref: BSTTI#16142
+          type: selectitem
+          class: MTM koppeling
+        status:
+          stereotype: variabele
+          title: Status
+          description: Geeft aan of de rijstrook open of dicht is.
+          ref: BSTTI#16144
+          comment: 'Conditie: ( _sf_Verkeerslicht.#stand = ( geel | geel_knipperen
+            | groen | gedoofd ) ) && (_bf_Afsluitboom.#stand = op) && (_bf_mtm.#is_afgekruist_Verkeerslicht[_id]
+            = nee ) ; Waarde: open ; Conditie: (_sf_Verkeerslicht.#stand = rood )
+            || (_bf_Afsluitboom.#stand = neer ) || (_bf_Afsluitboom.#transitiestatus_afsluitboom
+            = in_transitie ) || (_bf_mtm.#is_afgekruist_Verkeerslicht[_id] = ja )
+            ; Waarde: dicht ; Conditie: overige situaties ; Waarde: ongeldig'
+          enum:
+            open: Open
+            dicht: Dicht
+          get(): >
+            return (this.sf_Verkeerslicht_Verkeersbuis.stand == "geel"
+            || this.sf_Verkeerslicht_Verkeersbuis.stand == "geel_knipperen"
+            || this.sf_Verkeerslicht_Verkeersbuis.stand == "groen"
+            //|| this.sf_Verkeerslicht.stand == "gedoofd")
+            //&& this.bf_Afsluitboom.stand == "op"
+            //&& (this.bf_mtm.is_afgekruist_Verkeerslicht[this.id] == "nee" ? "open" : (this.sf_Verkeerslicht.stand == "rood" || this.bf_Afsluitboom.stand == "neer" ||this.bf_Afsluitboom.transitiestatus_afsluitboom == "in_transitie" ||this.bf_mtm.is_afgekruist_Verkeerslicht[this.id] == "ja") ? "dicht"
+            : "ongeldig";
+            ) ? "dicht" : "ongeldig";

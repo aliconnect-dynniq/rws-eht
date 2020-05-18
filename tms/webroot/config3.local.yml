@@ -9,10 +9,12 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 config:
+  oauth2:
+    protocol: https
+    hostname: login.aliconnect.nl
+    basePath: /api/oauth2
   aim:
     client_id: 71BED2B1-E21C-4EFF-9881-2D3960A0523E
-    aud: 2804394
-    sub: 2804394
     # url: https://rws.aliconnect.nl/tms/eht/webroot/api
     # protocol: https
     # hostname: rws.aliconnect.nl
@@ -60,61 +62,11 @@ css:
 om:
   nav:
     items: {}
-Docs:
+Doc:
   index:
-    Config:
-      request: AIM.Docs.Config.onclick
-    Aanbesteding:
-      Vraagspecificatie Eisen REHT:
-        request: AIM.rws.docs.vraagspecificatie_eisen_reht
-        Create from htm:
-          request: AIM.rws.docs.vraagspecificatie_eisen_reht_create
-      Uitgangspunten:
-        href: /docs/nl/rws/eht/uitgangspunten.md
-      Cybersecurity:
-        href: /docs/nl/rws/eht/cybersecurity.md
-      PVA Samenwerking in het project:
-        href: /docs/nl/rws/eht/plan_van_aanpak_samenwerking_in_het_project.md
-      # 3BT:
-      #   href: /docs/nl/rws/reh3bt/plan_van_aanpak_samenwerking_in_het_project.md
-    Hoe bouw je een tunnel met AIM conform RWS LTS:
-      href: /docs/en/samples/tms/how_to_build_a_tunnel_with_aim.htm
-    LTS Landelijke tunnel standaard:
-      href: /docs/en/standards/lts/index.htm
-      Basis specificatie TTI:
-        href: https://rws.aliconnect.nl/a29h/webroot/doc/vse_reht/specificatie_tti.htm
-    Specialisten overleg:
-      Typical keuze:
-        href: /docs/nl/rws/architectuur_typen.md
-      Plan van Aanpak:
-        href: /docs/nl/rws/PVA.md
-      Planning:
-        href: /docs/nl/rws/Planning.md
-      Questions:
-        href: /docs/nl/rws/rws_3bt_questions.md
-      Ontwikkel methodiek 3BT:
-        href: /docs/nl/rws/ontwikkelmethodiek_3BT.md
-      SO 2:
-        href: /docs/nl/rws/SO2.md
-      ODS:
-        href: /docs/nl/rws/ods.html
-      Visie test:
-        href: /docs/nl/rws/visie_test.html
-    Samples:
-      Enterprise Architect Upload:
-        href: /ea/sample1/index.html
-      ALF to ST tool:
-        href: /samples/control/tools/alf/index.html
-      ST Build:
-        href: /api/?build_id=3448656&lang=st$accept=text/html
-    Afkortingen:
-      href: /docs/core/tms/afk.yml
-    Leidraad toepassing tunnelstandaard in bestaande tunnels:
-      href: /sites/rws/docs/R1.2 SP2 B2-2.2.1 Leidraad toepassing tunnelstandaard in bestaande tunnels.pdf
-    Werkwijzer aanpassing Software in bestaande tunnels (WWAS):
-      href: /sites/rws/docs/R1.2 SP2 B2-2.2.3 Werkwijzer aanpassing Software in bestaande tunnels (WWAS).pdf
-    Leidraad Verificatie en Validatie Tunnelstandaard (VenV):
-      href: /sites/rws/docs/R1.2 SP2 B2-3.4 Leidraad Verificatie en Validatie Tunnelstandaard (VenV).pdf
+    Tutorial:
+      TEST:
+        href: /docs/en/tutorial/create_account.md
 tags: []
 paths: ~
 components:

@@ -1,0 +1,459 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "lfv_Opslagsysteem_Verkeersbuis",
+        "description": "This is a LFV lfv_Opslagsysteem_Verkeersbuis server",
+        "termsOfService": "https:\/\/aliconnect.nl\/terms\/",
+        "contact": {
+            "email": "info@alicon.nl"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/192.168.0.132\/api\/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "lfv_Opslagsysteem_Verkeersbuis",
+            "description": ""
+        }
+    ],
+    "component": {
+        "schemas": {
+            "title": "LFV component Opslagsysteem Verkeersbuis",
+            "properties": {
+                "bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_bestuurbaar"
+                },
+                "reden_niet_bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Reden niet bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "plaatselijk_bediend": "Plaatselijk bediend",
+                        "noodstop": "Noodstop",
+                        "werkschakelaar": "Werkschakelaar",
+                        "storing": "Storing",
+                        "disabled": "Disabled",
+                        "opstart": "Opstart"
+                    },
+                    "type": "array",
+                    "initvalue": "opstart"
+                },
+                "observeerbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Observeerbaar",
+                    "description": "Uit de bij iedere LFV (of component) beschikbare variabelen #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar. Overal waar in het vervolg '#observeerbaar = ja' geschreven staat, betekent dit dat voor de LFV(of component) geldt: ofwel '#bestuurbaar = ja', ofwel '#bestuurbaar = nee' mits #reden_niet_bestuurbaar uitsluitend de volgende waardes bevat: 'plaatselijke_bediening' en \/ of 'noodstop' en \/ of 'werkschakelaar'. Overal waar in het vervolg '#observeerbaar = nee' geschreven staat, betekent dit dat voor de LFV(of component) geldt: '#bestuurbaar = nee' en bovendien bevat #reden_niet_bestuurbaar uitsluitend waardes die verschillen van 'plaatselijke_bediening', 'noodstop' en 'werkschakelaar'.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_observeerbaar"
+                },
+                "storingen": {
+                    "title": "Storingen",
+                    "description": "Elke CCTV Verkeersbuis dient de volgende generieke storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie met de LFV gedetecteerd.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "STORING_ALGEMEEN": "Storing algemeen",
+                        "STORING_COMMUNICATIE_UITGEVALLEN": "Storing uitval communicatie met de LFV"
+                    },
+                    "type": "array"
+                },
+                "permanent_opslaan": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Permanent opslaan",
+                    "description": "Toestandsvariabele die aangeeft of er momenteel permanente opslag plaatsvindt.",
+                    "ref": "BSTTI#2812",
+                    "comment": "",
+                    "enum": {
+                        "gestart": "Gestart",
+                        "gestopt": "Gestopt"
+                    }
+                },
+                "opgeslagen_sessie": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Opgeslagen sessie",
+                    "description": "Lijst van achtereenvolgende opslagsessies. Elke opslagsessie bevat alle opgenomen beelden uit een gegeven tijdsperiode, en ook de begin- en eindtijd. Elk element bevat de volgende subvelden: id: Een uniek identificatie nummer per opslagsessie.Dit identificatie nummer mag nooit veranderen. omschrijving: Instelbare tekstuele omschrijving van de sessie.Initieel leeg. begintijd: Eerste opgeslagen tijdsmoment van deze sessie. eindtijd: Laatste opgeslagen tijdsmoment van deze sessie. Dit subveld is leeg zolang de opslag van deze sessie nog gaande is.",
+                    "ref": "BSTTI#2812",
+                    "comment": "",
+                    "type": "array"
+                },
+                "opgenomen_tijdstip": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Opgenomen tijdstip",
+                    "description": "Per kanaal is dit het tijdsmoment waarop de getoonde beelden oorspronkelijk opgenomen zijn. Als er op een kanaal geen opgenomen beelden getoond worden dan is de waarde voor dat kanaal leeg.",
+                    "ref": "BSTTI#2812",
+                    "comment": ""
+                },
+                "afspeelsnelheid": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Afspeelsnelheid",
+                    "description": "De snelheid waarmee opgeslagen beelden afgespeeld worden; rationaal getal, met de volgende betekenis: 1: nominale afspeelsnelheid, overeenkomend met 'play' 0: gepauzeerd s: fastforwardsnelheid. - s: fastbackwardsnelheid.",
+                    "ref": "BSTTI#2812",
+                    "comment": ""
+                },
+                "cots_medium": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "COTS medium",
+                    "description": "Lijst met aangekoppelde COTS opslagmedia. #cots_medium is leeg als er geen COTS opslagmedium aangekoppeld is.",
+                    "ref": "BSTTI#2812",
+                    "comment": "",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "paths": {
+        "\/StartPermanenteOpslag": {
+            "stereotype": "commando",
+            "title": "Start permanente opslag",
+            "description": "commando, om van elke camera het vanaf de starttijd opgeslagen beeld in de FIFO en de actuele beelden op te slaan in een nieuwe opslagsessie. Als er al een opslagsessie gaande is wordt dit commando genegeerd. Als de aangegeven starttijd vroeger is dan het begin van de FIFO zal deze afgerond worden naar de begintijd van de FIFO. De gekozen starttijd mag zich niet in de toekomst bevinden. Als de gekozen starttijd zich tussen een begin- en eindtijd van een bestaande en afgeronde opslagsessie bevindt, wordt de eindtijd van de bestaande sessie als starttijd van de nieuwe sessie genomen.",
+            "ref": "BSTTI#1623",
+            "comment": "StartPermanenteOpslag(starttijd)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "StartPermanenteOpslag lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "StartPermanenteOpslag",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/StopPermanenteOpslag": {
+            "stereotype": "commando",
+            "title": "Stop permanente opslag",
+            "description": "commando, om een opslagsessie te be\u00ebindigen op de aangegeven stoptijd, en de normale situatie te hervatten, waarbij alle actuele beelden in de FIFO worden opgeslagen. Als er geen opslagsessie gaande is wordt dit commando genegeerd. De stoptijd moet later zijn dan de begintijd van de huidige sessie. De gekozen stoptijd mag zich niet in de toekomst bevinden, en ook niet tussen een begin- en eindtijd van een bestaande opslagsessie.",
+            "ref": "BSTTI#1623",
+            "comment": "StopPermanenteOpslag(stoptijd)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "StopPermanenteOpslag lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "StopPermanenteOpslag",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SelectCameraPermanenteOpslagBeeld": {
+            "stereotype": "commando",
+            "title": "Select camera permanente opslag beeld",
+            "description": "commando, om het opgeslagen beeld van camera met index i vanaf tijdstip t beschikbaar te stellen in kanaal k. Als het beeld niet beschikbaar is dan wordt het zwart. Met een herhaald commando met dezelfde i,k waarde kunnen sprongen in de tijd gemaakt worden.",
+            "ref": "BSTTI#1623",
+            "comment": "SelectCameraPermanenteOpslagBeeld(i, k, t)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "SelectCameraPermanenteOpslagBeeld lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "SelectCameraPermanenteOpslagBeeld",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetSessieOmschrijving": {
+            "stereotype": "commando",
+            "title": "Set sessie omschrijving",
+            "description": "commando, om de omschrijving van de sessie met het opgegeven id te veranderen in de aangegeven tekst.",
+            "ref": "BSTTI#1623",
+            "comment": "SetSessieOmschrijving(id, tekst)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "SetSessieOmschrijving lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "SetSessieOmschrijving",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/WisPermanenteOpslagSessie": {
+            "stereotype": "commando",
+            "title": "Wis permanente opslagsessie",
+            "description": "commando, om de opslagsessie met het opgegeven id te wissen uit de opgeslagen_sessie lijst. Hierdoor schuiven alle sessies die een hogere index in de lijst hebben dan deze sessie \u00e9\u00e9n indexpositie omlaag.",
+            "ref": "BSTTI#1623",
+            "comment": "WisPermanenteOpslagSessie(id)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "WisPermanenteOpslagSessie lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "WisPermanenteOpslagSessie",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/KopieerPermanenteOpslagBeeld": {
+            "stereotype": "commando",
+            "title": "Kopieer permanente opslagbeeld",
+            "description": "commando, om de opslagsessie met het opgegeven id, inclusief subvelden, te kopi\u00ebren naar COTS bestemming b.",
+            "ref": "BSTTI#1623",
+            "comment": "KopieerPermanenteOpslagBeeld(id, b)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "KopieerPermanenteOpslagBeeld lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "KopieerPermanenteOpslagBeeld",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/Pauze": {
+            "stereotype": "commando",
+            "title": "Pauze",
+            "description": "commando, om het afspelen van het opgeslagen beeld te pauzeren.",
+            "ref": "BSTTI#1623",
+            "comment": "Pauze(i, k)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "Pauze lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "Pauze",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/Play": {
+            "stereotype": "commando",
+            "title": "Play",
+            "description": "commando, om het afspelen van het opgeslagen beeld te continueren.",
+            "ref": "BSTTI#1623",
+            "comment": "Play(i, k)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "Play lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "Play",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/FastForward": {
+            "stereotype": "commando",
+            "title": "Fastforward",
+            "description": "commando, resulterend in versneld vooruit afspelen met snelheid s. 's' geeft de relatieve snelheid weer t.o.v. real-time.",
+            "ref": "BSTTI#1623",
+            "comment": "FastForward(i,k,s)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "FastForward lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "FastForward",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/FastBackward": {
+            "stereotype": "commando",
+            "title": "Fastbackward",
+            "description": "commando, resulterend in versneld achteruit afspelen met snelheid s. 's' geeft de relatieve snelheid weer t.o.v. real-time.",
+            "ref": "BSTTI#1623",
+            "comment": "FastBackward(i,k,s)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "FastBackward lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "FastBackward",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/UnselectCameraOpslagBeeld": {
+            "stereotype": "commando",
+            "title": "Unselect camera opslagbeeld",
+            "description": "commando, om de beschikbaarheid van het opgeslagen beeld van camera i op kanaal k op te heffen en het kanaal vrij te geven.",
+            "ref": "BSTTI#1623",
+            "comment": "UnselectCameraOpslagBeeld(i, k)",
+            "tags": [
+                "lfv_Opslagsysteem_Verkeersbuis"
+            ],
+            "summary": "UnselectCameraOpslagBeeld lfv_Opslagsysteem_Verkeersbuis",
+            "operationId": "UnselectCameraOpslagBeeld",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        }
+    }
+}

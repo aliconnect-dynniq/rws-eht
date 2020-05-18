@@ -1,0 +1,181 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "lfv_Hulppost_Verkeersbuis",
+        "description": "This is a LFV lfv_Hulppost_Verkeersbuis server",
+        "termsOfService": "https:\/\/aliconnect.nl\/terms\/",
+        "contact": {
+            "email": "info@alicon.nl"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/192.168.0.132\/api\/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "lfv_Hulppost_Verkeersbuis",
+            "description": ""
+        }
+    ],
+    "component": {
+        "schemas": {
+            "title": "LFV Hulppost Verkeersbuis",
+            "properties": {
+                "bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_bestuurbaar"
+                },
+                "reden_niet_bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Reden niet bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "plaatselijk_bediend": "Plaatselijk bediend",
+                        "noodstop": "Noodstop",
+                        "werkschakelaar": "Werkschakelaar",
+                        "storing": "Storing",
+                        "disabled": "Disabled",
+                        "opstart": "Opstart"
+                    },
+                    "type": "array",
+                    "initvalue": "opstart"
+                },
+                "observeerbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Observeerbaar",
+                    "description": "Uit de bij iedere LFV (of component) beschikbare variabelen #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar. Overal waar in het vervolg '#observeerbaar = ja' geschreven staat, betekent dit dat voor de LFV(of component) geldt: ofwel '#bestuurbaar = ja', ofwel '#bestuurbaar = nee' mits #reden_niet_bestuurbaar uitsluitend de volgende waardes bevat: 'plaatselijke_bediening' en \/ of 'noodstop' en \/ of 'werkschakelaar'. Overal waar in het vervolg '#observeerbaar = nee' geschreven staat, betekent dit dat voor de LFV(of component) geldt: '#bestuurbaar = nee' en bovendien bevat #reden_niet_bestuurbaar uitsluitend waardes die verschillen van 'plaatselijke_bediening', 'noodstop' en 'werkschakelaar'.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_observeerbaar"
+                },
+                "storingen": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Storingen",
+                    "description": "Elke Hulppost dient de volgende generieke storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie met de LFV gedetecteerd.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "STORING_ALGEMEEN": "Storing algemeen",
+                        "STORING_COMMUNICATIE_UITGEVALLEN": "Storing uitval communicatie met de LFV"
+                    },
+                    "type": "array"
+                },
+                "hulppost_type": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Hulppost type",
+                    "description": "Geeft aan wat voor type hulppost dit is.",
+                    "ref": "BSTTI#453",
+                    "comment": "",
+                    "enum": {
+                        "A": "A",
+                        "C": "C"
+                    },
+                    "type": ""
+                },
+                "deur_open": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Deur open",
+                    "description": "Geeft aan of de eerst openende deur open is.",
+                    "ref": "BSTTI#453",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee",
+                        "disabled": "Disabled"
+                    },
+                    "type": ""
+                },
+                "deur_open_enabled": {
+                    "stereotype": "hulpvariabele",
+                    "title": "Deur open detectie enabled\/disabled",
+                    "description": "Hulpvariabele om enabled\/disabled te onthouden.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "type": ""
+                },
+                "blusapparaat_in_houder_enabled": {
+                    "stereotype": "hulpvariabele",
+                    "title": "Blusapparaat in houder detectie enabled\/disabled",
+                    "description": "Hulpvariabele om enabled\/disabled te onthouden.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "type": ""
+                },
+                "spuitmond_enabled": {
+                    "stereotype": "hulpvariabele",
+                    "title": "Spuitmond detectie enabled\/disabled",
+                    "description": "Hulpvariabele om enabled\/disabled te onthouden.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "type": ""
+                }
+            }
+        }
+    },
+    "paths": {
+        "\/EnableDetector": {
+            "stereotype": "commando",
+            "title": "Enable detector",
+            "description": "Activeert of deactiveert een toestandsvariabele; de toestandsvariabele overeenkomend met sensor_id zal de actuele waarde reflecteren (indien enabled = 'ja') of krijgt de waarde 'detector_disabled' (indien enabled = 'nee'). Hierbij identificeert sensor_id een van de toestandsvariabelen('deur' voor #deur_open, 'blusapparaat' voor #blusapparaat_in_houder, en 'spuitmond' voor #spuitmond_slanghaspel_in_houder).",
+            "ref": "BSTTI#10611",
+            "comment": "",
+            "conditie": "function () {\r\n\t\t\t\t\t\t\treturn true;\r\n\t\t\t\t\t\t}",
+            "tags": [
+                "lfv_Hulppost_Verkeersbuis"
+            ],
+            "summary": "EnableDetector lfv_Hulppost_Verkeersbuis",
+            "operationId": "EnableDetector",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        }
+    }
+}

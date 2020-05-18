@@ -1,0 +1,43 @@
+{
+    "@context": "https://rws.aliconnect.nl/api/$metadata#/System/$entity",
+    "@id": "https://rws.aliconnect.nl/api/Verkeerslichten(3443787)",
+    "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodGVuKDM0NDM3ODcp",
+    "Children": [
+        {
+            "@id": "https://rws.aliconnect.nl/api/bf_Verkeerslichten_Verkeersbuis(3443796)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvYmZfVmVya2VlcnNsaWNodGVuX1ZlcmtlZXJzYnVpcygzNDQzNzk2KQ==",
+            "Level": 1,
+            "ChildIndex": null
+        },
+        {
+            "@id": "https://rws.aliconnect.nl/api/Verkeerslicht(3456219)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodCgzNDU2MjE5KQ==",
+            "Level": 1,
+            "ChildIndex": null
+        },
+        {
+            "@id": "https://rws.aliconnect.nl/api/Verkeerslicht(3456818)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodCgzNDU2ODE4KQ==",
+            "Level": 1,
+            "ChildIndex": null
+        },
+        {
+            "@id": "https://rws.aliconnect.nl/api/Verkeerslicht(3456823)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodCgzNDU2ODIzKQ==",
+            "Level": 1,
+            "ChildIndex": null
+        },
+        {
+            "@id": "https://rws.aliconnect.nl/api/Verkeerslicht(3456941)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodCgzNDU2OTQxKQ==",
+            "Level": 1,
+            "ChildIndex": null
+        },
+        {
+            "@id": "https://rws.aliconnect.nl/api/Verkeerslicht(3457056)",
+            "Id": "aHR0cHM6Ly9yd3MuYWxpY29ubmVjdC5ubC9hcGkvVmVya2VlcnNsaWNodCgzNDU3MDU2KQ==",
+            "Level": 1,
+            "ChildIndex": null
+        }
+    ]
+}

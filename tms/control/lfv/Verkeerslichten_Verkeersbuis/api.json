@@ -1,0 +1,228 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "lfv/Verkeerslichten_Verkeersbuis",
+        "description": "This is a lfv/Verkeerslichten_Verkeersbuis server",
+        "termsOfService": "https://aliconnect.nl/terms/",
+        "contact": {
+            "email": "info@alicon.nl"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": [],
+    "components": {
+        "schemas": {
+            "hoortbij": "lfv/Verkeerslichten_Verkeersbuis",
+            "title": "LFV Verkeerslichten",
+            "cm": 1,
+            "wss": [],
+            "properties": {
+                "_lfv_Verkeerslicht_Verkeersbuis": {
+                    "stereotype": "configuratie_element",
+                    "title": "",
+                    "description": "",
+                    "ref": "",
+                    "type": "selectitem"
+                },
+                "lfv_J32_Verkeersbuis": {
+                    "stereotype": "configuratie_element",
+                    "title": "",
+                    "description": "",
+                    "ref": "",
+                    "type": "selectitem"
+                },
+                "tijd_j32": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd J32",
+                    "description": "De tijdsduur dat de J32 borden aan moeten staan voordat de Verkeerslichten aan mogen. Deze waarde dient (minimaal) 10 seconden te zijn. Als de LFV wordt toegepast voor een verkeersbuis die kan worden gebruikt als ondersteunende buis bij vluchten door een middenwand moet de waarde bij uitzondering (minimaal) 3 seconden zijn. Dit configuratie-element moet instelbaar zijn van 0.0 t/m 15.0 seconden.",
+                    "ref": "BSTTI#16913",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "10"
+                },
+                "tijd_groen": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd stand groen",
+                    "description": "De tijdsduur die de Verkeerslichten op groen moeten staan voordat deze naar gedoofd, geel knipperen of geel mogen.",
+                    "ref": "BSTTI#16914",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "6"
+                },
+                "tijd_geel_knipperen": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd stand geel knipperen",
+                    "description": "De tijdsduur die de Verkeerslichten op geel knipperen moeten staan voordat deze naar gedoofd, groen of naar geel mogen.",
+                    "ref": "BSTTI#16915",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "6"
+                },
+                "tijd_geel": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd stand geel",
+                    "description": "De tijdsduur die de Verkeerslichten op geel staan voordat deze naar rood of geel knipperen mogen.",
+                    "ref": "BSTTI#16916",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "6"
+                },
+                "tijd_rood": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd stand rood",
+                    "description": "De tijdsduur die de Verkeerslichten op rood moeten staan voordat deze naar geel knipperen of groen mogen.",
+                    "ref": "BSTTI#16917",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "6"
+                },
+                "tijd_rood_voor_vrijgave_signaal": {
+                    "stereotype": "configuratie_element",
+                    "title": "Tijd vrijgave signaal",
+                    "description": "De tijdsduur die de Verkeerslichten op rood moeten staan voordat een vrijgavesignaal wordt afgegeven. Let op: de waarde van dit element moet afgestemd zijn op de waarde van het gerelateerde element uit het besturingssysteem(BSTTI#15962).",
+                    "ref": "BSTTI#16918",
+                    "type": "number",
+                    "unit": "s",
+                    "min": "0",
+                    "max": "15",
+                    "step": "1",
+                    "init": "4"
+                },
+                "bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    }
+                },
+                "reden_niet_bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Reden niet bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "plaatselijk_bediend": "Plaatselijk bediend",
+                        "noodstop": "Noodstop",
+                        "werkschakelaar": "Werkschakelaar",
+                        "storing": "Storing",
+                        "disabled": "Disabled",
+                        "opstart": "Opstart"
+                    },
+                    "type": "array",
+                    "initvalue": "opstart"
+                },
+                "observeerbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Observeerbaar",
+                    "description": "Uit de bij iedere LFV (of component) beschikbare variabelen #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar. Overal waar in het vervolg '#observeerbaar = ja' geschreven staat, betekent dit dat voor de LFV(of component) geldt: ofwel '#bestuurbaar = ja', ofwel '#bestuurbaar = nee' mits #reden_niet_bestuurbaar uitsluitend de volgende waardes bevat: 'plaatselijke_bediening' en / of 'noodstop' en / of 'werkschakelaar'. Overal waar in het vervolg '#observeerbaar = nee' geschreven staat, betekent dit dat voor de LFV(of component) geldt: '#bestuurbaar = nee' en bovendien bevat #reden_niet_bestuurbaar uitsluitend waardes die verschillen van 'plaatselijke_bediening', 'noodstop' en 'werkschakelaar'.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    }
+                },
+                "storingen": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Storingen",
+                    "description": "De LFV Verkeerslichten dient de volgende generieke storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie met de LFV gedetecteerd. ; De LFV Verkeerslichten dient de volgende specifieke storingen te detecteren: ; STORING_ROOD_ACTIEVE_LICHTEN: De Verkeerslichten zijn ingesteld om rood te tonen, maar geen van de actieve Verkeerslichten kan \u2018rood\u2019 tonen. Merk op: #stand wordt geel_knipperen(zie BSTTI#16901). ; STORING_J32: Een of meer J32 borden tonen niet de gewenste stand of er is een storing in de terugmelding. ",
+                    "ref": "BSTTI#16850",
+                    "comment": "",
+                    "enum": {
+                        "STORING_ALGEMEEN": "Storing algemeen",
+                        "STORING_COMMUNICATIE_UITGEVALLEN": "Storing uitval communicatie met de LFV",
+                        "STORING_ROOD_ACTIEVE_LICHTEN": "Storing rood actieve Verkeerslichten",
+                        "STORING_J32": "Storing J32 borden"
+                    },
+                    "type": "array"
+                },
+                "stand_gewenst": {
+                    "stereotype": "hulpvariabele",
+                    "title": "Gewenste stand verkeerslichten",
+                    "description": "De stand die de Verkeerslichten moeten aannemen.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "rood": "Rood",
+                        "geel": "Geel",
+                        "geel_knipperen": "Geel knipperen",
+                        "groen": "Groen",
+                        "gedoofd": "Gedoofd"
+                    }
+                },
+                "stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Stand Verkeerslichten",
+                    "description": "De stand die de Verkeerslichten tonen (met uitzondering van lichten die niet actief zijn of wegens storing gedoofd zijn). Als er geen actieve Verkeerslichten zijn is dit de stand die een Verkeerslicht zal tonen wanneer deze actief wordt.",
+                    "ref": "BSTTI#16848",
+                    "comment": "#stand: rood | geel | geel_knipperen | groen | gedoofd",
+                    "enum": {
+                        "rood": "Rood",
+                        "geel": "Geel",
+                        "geel_knipperen": "Geel knipperen",
+                        "groen": "Groen",
+                        "gedoofd": "Gedoofd"
+                    }
+                },
+                "stand_j32_gewenst": {
+                    "stereotype": "hulpvariabele",
+                    "title": "Gewenste stand J32 borden",
+                    "description": "De stand die de J32-borden moeten aannemen.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "aan": "Aan",
+                        "uit": "Uit"
+                    }
+                },
+                "stand_j32": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Stand J32 borden",
+                    "description": "De stand van de signaalgever op signaleringsraai s (1 \u2264 s \u2264 3) van rijstrook r (1 \u2264 r \u2264 n), waarbij n overeenkomt met het aantal rijstroken minus \u00e9\u00e9n, met een minimum van 1. De nummering van signaleringsraaien dient oplopend te zijn in de rijrichting, overeenkomend met de nummering zoals gebruikt bij de MTM-koppeling (BSTTI#1209). Merk op dat ook de rijstroken worden genummerd volgens de definitie in ref. [BPS]. storing: geeft aan dat terugmelding faalt, waardoor de stand van het bord onbekend is.",
+                    "ref": "BSTTI#16848",
+                    "comment": "#stand_j32[1..3, 1..n]: aan | uit | storing",
+                    "enum": {
+                        "aan": "Aan",
+                        "uit": "Uit",
+                        "storing": "Storing"
+                    }
+                }
+            },
+            "operations": {
+                "SetStand": {
+                    "stereotype": "commando",
+                    "title": "Set Stand",
+                    "description": "Stelt de stand van de Verkeerslichten in. De LFV moet deze stand in stappen realiseren, in overeenstemming met eis BSTTI#16902.",
+                    "ref": "BSTTI#16849",
+                    "comment": "SetStand( rood | geel_knipperen | groen | gedoofd )",
+                    "arguments": [],
+                    "publish": true
+                }
+            }
+        }
+    }
+}

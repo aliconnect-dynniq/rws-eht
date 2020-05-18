@@ -1,0 +1,739 @@
+info:
+  title: A29H
+  description: RWS A29 Heinenoordtunnel
+  termsOfService: http://rws.aliconnect.nl/terms/
+  contact:
+    email: max.van.kampen@alicon.nl
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+config:
+  oauth2:
+    protocol: https
+    hostname: login.aliconnect.nl
+    basePath: /api/oauth2
+  aim:
+    client_id: 71BED2B1-E21C-4EFF-9881-2D3960A0523E
+    protocol: https
+    hostname: rws.aliconnect.nl
+    basePath: /tms/a2m/webroot/api
+    domain: rws
+om:
+  nav:
+    items:
+    - title: Start
+      className: start
+      href: '#/start()'
+      items:
+      - title: Favorieten
+        className: fav
+        href: '#/fav()'
+      - title: Recent
+        className: History
+        href: '#/his()'
+      - title: Gedeeld
+        className: group
+        href: '#/shared()'
+      - title: Prullenbak
+        className: trash
+        href: '#/trash()'
+    - title: Website
+      className: Website
+      items:
+      - title: Web sites
+        className: WebSite
+        href: '#/Website?filter=hostID<>1'
+      - title: Web pages
+        className: WebPage
+        href: '#/Webpage?filter=hostID<>1'
+      - title: Help pages
+        className: HelpPage
+        href: '#/Helppage'
+    - title: Organisatie
+      className: crm
+      items:
+      - title: Contacts
+        className: person
+        href: '#/Contact?filter=hostID ne 1'
+      - title: Companies
+        className: company
+        href: '#/Company?filter=hostID ne 1'
+      - title: Mailgroups
+        className: group
+        href: '#/mailgroup?filter=hostID ne 1'
+      - title: Outlook Contacts
+        className: person
+        href: '#/Contact'
+      - title: Outlook Tasks
+        className: company
+        href: '#/Company'
+    - title: Engineering
+      className: se
+      items:
+      - title: Signal
+        className: signal
+        href: '#/Signal'
+      - title: SoftwareFunction
+        className: softwarefunction
+        href: '#/SoftwareFunction'
+      - title: Instruments
+        href: '#/Signal'
+      - title: Products
+        href: '#/System?filter=hostID<>1+AND+srcID=masterID+AND+id+NOT+IN+(SELECT+masterID+FROM+api.items+WHERE+masterid=srcid)'
+      - title: Systems
+        href: '#/System'
+      - title: IO
+        href: '#/IO'
+      - title: Document
+        className: document
+        href: '#/Document'
+      # - title: Asset: { get: { folder: 'product', href: #/System },//filter: hostID<>1, q: '' } },
+      - title: Locations
+        className: location
+        href: '#/Location'
+    - title: Work
+      className: taskboard
+      items:
+      - title: Taken
+        className: task
+        href: '#/Task'
+      - title: Mijn taken
+        className: task
+        href: '#/Task?filter=ownerID+eq+me'
+      - title: Alicon support
+        className: support
+        href: '#/Task?filter=ownerID+eq+support'
+    - title: Outlook
+      className: crm
+      items:
+      - title: Contacts
+        className: person
+        href: '#/mse/Contacts/find'
+      - title: Messages
+        className: messages
+        href: '#/mse/Messages/find'
+      - title: Events
+        className: event
+        href: '#/mse/Events/find'
+      - title: Calendar
+        className: calender
+        href: '#/mse/Calendarview/find'
+    - title: Admin
+      className: admin
+      items:
+      - title: Publish
+        href: '#/admin/publish'
+      - title: Groups
+        className: crm
+        href: '#/groups'
+      - title: Keys
+        className: keys
+        href: '#/keys'
+      - title: License
+        className: License
+        href: '#/License'
+css:
+  rules:
+    .row.top.bar: background-color:#F9E11E; color:#154273;
+externalDocs:
+  description: Find out more about Aliconnect
+  url: https://aliconnect.nl
+servers:
+- url: https://rws.aliconnect.nl/api
+tags:
+  - name: Afsluitboom
+    description: Everything about Afsluitboom
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Basisfunctie_Bediening
+    description: Everything about Basisfunctie_Bediening
+components:
+  schemas:
+    Verkeerslichten:
+      properties:
+        Lfv_verkeerslichten:
+          stereotype: configuratie_element
+          summary: _lfv_verkeerslichten
+          description: De LFV Verkeerslichten Verkeersbuis voor deze functie.
+          bsttiName: _lfv_verkeerslichten
+          bsttiNr: BSTTI#16855
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Configuratie-elementen
+        Sf_verkeerslicht:
+          stereotype: configuratie_element
+          type: array
+          summary: _sf_verkeerslicht[]
+          description: De lijst met subfuncties Verkeerslicht voor deze functie.
+          enum:
+          - a29h
+          bsttiName: _sf_verkeerslicht[]
+          bsttiNr: BSTTI#16856
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Configuratie-elementen
+        Lfv_verkeerslicht:
+          stereotype: configuratie_element
+          summary: _lfv_verkeerslicht
+          description: De component Verkeerslicht van de LFV Verkeerslichten Verkeersbuis
+            voor deze subfunctie.
+          bsttiName: _lfv_verkeerslicht
+          bsttiNr: BSTTI#6446
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Configuratie-elementen
+        Eschikbaarheid:
+          stereotype: variabele
+          summary: '#beschikbaarheid'
+          description: Geeft aan of dit verkeerslicht beschikbaar is.
+          bsttiName: '#beschikbaarheid'
+          bsttiNr: BSTTI#9381
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: _lfv_verkeerslicht.#bestuurbaar = ja && _lfv_verkeerslicht.#storingen
+              = {}
+            Waarde: beschikbaar
+          - Conditie: _lfv_verkeerslicht.#bestuurbaar = nee ||  _lfv_verkeerslicht.#storingen[i]
+              = ( STORING_ROOD | STORING_GEEL | STORING_GEEL_KNIPPEREN | STORING_GROEN
+              )
+            Waarde: niet_beschikbaar
+          - Conditie: overige situaties
+            Waarde: beperkt_beschikbaar
+          st(): |
+            IF Verkeerslichten_%d_lfv_verkeerslicht_bestuurbaar = ja  AND  Verkeerslichten_%d_lfv_verkeerslicht_storingen = {} THEN
+
+            beschikbaar;
+            END_IF;
+            IF Verkeerslichten_%d_lfv_verkeerslicht_bestuurbaar = nee  OR   Verkeerslichten_%d_lfv_verkeerslicht_storingen[i] = ( STORING_ROOD | STORING_GEEL | STORING_GEEL_KNIPPEREN | STORING_GROEN ) THEN
+
+            niet_beschikbaar;
+            END_IF;
+            beperkt_beschikbaar
+          get(): |
+            if (this.lfv_verkeerslicht.bestuurbaar == ja && this.lfv_verkeerslicht.storingen == {})
+            {
+            return beschikbaar;
+            }
+            if (this.lfv_verkeerslicht.bestuurbaar == nee ||;
+            this.lfv_verkeerslicht.storingen[i] == ( STORING_ROOD | STORING_GEEL | STORING_GEEL_KNIPPEREN | STORING_GROEN ))
+            {
+            return niet_beschikbaar;
+            }
+            return beperkt_beschikbaar;
+        Tand:
+          stereotype: variabele
+          summary: '#stand'
+          description: De huidige stand van dit verkeerslicht.
+          bsttiName: '#stand'
+          bsttiNr: BSTTI#6451
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: _lfv_verkeerslicht.#observeerbaar = ja
+            Waarde: _lfv_verkeerslicht.#stand
+          st(): |
+            IF Verkeerslichten_%d_lfv_verkeerslicht_observeerbaar = ja THEN
+            Verkeerslichten_%d_lfv_verkeerslicht_stand;
+            END_IF;
+          get(): |
+            if (this.lfv_verkeerslicht.observeerbaar == ja)
+            {
+            return this.lfv_verkeerslicht.stand;
+            }
+        Tand_j32[1..3, 1..n]:
+          stereotype: variabele
+          summary: '#stand_j32[1..3, 1..n]'
+          description: "De actuele stand van de J32 signaalgever op signaleringsraai
+            s (1 \u2264 s \u2264 3) van rijstrook r (1 \u2264 r \u2264 n), waarbij
+            n overeenkomt met het aantal rijstroken minus 1, met een minimum van 1."
+          bsttiName: '#stand_j32[1..3, 1..n]'
+          bsttiNr: BSTTI#17088
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: _lfv_verkeerslichten.#observeerbaar = ja
+            Waarde: _lfv_verkeerslichten.#stand_j32
+          st(): |
+            IF Verkeerslichten_%d_lfv_verkeerslichten_observeerbaar = ja THEN
+            Verkeerslichten_%d_lfv_verkeerslichten_stand_j32;
+            END_IF;
+          get(): |
+            if (this.lfv_verkeerslichten.observeerbaar == ja)
+            {
+            return this.lfv_verkeerslichten.stand_j32;
+            }
+        Edieningswijze:
+          stereotype: variabele
+          summary: '#bedieningswijze'
+          description: 'De huidige bedieningswijze van de basisfunctie Verkeerslichten. '
+          bsttiName: '#bedieningswijze'
+          bsttiNr: BSTTI#16861
+          bsttiInit: hand
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          init(): |+
+            return hand
+
+          st(): |
+            IF init = 1 THEN
+            hand
+            END_IF;
+        And_stand:
+          stereotype: variabele
+          summary: '#hand_stand'
+          description: 'De stand die de basisfunctie Verkeerslichten moet instellen
+            en handhaven als #bedieningswijze = hand. '
+          bsttiName: '#hand_stand'
+          bsttiNr: BSTTI#16862
+          bsttiInit: 'init_patroon((#stand <> ongeldig && #stand <> geel), #stand)'
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          init(): |+
+            return init_patroon((this.stand != ongeldig && this.stand != geel), this.stand)
+
+          st(): |
+            IF init = 1 THEN
+            init_patroon((#stand <> ongeldig  AND  Verkeerslichten_%d_stand <> geel), Verkeerslichten_%d_stand)
+            END_IF;
+        Uto_stand:
+          stereotype: variabele
+          summary: '#auto_stand'
+          description: 'De stand die de basisfunctie Verkeerslichten moet instellen
+            en handhaven als #bedieningswijze = auto.'
+          bsttiName: '#auto_stand'
+          bsttiNr: BSTTI#16863
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+        Ngestelde_stand:
+          stereotype: variabele
+          summary: '#ingestelde_stand'
+          description: De beoogde stand voor de verkeerslichten.
+          bsttiName: '#ingestelde_stand'
+          bsttiNr: BSTTI#9394
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: '#bedieningswijze = hand'
+            Waarde: '#hand_stand'
+          - Conditie: '#bedieningswijze = auto'
+            Waarde: '#auto_stand'
+          st(): |
+            IF Verkeerslichten_%d_bedieningswijze = hand THEN
+            Verkeerslichten_%d_hand_stand;
+            END_IF;
+            IF Verkeerslichten_%d_bedieningswijze = auto THEN
+            Verkeerslichten_%d_auto_stand;
+            END_IF;
+          get(): |
+            if (this.bedieningswijze == hand)
+            {
+            return this.hand_stand;
+            }
+            if (this.bedieningswijze == auto)
+            {
+            return this.auto_stand;
+            }
+        Laatselijk_bediend:
+          stereotype: variabele
+          summary: '#plaatselijk_bediend'
+          description: De verkeerslichten kunnen plaatselijk bediend worden.
+          bsttiName: '#plaatselijk_bediend'
+          bsttiNr: BSTTI#16866
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: '*'
+            Waarde: _lfv_verkeerslichten.#bestuurbaar = nee &&  _lfv_verkeerslichten.#reden_niet_bestuurbaar[i]
+              = plaatselijke_bediening
+          st(): |
+            _lfv_verkeerslichten_bestuurbaar = nee  AND ; Verkeerslichten_%d_lfv_verkeerslichten_reden_niet_bestuurbaar[i] = plaatselijke_bediening
+          get(): |
+            return this.lfv_verkeerslichten.bestuurbaar = nee &&;
+            this.lfv_verkeerslichten.some(function(){return this.reden_niet_bestuurbaar;})
+        Ood_bediend:
+          stereotype: variabele
+          summary: '#nood_bediend'
+          description: De verkeerslichten kunnen bediend worden vanuit de noodbediening.
+          bsttiName: '#nood_bediend'
+          bsttiNr: BSTTI#18625
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: '*'
+            Waarde: _lfv_verkeerslichten.#bestuurbaar = nee &&  _lfv_verkeerslichten.#reden_niet_bestuurbaar[i]
+              = noodbediening
+          st(): |
+            _lfv_verkeerslichten_bestuurbaar = nee  AND ; Verkeerslichten_%d_lfv_verkeerslichten_reden_niet_bestuurbaar[i] = noodbediening
+          get(): |
+            return this.lfv_verkeerslichten.bestuurbaar = nee &&;
+            this.lfv_verkeerslichten.some(function(){return this.reden_niet_bestuurbaar;})
+        N_gebruik:
+          stereotype: variabele
+          summary: '#in_gebruik'
+          description: 'PERSISTENT Geeft voor toepassing in wisselbuizen aan of deze
+            instantie van basisfunctie verkeerslichten wel of niet in gebruik moet
+            zijn. Voor toepassing in verkeersbuizen die geen wisselbuizen zijn, dient
+            de waarde van #in_gebruik altijd ''ja'' te zijn. N.B.: de waarde van #in_gebruik
+            representeert een streven. Of de verkeerslichten daadwerkelijk in gebruik
+            zijn wordt weergegeven door de variabele #daadwerkelijk_in_gebruik.'
+          bsttiName: '#in_gebruik'
+          bsttiNr: BSTTI#16541
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+        Aadwerkelijk_in_gebruik:
+          stereotype: variabele
+          summary: '#daadwerkelijk_in_gebruik'
+          description: Geeft aan of deze instantie van basisfunctie verkeerslichten
+            daadwerkelijk in gebruik is.
+          bsttiName: '#daadwerkelijk_in_gebruik'
+          bsttiNr: BSTTI#16542
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: '#in_gebruik = ja'
+            Waarde: ja
+          - Conditie: '#in_gebruik = nee && #stand = gedoofd && _sf_verkeerslicht[].#stand
+              = gedoofd'
+            Waarde: nee
+          - Conditie: overige situaties
+            Waarde: onbekend
+          st(): |
+            IF Verkeerslichten_%d_in_gebruik = ja THEN
+
+            ja;
+            END_IF;
+            IF Verkeerslichten_%d_in_gebruik = nee  AND  Verkeerslichten_%d_stand = gedoofd  AND  Verkeerslichten_%d_sf_verkeerslicht[]_stand = gedoofd THEN
+
+            nee;
+            END_IF;
+            onbekend
+          get(): |
+            if (this.in_gebruik == ja)
+            {
+            return ja;
+            }
+            if (this.in_gebruik == nee && this.stand == gedoofd && this.sf_verkeerslicht.every(function(){return this.stand == gedoofd;})
+            {
+            return nee;
+            }
+            return onbekend;
+        Ijd_rood_voor_vrijgave_signaal:
+          stereotype: variabele
+          summary: '#tijd_rood_voor_vrijgave_signaal'
+          description: De tijdsduur die de verkeerslichten op rood moeten staan voordat
+            de afsluitbomen dicht mogen.
+          bsttiName: '#tijd_rood_voor_vrijgave_signaal'
+          bsttiNr: BSTTI#15962
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: '*'
+            Waarde: _lfv_verkeerslichten._tijd_rood_voor_vrijgave_signaal
+          st(): |
+            _lfv_verkeerslichten_tijd_rood_voor_vrijgave_signaal
+          get(): |
+            return this.lfv_verkeerslichten.tijd_rood_voor_vrijgave_signaal;
+        Oel_actief:
+          stereotype: variabele
+          summary: '#doel_actief'
+          description: De variabele geeft aan of het verkeerslicht gebruikt mag worden.
+            Het verkeerslicht mag met name niet worden gebruikt, indien de bijbehorende
+            rijstrook is afgekruist door MTM.
+          bsttiName: '#doel_actief'
+          bsttiNr: BSTTI#9371
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+        Ctief:
+          stereotype: variabele
+          summary: '#actief'
+          description: De variabele geeft aan of het verkeerslicht actief is.
+          bsttiName: '#actief'
+          bsttiNr: BSTTI#16868
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Variabelen
+          rules:
+          - Conditie: _lfv_verkeerslicht.#observeerbaar = ja
+            Waarde: _lfv_verkeerslicht.#actief
+          st(): |
+            IF Verkeerslichten_%d_lfv_verkeerslicht_observeerbaar = ja THEN
+            Verkeerslichten_%d_lfv_verkeerslicht_actief;
+            END_IF;
+          get(): |
+            if (this.lfv_verkeerslicht.observeerbaar == ja)
+            {
+            return this.lfv_verkeerslicht.actief;
+            }
+      operations:
+        setOpAutobediening:
+          stereotype: bediening
+          summary: SetOpAutobediening
+          description: De verkeerslichten worden op auto gezet en volgen de besturingen.
+          bsttiName: SetOpAutobediening
+          bsttiNr: BSTTI#16873
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Bedieningen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          operationId: Verkeerslichten(id).SetOpAutobediening
+          rules:
+          - Conditie: '#in_gebruik = ja'
+            Acties: '#bedieningswijze := auto'
+          st(): |
+            IF Verkeerslichten_%d_in_gebruik = ja THEN
+            Verkeerslichten_%d_bedieningswijze := auto;
+            END_IF;
+          js(): |
+            if (this.in_gebruik == ja)
+            {
+            this.bedieningswijze = auto;
+            }
+        setOpHandbediening:
+          stereotype: bediening
+          summary: SetOpHandbediening
+          description: De verkeerslichten worden op hand gezet en volgen de bedieningen.
+            Deze bediening overbrugt functionele vergrendelingen van de cordinerende
+            functie Verkeersbuisafsluiter (zie sectie 10.5.4) en voorkomt aansturingen
+            bij eventuele hoogtedetectie. De bediening mag alleen via de MMI worden
+            aangeroepen, als de situatie voldoende veilig is, of door een bewakingsfunctie
+            op noodbediening.
+          bsttiName: SetOpHandbediening
+          bsttiNr: BSTTI#16874
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Bedieningen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          operationId: Verkeerslichten(id).SetOpHandbediening
+          rules:
+          - Conditie: '#in_gebruik = ja && #bedieningswijze <> hand'
+            Acties: '#bedieningswijze := hand #hand_stand := #auto_stand'
+          st(): |
+            IF Verkeerslichten_%d_in_gebruik = ja  AND  Verkeerslichten_%d_bedieningswijze <> hand THEN
+            Verkeerslichten_%d_bedieningswijze := hand Verkeerslichten_%d_hand_stand := Verkeerslichten_%d_auto_stand;
+            END_IF;
+          js(): |
+            if (this.in_gebruik == ja && this.bedieningswijze != hand)
+            {
+            this.bedieningswijze = hand this.hand_stand = this.auto_stand;
+            }
+        setHandStand(stand):
+          stereotype: bediening
+          summary: SetHandStand
+          description: 'Stel de gewenste stand van de verkeerslichten in die gebruikt
+            moet worden als #bedieningswijze = hand. De instellingen worden gezet
+            op de LFV door het autonome proces *HandhaafInstellingen.'
+          bsttiName: SetHandStand
+          bsttiNr: BSTTI#16876
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Bedieningen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          - name: stand
+            in: query
+            description: stand
+            required: true
+            schema:
+              type: string
+          operationId: Verkeerslichten(id).SetHandStand(stand)
+          rules:
+          - Conditie: '#in_gebruik = ja'
+            Acties: '#hand_stand := stand'
+          st(): |
+            IF Verkeerslichten_%d_in_gebruik = ja THEN
+            Verkeerslichten_%d_hand_stand := stand;
+            END_IF;
+          js(): |
+            if (this.in_gebruik == ja)
+            {
+            this.hand_stand = stand;
+            }
+        setAutoStand(stand):
+          stereotype: besturing
+          summary: SetAutoStand
+          description: 'Stel de gewenste stand van de verkeerslichten in die gebruikt
+            moet worden als #bedieningswijze = auto. De instellingen worden gezet
+            op de LFV door het autonome proces *HandhaafInstellingen.'
+          bsttiName: SetAutoStand
+          bsttiNr: BSTTI#16877
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Besturingen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          - name: stand
+            in: query
+            description: stand
+            required: true
+            schema:
+              type: string
+          operationId: Verkeerslichten(id).SetAutoStand(stand)
+          rules:
+          - Conditie: '#in_gebruik = ja'
+            Acties: '#auto_stand := stand'
+          st(): |
+            IF Verkeerslichten_%d_in_gebruik = ja THEN
+            Verkeerslichten_%d_auto_stand := stand;
+            END_IF;
+          js(): |
+            if (this.in_gebruik == ja)
+            {
+            this.auto_stand = stand;
+            }
+        setInGebruik(in_gebruik):
+          stereotype: besturing
+          summary: SetInGebruik
+          description: Besturing die voor toepassing in wisselbuizen gebruikt wordt
+            om deze instantie van de functie Verkeerslichten in of uit te schakelen.
+            Wanneer aangeroepen met het argument 'ja', dan moeten de verkeerslichten
+            functioneren als bij een verkeersbuis die geen wisselbuis is. Wanneer
+            aangeroepen met het argument 'nee', dan moeten de verkeerslichten gedoofd
+            zijn en signaleringen gewoon door blijven geven. Voor de veiligheid mogen
+            enkel instanties die al gedoofd zouden moeten zijn in of uit gebruik genomen
+            worden.
+          bsttiName: SetInGebruik
+          bsttiNr: BSTTI#16543
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Besturingen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          - name: in_gebruik
+            in: query
+            description: in_gebruik
+            required: true
+            schema:
+              type: string
+          operationId: Verkeerslichten(id).SetInGebruik(in_gebruik)
+          rules:
+          - Conditie: '#ingestelde_stand = gedoofd'
+            Acties: '#in_gebruik := in_gebruik'
+          st(): |
+            IF Verkeerslichten_%d_ingestelde_stand = gedoofd THEN
+            Verkeerslichten_%d_in_gebruik := in_gebruik;
+            END_IF;
+          js(): |
+            if (this.ingestelde_stand == gedoofd)
+            {
+            this.in_gebruik = in_gebruik;
+            }
+        setVerkeerslichtActief(waarde):
+          stereotype: besturing
+          summary: SetVerkeerslichtActief
+          description: 'Deze besturing maakt het mogelijk om aan een verkeerslicht
+            door te geven of hij actief moet zijn (zie #doel_actief).'
+          bsttiName: SetVerkeerslichtActief
+          bsttiNr: BSTTI#9373
+          bsttiPath:
+          - Functies van een Verkeersbuis
+          - Verkeersgeleiding-functies
+          - Verkeerslichten
+          - Besturingen
+          parameters:
+          - name: id
+            in: query
+            description: Identifier of Verkeerslichten
+            required: true
+            schema:
+              type: number
+          - name: waarde
+            in: query
+            description: waarde
+            required: true
+            schema:
+              type: string
+          operationId: Verkeerslichten(id).SetVerkeerslichtActief(waarde)
+          rules:
+          - Conditie: '*'
+            Acties: '#doel_actief := waarde'
+          st(): |
+            #doel_actief := waarde
+          js(): |
+            this.doel_actief = waarde

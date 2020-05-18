@@ -1,0 +1,594 @@
+﻿.detail .sf_Verkeerslicht_Verkeersbuis {
+	display: inline-block;
+}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis > div {
+		border-radius: 10px;
+		background-color: black;
+		padding: 2px;
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis .storing {
+		left: -3px !important;
+		right: -2px !important;
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis > div > div {
+		border-radius: 10px;
+		width: 8px;
+		height: 8px;
+		margin: auto;
+		background-color: rgb(190,190,190);
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis[stand="rood"] .rood {
+		background-color: rgb(255,30,30);
+		-webkit-box-shadow: 0px 0px 5px 2px rgb(255,0,0);
+		-moz-box-shadow: 0px 0px 5px 2px rgb(255,0,0);
+		box-shadow: 0px 0px 5px 2px rgb(255,0,0);
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis[stand="geel_knipperen"] .geel,
+	.detail .sf_Verkeerslicht_Verkeersbuis[stand="geel"] .geel {
+		background-color: rgb(252,178,0);
+		-webkit-box-shadow: 0px 0px 5px 2px rgb(252,178,0);
+		-moz-box-shadow: 0px 0px 5px 2px rgb(252,178,0);
+		box-shadow: 0px 0px 5px 2px rgb(252,178,0);
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis[stand="groen"] .groen {
+		background-color: rgb(0,206,0);
+		-webkit-box-shadow: 0px 0px 5px 2px rgb(0,206,0);
+		-moz-box-shadow: 0px 0px 5px 2px rgb(0,206,0);
+		box-shadow: 0px 0px 5px 2px rgb(0,206,0);
+	}
+
+	.detail .sf_Verkeerslicht_Verkeersbuis[lichtStatus="licht_disabled"] .disable {
+		visibility: visible;
+	}
+
+
+.detail .bf_Verlichting_Verkeersbuis > div::before {
+	content: '\e350';
+}
+
+
+.detail .bf_Verlichting_Verkeersbuis[stand='aan'] > div::before {
+	color: orange;
+	content: '\e351';
+}
+
+.detail .bf_Verlichting_Verkeersbuis[stand='aan'] > div::after {
+	content: '\e350';
+}
+
+
+
+.detail .sf_SOSSectie > div::before {
+	content: '\e352';
+}
+
+
+.detail .sf_SOSSectie[signal] > div,
+.detail .sf_SOSSectie[disable] > div,
+.detail .sf_SOSSectie[hand] > div,
+.detail .sf_SOSSectie[storing] > div,
+.detail .sf_SOSSectie[nb] > div,
+.detail .sf_SOSSectie[bb] > div {
+	width: 27px;
+	background: #4C575B;
+	border-radius: 20px;
+	border: solid 2px #23353D;
+	color: #B7BCBD;
+	font-size: 8pt;
+	text-align: center;
+	line-height: 17px;
+}
+
+	.detail .sf_SOSSectie[signal] > div::before,
+	.detail .sf_SOSSectie[disable] > div::before,
+	.detail .sf_SOSSectie[hand] > div::before,
+	.detail .sf_SOSSectie[storing] > div::before,
+	.detail .sf_SOSSectie[nb] > div::before,
+	.detail .sf_SOSSectie[bb] > div::before {
+		font-family: Arial;
+		content: 'SOS';
+	}
+
+.detail .sf_SOSSectie[signal] > div {
+	border-color: #3c84d3;
+	background-color: #4CBAF1;
+	color: black;
+}
+
+
+.detail .sf_SOSSectie > div[sel] {
+	border-color: #007AA3;
+	color: black;
+	background-color: #00BEFD;
+}
+
+.detail .sf_Camera > div {
+	z-index: 0;
+	color: #B7BCBD;
+	font-size: 12px;
+	font-family: Arial !important;
+	width: 40px;
+	text-align: right;
+	padding-right: 4px;
+}
+
+	.detail .sf_Camera > div:before {
+		content: '123';
+	}
+
+.detail .sf_Camera .lens {
+	z-index: -1;
+}
+
+	.detail .sf_Camera .lens::before {
+		content: '';
+		position: absolute;
+		width: 28px;
+		font-family: Arial;
+		top: -15px;
+		right: -4px;
+		font-size: 10px;
+		border-top: solid #23353D 16px;
+		border-left: solid transparent 16px;
+	}
+
+	.detail .sf_Camera .lens::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		font-family: Arial;
+		top: -13px;
+		right: -2px;
+		font-size: 10px;
+		border-top: solid #4C575B 12px;
+		border-left: solid transparent 12px;
+	}
+
+.detail .sf_Camera[status='active'] > div {
+	color: black;
+}
+
+.detail .sf_Camera[status='active'] .lens::before {
+	border-top-color: black;
+}
+
+.detail .sf_Camera[status='active'] .lens::after {
+	border-top-color: white;
+}
+
+.detail .sf_Camera[signal] .lens::before {
+	border-top-color: #4CBAF1;
+}
+
+
+/*.bf_Afsluitboom {
+	width: 20px;
+	height: 20px;
+	background: brown;
+	border-radius: 20px;
+}*/
+.detail .bf_Afsluitboom > div {
+	border: solid 2px black;
+}
+
+.detail .bf_Afsluitboom .hand {
+	left: -8px;
+	right: auto;
+	width: 3px;
+	top: -2px;
+	bottom: -2px;
+	height: auto;
+}
+
+.detail .bf_Afsluitboom .storing {
+	right: -8px;
+	left: auto;
+	width: 3px;
+	top: -2px;
+	bottom: -2px;
+	height: auto;
+}
+
+.detail .bf_Afsluitboom[signal] > div {
+	border-color: aqua;
+}
+
+.detail .bf_Afsluitboom > div > .boom {
+	width: 8px;
+	height: 140px;
+	background-image: url('../img/bf_afsluitboom_bg2.png');
+	transition: height linear 1s;
+}
+
+.detail .bf_Afsluitboom > div > .basis {
+	width: 8px;
+	height: 20px;
+	background-image: url('../img/bf_afsluitboom_bg1.png');
+	transition: height linear 1s;
+}
+
+.detail .bf_Afsluitboom[stand="op"] > div > .boom {
+	display: none;
+}
+
+.detail .bf_Afsluitboom[stand="op_verlaten"] > div > .boom {
+	opacity: 0.5;
+}
+
+.overview .bf_afsluitboom[stand="neer"]::after {
+	height: 40px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}
+
+.detail .bf_afsluitboom[stand="op_verlaten"]::after {
+	height: 140px;
+	opacity: 0.5;
+}
+
+.overview .bf_afsluitboom[stand="op_verlaten"]::after {
+	height: 40px;
+	opacity: 0.5;
+}
+
+.detail .bf_HoogteDetector > div {
+	width: 8px;
+	border: solid 1px #1F353D;
+	border-radius: 10px;
+	height: 100px;
+	background: #7D8689;
+	color: #CACFD0;
+	font-size: 8px;
+	text-align: center;
+	padding-top: 2px;
+}
+
+	.detail .bf_HoogteDetector > div::before {
+		font-family: Arial;
+		content: 'H';
+	}
+
+/*.bf_HoogteDetector[hoogte_overschrijding] {
+	background: #00BBFF;
+	color: gray;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}*/
+
+
+.detail .cf_HoogteDetectie[signal] > div {
+	border-color: gray;
+	color: gray;
+	background: #00BBFF;
+}
+
+.detail .bf_Hulppost > div {
+	border-radius: 10px;
+	border: solid 1px transparent;
+	background-color: rgb(40,40,40);
+	height: 14px;
+}
+
+	.detail .bf_Hulppost > div > div {
+		font-family: Arial;
+		display: inline-block;
+		border-radius: 10px;
+		border: solid 1px #23353D;
+		background-color: #23353D;
+		background-color: rgb(80,80,80);
+		width: 10px;
+		height: 10px;
+		text-align: center;
+		vertical-align: top;
+		font-size: 8px;
+		line-height: 10px;
+		white-space: nowrap;
+		margin: 1px;
+	}
+
+.detail .bf_Hulppost[signal] > div {
+	border-color: #4CBAF1;
+}
+/*#detail .bf_hulppost>ul {position:relative;vertical-align:top;}*/
+/*.bf_Hulppost > div > span > span {
+			display: inline-block;
+			vertical-align: bottom;
+			background: #4A575B;
+			border: solid 1px #23353D;
+			width: 10px;
+			height: 10px;
+			border-radius: 10px;
+			text-align: center;
+		}*/
+
+.detail .bf_Hulppost .blusapparaat::after {
+	content: 'B';
+}
+
+.detail .bf_Hulppost .slanghaspel::after {
+	content: 'H';
+}
+/*#detail .bf_hulppost[deur_open='ja']>span {background:red;}
+#detail .bf_hulppost[blusapparaat_in_houder='ja'] .blusapparaat {background:red;}
+#detail .bf_hulppost[spuitmond_slanghaspel_in_houder='ja'] .slanghaspel {background:red;}*/
+
+
+
+
+body:not([off]) .detail .bf_hulppost[Alarm_HulppostDeurOpen="0"],
+.detail .bf_hulppost[Alarm_HulppostDeurOpen="1"]::after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: -2px;
+	top: -2px;
+	border-radius: 10px;
+	border: solid 2px #4CBAF1;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}
+
+body:not([off]) .detail .bf_hulppost[Alarm_HulppostDeurOpen="1"][bev='0']::after {
+	visibility: hidden;
+}
+
+body:not([off]) .detail .bf_hulppost[Alarm_BlusapparaatUitgenomen="0"] .blusapparaat,
+.detail .bf_hulppost[Alarm_BlusapparaatUitgenomen="1"] .blusapparaat {
+	border-color: #0078A5;
+	background-color: #4CBAF1;
+	color: black;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}
+
+body:not([off]) .detail .bf_hulppost[Alarm_BlusapparaatUitgenomen="1"][bev='0'] .blusapparaat {
+	background: #4A575B;
+	color: white;
+}
+
+body:not([off]) .detail .bf_hulppost[alarm_brandslanghaspeluithoudergenomen="0"] .slanghaspel,
+.detail .bf_hulppost[Alarm_BrandslanghaspelUitHouderGenomen="1"] .slanghaspel {
+	border-color: #0078A5;
+	background-color: #4CBAF1;
+	color: black;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}
+
+body:not([off]) .detail .bf_hulppost[Alarm_BrandslanghaspelUitHouderGenomen="1"][bev='0'] .slanghaspel {
+	background: #4A575B;
+	color: white;
+}
+
+.detail .bf_hulppost[Alarm_HulppostDeurOpen],
+.detail .bf_hulppost[Alarm_BrandslanghaspelUitHouderGenomen],
+.detail .bf_hulppost[Alarm_BlusapparaatUitgenomen] {
+	display: inline-block;
+	background: #4CBAF1;
+	border: solid 1px #9BE1F9;
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+	box-shadow: 0px 0px 5px 2px rgba(254,254,254,.5);
+}
+
+body:not([off]) .detail .bf_hulppost[Alarm_HulppostDeurOpen][bev='0'],
+body:not([off]) .detail .bf_hulppost[Alarm_BrandslanghaspelUitHouderGenomen][bev='0'],
+body:not([off]) .detail .bf_hulppost[Alarm_BlusapparaatUitgenomen][bev='0'] {
+	background: #CCC;
+}
+
+body[off] .detail .bf_hulppost[Alarm_HulppostDeurOpen="0"],
+body[off] .detail .bf_hulppost[Alarm_BrandslanghaspelUitHouderGenomen="0"],
+body[off] .detail .bf_hulppost[Alarm_BlusapparaatUitgenomen="0"] {
+	background: #949FA2;
+	z-index: 2;
+}
+
+
+.detail sf_Omroepsectie {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: no-repeat center center url(image/sym/speaker_aan.png);
+}
+
+.detail .sf_Omroepsectie[speaker] > div::before {
+	content: '\e354';
+}
+
+.detail .sf_Omroepsectie[speaker] > div::after {
+	content: '\e355';
+}
+
+.detail .sf_Omroepsectie[micro] > div::before {
+	content: '\e356';
+}
+
+.detail .sf_Omroepsectie[micro] > div::before {
+	content: '\e357';
+}
+
+
+.detail .sf_Signaalgever[stand="aan"] > div {
+	width: 14px;
+	height: 14px;
+	background-color: black;
+}
+
+.detail .sf_Signaalgever[stand="30"] > div::before {
+	content: attr(stand);
+	color: #D09116;
+}
+
+.detail .sf_Signaalgever[stand="50"] > div::before {
+	content: attr(stand);
+	color: red;
+}
+
+.detail .sf_Signaalgever[stand="vrijgave"] > div::before {
+	content: '\e358';
+	color: #F3ED50;
+}
+
+.detail .sf_Signaalgever[stand="links"] > div::before {
+	content: '\e359';
+	color: #F3ED50;
+}
+
+.detail .sf_Signaalgever[stand="rechts"] > div::before {
+	content: '\e35a';
+	color: #F3ED50;
+}
+
+.detail .sf_Signaalgever[stand="omhoog"] > div::before {
+	content: '\e35b';
+	color: #F3ED50;
+}
+
+.detail .sf_Signaalgever[stand="omlaag"] > div::before {
+	content: '\e35c';
+	color: #F3ED50;
+}
+
+.detail .sf_Signaalgever[stand="kruis"] > div::before {
+	content: '\e35d';
+	color: #F3ED50;
+}
+
+.detail .sf_NoodtelefoonToestel > div {
+}
+
+.detail .bf_VerkeersbuisLangsventilatie[links] > div {
+}
+
+.detail .bf_VerkeersbuisLangsventilatie > div::before {
+	font-family: Arial;
+	content: attr(sectie);
+}
+
+.detail .bf_VerkeersbuisLangsventilatie > div > .symbol::before {
+	margin: 0 5px;
+	font-size: 10pt;
+}
+
+.detail .bf_VerkeersbuisLangsventilatie > div[dir="links"] > .symbol::before {
+	content: "\e35e";
+}
+
+.detail .bf_VerkeersbuisLangsventilatie > div[dir="rechts"] > .symbol::before {
+	content: "\e35f";
+}
+
+.detail .bf_VerkeersbuisLangsventilatie > div::after {
+	font-family: Arial;
+	position: relative !important;
+	content: attr(stand);
+}
+
+.detail .bf_VerkeersbuisLangsventilatie[aan] > div {
+	color: white;
+}
+
+.detail .bf_VerkeersbuisLangsventilatie[uit] > div {
+	color: gray;
+}
+
+	.detail .bf_VerkeersbuisLangsventilatie[uit] > div > .symbol {
+		color: #ccc;
+	}
+
+.detail .bf_LuchtkwaliteitsmetingVerkeersbuis > div::before {
+	content: "\e360";
+}
+
+.detail .bf_LuchtkwaliteitsmetingVerkeersbuis > div::before {
+	content: "\e360";
+}
+
+.detail .sf_Vluchtdeur {
+	border-radius: 10px;
+	border: solid 1px rgb(40,40,40);
+	background-color: rgb(80,80,80);
+	line-height: 14px;
+	height: 14px;
+	width: 40px;
+	font-size: 10px;
+	text-align: center;
+}
+
+	.detail .sf_Vluchtdeur::before {
+		font-family: TmsIcon;
+		content: "\e361";
+	}
+
+	.detail .sf_Vluchtdeur[status='lock']::after {
+		font-family: TmsIcon;
+		content: "\e362" attr(nr);
+	}
+
+	.detail .sf_Vluchtdeur[status='key']::after {
+		font-family: TmsIcon;
+		content: "\e363" attr(nr);
+	}
+
+	.detail .sf_Vluchtdeur[status='boven']::after {
+		font-family: TmsIcon;
+		content: "\e364" attr(nr);
+	}
+
+	.detail .sf_Vluchtdeur[status='onder']::after {
+		font-family: TmsIcon;
+		content: "\e365" attr(nr);
+	}
+
+	.detail .sf_Vluchtdeur[signalering] {
+		border-color: #4CBAF1;
+	}
+
+	.detail .sf_Vluchtdeur[alarm_vluchtactief]::before,
+	.detail .sf_Vluchtdeur[alarm_vluchtdeur]::before {
+		color: red;
+	}
+
+	.detail .sf_Vluchtdeur[alarm_vluchtactief]::after {
+		font-family: TmsIcon;
+		content: "\e363" attr(nr);
+		color: orange;
+	}
+
+
+.detail .sf_Overdruk::before {
+	content: "\e366";
+}
+
+.detail .sf_DynVluchtInd[links]::before {
+	content: "\e367";
+}
+
+.detail .sf_DynVluchtInd[rechts]::before {
+	content: "\e368";
+}
+
+.detail .sf_Bluswater::before {
+	content: "\e369";
+}
+
+.detail .sf_Pomp::before {
+	content: "\e36a";
+}

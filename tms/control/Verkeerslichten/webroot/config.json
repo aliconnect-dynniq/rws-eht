@@ -1,0 +1,156 @@
+{
+  "info": {
+    "title": "RWS A2 Maastricht Verkeerslichten",
+    "description": ".",
+    "termsOfService": "http://aliconnect.nl/terms/",
+    "contact": {
+      "email": "max.van.kampen@alicon.nl"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "config": {
+    "http": {
+      "port": 8443
+    },
+    "ws": {
+      "url": "wss://aliconnect.nl:444",
+      "url": "ws://192.168.0.135:8443",
+      "url": "ws://localhost:8443",
+      "url": "",
+    },
+    "oauth2": {
+      "url": "https://login.aliconnect.nl/api/oauth2"
+    },
+    "aim": {
+      "url": "https://rws.aliconnect.nl/api/tms/a2m/api",
+      "client_id": "71BED2B1-E21C-4EFF-9881-2D3960A0523E",
+      "_client_id": "17EEF109-7A06-430E-B973-CE4FBCB03E55",
+      "protocol": "https:",
+      "hostname": "rws.aliconnect.nl",
+      "basePath": "/tms/a2m/api",
+      "domain": "rws",
+      "sub": 3443787,
+      "aud": 2804394
+    },
+    "debug": true
+  },
+  "paths": {
+    "/Verkeerslichten(id)/setStand(stand)": {
+      "post": {
+        "operationId": "Verkeerslichten(id).setStand(stand)"
+      }
+    },
+    "/js": {
+      "get": {
+        "operationId": "aim.js",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        },
+        "security": [
+          {
+            "aliconnect_auth": [
+              "read:web"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rio": {
+    "1": {
+      "type": "Mcp23017",
+      "type": "ConsoleIO",
+      "address": 32,
+      "device": "/dev/i2c-1",
+      "debug": false
+    }
+  },
+  "Verkeerslichten": [
+    {
+      "Verkeerslicht": [
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        },
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        },
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        },
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        },
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        },
+        {
+          "rio": 1,
+          "doGroen": 5,
+          "doGeel": 6,
+          "doRood": 7
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Verkeerslichten": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      },
+      "Verkeerslicht": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      },
+      "bf_Verkeerslichten_Verkeersbuis": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      },
+      "sf_Verkeerslicht_Verkeersbuis": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      },
+      "lfv_Verkeerslichten_Verkeersbuis": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      },
+      "lfv_Verkeerslicht_Verkeersbuis": {
+        "title": "LFV Verkeerslichten",
+        "properties": {
+          "stand": {}
+        }
+      }
+    }
+  }
+}

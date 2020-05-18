@@ -1,0 +1,147 @@
+{
+    "value": [
+        {
+            "@context": "https://aliconnect.nl/api/lfv_Verkeerslichten_Verkeersbuis(3443804)",
+            "@etag": "W/'QzY4NEE1OTMtRUQ0RS00NUM5LTkyNUItQjRGQ0Q5MTAwRDg1'",
+            "@id": "lfv_Verkeerslichten_Verkeersbuis(3443804)",
+            "Id": "eyJzY2hlbWEiOiJsZnZfVmVya2VlcnNsaWNodGVuX1ZlcmtlZXJzYnVpcyIsIklEIjozNDQzODA0LCJVSUQiOiJDNjg0QTU5My1FRDRFLTQ1QzktOTI1Qi1CNEZDRDkxMDBEODUiLCJtYXN0ZXJJRCI6MzQ0Mzc5NiwiaWR4IjowLCJzcmNJRCI6MzMxODAxMywidXNlcklEIjowLCJjbGFzc0lEIjoyMTEzLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTA5VDEzOjAyOjE0Ljc3NzAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMTEtMjZUMDk6NTc6MjkuNTQzMDAwMFoiLCJoYXNDaGlsZHJlbiI6MSwiaGVhZGVyIjpbImxmdl9WZXJrZWVyc2xpY2h0ZW5fVmVya2VlcnNidWlzIixudWxsLCJiZl9WZXJrZWVyc2xpY2h0ZW5fVmVya2VlcnNidWlzIl19",
+            "lfv_Verkeerslicht_Verkeersbuis": [
+                {
+                    "@id": "lfv_Verkeerslicht_Verkeersbuis(3456221)"
+                },
+                {
+                    "@id": "lfv_Verkeerslicht_Verkeersbuis(3443813)"
+                }
+            ],
+            "Title": {
+                "value": "lfv_Verkeerslichten_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "subject": {
+                "value": "2817404",
+                "valueSource": "2817404",
+                "modifiedDT": "2019-07-04T10:58:50.347"
+            },
+            "Name": {
+                "value": "lfv_Verkeerslichten_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "max_transitietijd_asb": {
+                "value": "30",
+                "valueSource": "30",
+                "modifiedDT": "2019-05-06T11:04:00.333"
+            },
+            "Master": {
+                "value": "bf_Verkeerslichten_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "Source": {
+                "value": "lfv_Verkeerslichten_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "Subject": {
+                "value": "bf_Verkeerslichten_Verkeersbuis",
+                "valueSource": "lfv",
+                "modifiedDT": "2019-05-17T11:04:51.467"
+            }
+        },
+        {
+            "@context": "https://aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3443813)",
+            "@etag": "W/'RjcyMDgzQjctREM5Ny00NzQwLUFGRTAtMzg1RkQwNUU5NDFB'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3443813)",
+            "Id": "eyJzY2hlbWEiOiJsZnZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJJRCI6MzQ0MzgxMywiVUlEIjoiRjcyMDgzQjctREM5Ny00NzQwLUFGRTAtMzg1RkQwNUU5NDFBIiwibWFzdGVySUQiOjM0NDM4MDQsImlkeCI6MSwic3JjSUQiOjMzMTgwMTQsInVzZXJJRCI6MCwiY2xhc3NJRCI6MjExMywiY3JlYXRlZERUIjoiMjAxOS0wNS0wOVQxMzowMjoxNC43OTcwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTExLTI2VDA5OjU3OjMwLjYyMDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJsZnZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsInNmX1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIl19",
+            "Name": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "subject": {
+                "value": "2817404",
+                "valueSource": "2817404",
+                "modifiedDT": "2019-07-04T10:58:50.347"
+            },
+            "Title": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "Source": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "Master": {
+                "value": "sf_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "max_transitietijd_asb": {
+                "value": "30",
+                "valueSource": "30",
+                "modifiedDT": "2019-05-06T11:04:00.333"
+            },
+            "Subject": {
+                "value": "sf_Verkeerslicht_Verkeersbuis",
+                "valueSource": "lfv",
+                "modifiedDT": "2019-05-17T11:04:51.467"
+            }
+        },
+        {
+            "@context": "https://aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3456221)",
+            "@etag": "W/'OUU2NEZERDItRENERi00QjRFLUJFMkUtMzI4NzZFODQ5QzI5'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3456221)",
+            "Id": "eyJzY2hlbWEiOiJsZnZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJJRCI6MzQ1NjIyMSwiVUlEIjoiOUU2NEZERDItRENERi00QjRFLUJFMkUtMzI4NzZFODQ5QzI5IiwibWFzdGVySUQiOjM0NDM4MDQsImlkeCI6MCwic3JjSUQiOjMzMTgwMTQsInVzZXJJRCI6MCwiY2xhc3NJRCI6MjExMywiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxNjozMDoxMi44ODAwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE2OjMwOjEyLjg4MDAwMDBaIiwiaGVhZGVyIjpbImxmdl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyIsbnVsbCwic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiXX0=",
+            "Name": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "subject": {
+                "value": "2817404",
+                "valueSource": "2817404",
+                "modifiedDT": "2019-07-04T10:58:50.347"
+            },
+            "Title": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "modifiedDT": "2019-06-04T16:15:13.887"
+            },
+            "Source": {
+                "value": "lfv_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "Master": {
+                "value": "sf_Verkeerslicht_Verkeersbuis",
+                "valueSource": "Software Library",
+                "@id": "software_library(3309725)",
+                "itemID": 3309725,
+                "modifiedDT": "2019-05-10T14:24:23.923"
+            },
+            "max_transitietijd_asb": {
+                "value": "30",
+                "valueSource": "30",
+                "modifiedDT": "2019-05-06T11:04:00.333"
+            },
+            "Subject": {
+                "value": "sf_Verkeerslicht_Verkeersbuis",
+                "valueSource": "lfv",
+                "modifiedDT": "2019-05-17T11:04:51.467"
+            }
+        }
+    ]
+}

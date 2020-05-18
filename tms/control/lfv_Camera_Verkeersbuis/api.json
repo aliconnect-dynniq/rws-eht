@@ -1,0 +1,482 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "lfv_Camera_Verkeersbuis",
+        "description": "This is a LFV lfv_Camera_Verkeersbuis server",
+        "termsOfService": "https:\/\/aliconnect.nl\/terms\/",
+        "contact": {
+            "email": "info@alicon.nl"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/192.168.0.132\/api\/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "lfv_Camera_Verkeersbuis",
+            "description": ""
+        }
+    ],
+    "component": {
+        "schemas": {
+            "title": "LFV component Camera Verkeersbuis",
+            "properties": {
+                "bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_bestuurbaar"
+                },
+                "reden_niet_bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Reden niet bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "plaatselijk_bediend": "Plaatselijk bediend",
+                        "noodstop": "Noodstop",
+                        "werkschakelaar": "Werkschakelaar",
+                        "storing": "Storing",
+                        "disabled": "Disabled",
+                        "opstart": "Opstart"
+                    },
+                    "type": "array",
+                    "initvalue": "opstart"
+                },
+                "observeerbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Observeerbaar",
+                    "description": "Uit de bij iedere LFV (of component) beschikbare variabelen #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar. Overal waar in het vervolg '#observeerbaar = ja' geschreven staat, betekent dit dat voor de LFV(of component) geldt: ofwel '#bestuurbaar = ja', ofwel '#bestuurbaar = nee' mits #reden_niet_bestuurbaar uitsluitend de volgende waardes bevat: 'plaatselijke_bediening' en \/ of 'noodstop' en \/ of 'werkschakelaar'. Overal waar in het vervolg '#observeerbaar = nee' geschreven staat, betekent dit dat voor de LFV(of component) geldt: '#bestuurbaar = nee' en bovendien bevat #reden_niet_bestuurbaar uitsluitend waardes die verschillen van 'plaatselijke_bediening', 'noodstop' en 'werkschakelaar'.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_observeerbaar"
+                },
+                "storingen": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Storingen",
+                    "description": "Elke CCTV Verkeersbuis dient de volgende generieke storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie met de LFV gedetecteerd.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "STORING_ALGEMEEN": "Storing algemeen",
+                        "STORING_COMMUNICATIE_UITGEVALLEN": "Storing uitval communicatie met de LFV"
+                    },
+                    "type": "array"
+                },
+                "identificatie_code": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Identificatie code",
+                    "description": "De camera's moeten elk voorzien zijn van een unieke identificatiecode die zichtbaar is in het geproduceerde beeld.",
+                    "ref": "BSTTI#1620",
+                    "comment": ""
+                },
+                "identificatiecode_weergave": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Identificatiecode weergave",
+                    "description": "Geeft de weergave van de camerapositie-identificatiecode in het camerabeeld aan. Zie BSTTI#16702.",
+                    "ref": "BSTTI#1620",
+                    "comment": "",
+                    "enum": {
+                        "normaal": "Normaal",
+                        "inverse": "Inverse"
+                    }
+                },
+                "pan_stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Pan stand",
+                    "description": "De pan stand van de camera.",
+                    "ref": "BSTTI#1620",
+                    "comment": ""
+                },
+                "tilt_stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Tilt stand",
+                    "description": "De tilt stand van de camera.",
+                    "ref": "BSTTI#1620"
+                },
+                "zoom_stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Zoom stand",
+                    "description": "De zoom stand van de camera.",
+                    "ref": "BSTTI#1620"
+                },
+                "focus_stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Focus stand",
+                    "description": "De focus stand van de camera.",
+                    "ref": "BSTTI#1620"
+                },
+                "diafragma_stand": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Diafragme stand",
+                    "description": "De diafragma stand van de camera.",
+                    "ref": "BSTTI#1620"
+                },
+                "preset": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Presets",
+                    "description": "De lijst van preset-waarden zoals ingesteld voor deze camera. Elke preset bevat een pan, tilt, zoom, focus, diafragma waarde.",
+                    "ref": "BSTTI#1620",
+                    "type": "array"
+                },
+                "kanalen": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Kanalen",
+                    "description": "De lijst van kanalen waarop deze camera zichtbaar is.",
+                    "ref": "BSTTI#1620",
+                    "type": "array"
+                }
+            }
+        }
+    },
+    "paths": {
+        "\/SetPan": {
+            "stereotype": "commando",
+            "title": "Set Pan",
+            "description": "Laat de camera draaien tot hoek p.",
+            "ref": "BSTTI#1621",
+            "comment": "SetPan(p)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetPan lfv_Camera_Verkeersbuis",
+            "operationId": "SetPan",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetTilt": {
+            "stereotype": "commando",
+            "title": "Set Tilt",
+            "description": "Laat de camera kantelen tot hoek t.",
+            "ref": "BSTTI#1621",
+            "comment": "SetTilt(t)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetTilt lfv_Camera_Verkeersbuis",
+            "operationId": "SetTilt",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetZoom": {
+            "stereotype": "commando",
+            "title": "Set Zoom",
+            "description": "Laat de camera inzoomen tot z.",
+            "ref": "BSTTI#1621",
+            "comment": "SetZoom(z)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetZoom lfv_Camera_Verkeersbuis",
+            "operationId": "SetZoom",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetFocus": {
+            "stereotype": "commando",
+            "title": "Set Focus",
+            "description": "Wijzig de focus van de camera tot f. De autofocus stand kan ingeschakeld worden met de gereserveerde AUTOFOCUS waarde.",
+            "ref": "BSTTI#1621",
+            "comment": "SetFocus(f)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetFocus lfv_Camera_Verkeersbuis",
+            "operationId": "SetFocus",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetDiafragma": {
+            "stereotype": "commando",
+            "title": "Set Diafragma",
+            "description": "Zet de diafragma instelling van de camera in stand d. Met de waarde AUTODIAFRAGMA kan het autodiafragma mechanisme ingeschakeld worden.",
+            "ref": "BSTTI#1621",
+            "comment": "SetDiafragma(d)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetDiafragma lfv_Camera_Verkeersbuis",
+            "operationId": "SetDiafragma",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/DefinieerPreset": {
+            "stereotype": "commando",
+            "title": "Definieer Preset",
+            "description": "Voer voor de camera een preset positie i in.",
+            "ref": "BSTTI#1621",
+            "comment": "DefinieerPreset(i, p, t, z, f, d)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "DefinieerPreset lfv_Camera_Verkeersbuis",
+            "operationId": "DefinieerPreset",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetToPreset": {
+            "stereotype": "commando",
+            "title": "Set To Preset",
+            "description": "Stel de camera in volgens preset i.",
+            "ref": "BSTTI#1621",
+            "comment": "SetToPreset(i)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetToPreset lfv_Camera_Verkeersbuis",
+            "operationId": "SetToPreset",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetReferentiePreset": {
+            "stereotype": "commando",
+            "title": "Set Referentie Preset",
+            "description": "Zet een preset i als referentie om te bepalen of de camerapositie-identificatiecode normaal of ge\u00efnverteerd moet worden weergegeven.",
+            "ref": "BSTTI#1621",
+            "comment": "SetReferentiePreset(i)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetReferentiePreset lfv_Camera_Verkeersbuis",
+            "operationId": "SetReferentiePreset",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SetIdentificatiecode": {
+            "stereotype": "commando",
+            "title": "Set Identificatiecode",
+            "description": "Voer voor de camera een identificatiecode ic in.",
+            "ref": "BSTTI#1621",
+            "comment": "SetIdentificatiecode(ic)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SetIdentificatiecode lfv_Camera_Verkeersbuis",
+            "operationId": "SetIdentificatiecode",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/SelectCameraActueelBeeld": {
+            "stereotype": "commando",
+            "title": "Select Camera Actueel Beeld",
+            "description": "Stel het actuele beeld van de camera beschikbaar in kanaal k. Als het beeld niet beschikbaar is dan is dit zwart. Een kanaal wordt door de bediening gekoppeld aan een scherm om het beeld te vertonen. Een camera kan op meerdere kanalen zichtbaar gemaakt worden (minimaal 2).",
+            "ref": "BSTTI#1621",
+            "comment": "SelectCameraActueelBeeld(k)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "SelectCameraActueelBeeld lfv_Camera_Verkeersbuis",
+            "operationId": "SelectCameraActueelBeeld",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/UnselectCameraActueelBeeld": {
+            "stereotype": "commando",
+            "title": "Unselect Camera Actueel Beeld",
+            "description": "Koppel het actuele beeld van de camera los van kanaal k.",
+            "ref": "BSTTI#1621",
+            "comment": "UnselectCameraActueelBeeld(k)",
+            "tags": [
+                "lfv_Camera_Verkeersbuis"
+            ],
+            "summary": "UnselectCameraActueelBeeld lfv_Camera_Verkeersbuis",
+            "operationId": "UnselectCameraActueelBeeld",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        }
+    }
+}

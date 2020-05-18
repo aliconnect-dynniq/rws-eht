@@ -1,0 +1,48 @@
+{
+    "info": {
+		"title": "RWS A2 Maastricht Verkeerslichten",
+		"description": ".",
+		"termsOfService": "http://aliconnect.nl/terms/",
+		"contact": { "email": "max.van.kampen@alicon.nl" },
+		"license": { "name": "Apache 2.0", "url": "http://www.apache.org/licenses/LICENSE-2.0.html" },
+		"version": "1.0.0"
+	},
+	"config": {
+        "http": { "port": 9000 },
+        "ws": { "url": "wss://aliconnect.nl:444" },
+        "oauth2": { "url": "https://login.aliconnect.nl/oauth2"},
+		"aim": {
+            "client_id": "C52ABA40-11FE-4400-90B9-CEE5BDA2C5AA",
+            "hostname": "rws.aliconnect.nl",
+            "basePath": "/a2m/api",
+			"domain": "rws",
+			"aud": 2804394
+        },
+        "debug": true
+    },
+    "paths": {
+        "/Verkeerslichten(id)/SetStand(stand)": {
+            "post": {
+                "operationId": "Verkeerslichten.SetStand"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Verkeerslichten": {
+                "title": "LFV Verkeerslichten",
+                "properties": {
+                    "stand": {
+                    }
+                }
+            },
+            "Verkeerslicht": {
+                "title": "LFV Verkeerslichten",
+                "properties": {
+                    "stand": {
+                    }
+                }
+            }
+        }
+    }
+}

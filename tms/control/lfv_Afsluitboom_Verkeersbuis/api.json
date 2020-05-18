@@ -1,0 +1,247 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "lfv_Afsluitboom_Verkeersbuis",
+        "description": "This is a LFV lfv_Afsluitboom_Verkeersbuis server",
+        "termsOfService": "https:\/\/aliconnect.nl\/terms\/",
+        "contact": {
+            "email": "info@alicon.nl"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http:\/\/192.168.0.132\/api\/v1"
+        }
+    ],
+    "tags": [
+        {
+            "name": "lfv_Afsluitboom_Verkeersbuis",
+            "description": ""
+        }
+    ],
+    "component": {
+        "schemas": {
+            "title": "LFV afsluitboom",
+            "properties": {
+                "bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_bestuurbaar"
+                },
+                "reden_niet_bestuurbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Reden niet bestuurbaar",
+                    "description": "Elke LFV en elke component dienen elk de volgende toestandsvariabelen te ondersteunen: '#bestuurbaar', '#reden_niet_bestuurbaar', '#storingen'.",
+                    "ref": "BSTTI#3722",
+                    "comment": "",
+                    "enum": {
+                        "plaatselijk_bediend": "Plaatselijk bediend",
+                        "noodstop": "Noodstop",
+                        "werkschakelaar": "Werkschakelaar",
+                        "storing": "Storing",
+                        "disabled": "Disabled",
+                        "opstart": "Opstart"
+                    },
+                    "type": "array",
+                    "initvalue": "opstart"
+                },
+                "observeerbaar": {
+                    "stereotype": "toestandsvariabele",
+                    "title": "Observeerbaar",
+                    "description": "Uit de bij iedere LFV (of component) beschikbare variabelen #bestuurbaar en #reden_niet_bestuurbaar (zie sectie 4.4) kan als volgt een waarde afgeleid worden voor de impliciete variabele genaamd #observeerbaar. Overal waar in het vervolg '#observeerbaar = ja' geschreven staat, betekent dit dat voor de LFV(of component) geldt: ofwel '#bestuurbaar = ja', ofwel '#bestuurbaar = nee' mits #reden_niet_bestuurbaar uitsluitend de volgende waardes bevat: 'plaatselijke_bediening' en \/ of 'noodstop' en \/ of 'werkschakelaar'. Overal waar in het vervolg '#observeerbaar = nee' geschreven staat, betekent dit dat voor de LFV(of component) geldt: '#bestuurbaar = nee' en bovendien bevat #reden_niet_bestuurbaar uitsluitend waardes die verschillen van 'plaatselijke_bediening', 'noodstop' en 'werkschakelaar'.",
+                    "ref": "",
+                    "comment": "",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    },
+                    "getId": "get_observeerbaar"
+                },
+                "storingen": {
+                    "title": "Storingen",
+                    "description": "Elke afsluitboom dient de volgende generieke storingen te detecteren: ; STORING_ALGEMEEN: Er is een niet specifieke storing gedetecteerd. ; STORING_COMMUNICATIE_UITGEVALLEN: Er is een storing in de communicatie met de LFV gedetecteerd. ; Elke Afsluitboom dient de volgende specifieke storingen te detecteren: ; STORING_OBSTAKELDETECTIE: Er is een storing in de obstakeldetectie gedetecteerd.",
+                    "ref": "BSTTI#10059",
+                    "comment": "",
+                    "enum": {
+                        "STORING_ALGEMEEN": "Storing algemeen",
+                        "STORING_COMMUNICATIE_UITGEVALLEN": "Storing uitval communicatie met de LFV",
+                        "STORING_OBSTAKELDETECTIE": "Storing obstakeldetectie"
+                    },
+                    "type": "array"
+                },
+                "stand": {
+                    "title": "Stand",
+                    "description": "Representatie van de stand van de boom. ; op: De boom is volledig geopend. ; op_verlaten: De boom is niet geopend en niet volledig gesloten. ; neer: De boom is volledig gesloten",
+                    "ref": "BSTTI#1820",
+                    "comment": "#stand: op | op_verlaten | neer",
+                    "enum": {
+                        "op": "Op",
+                        "op_verlaten": "Op verlaten",
+                        "neer": "Neer"
+                    }
+                },
+                "beweging": {
+                    "title": "Beweging",
+                    "description": "Representatie van de actieve beweging van de boom. De boom dient alleen actief te bewegen als gevolg van een ontvangen commando. Zo dient #beweging niet de waarde 'op' of 'neer' te krijgen als gevolg van beweging door de wind. ; op: De boom is actief aan het openen ; neer: De boom is actief aan het sluiten ; geen: De boom beweegt niet actief",
+                    "ref": "BSTTI#1820",
+                    "comment": "#beweging: op | neer | geen",
+                    "enum": {
+                        "op": "Op",
+                        "neer": "Neer",
+                        "geen": "Geen"
+                    }
+                },
+                "obstakelgedetecteerd": {
+                    "title": "Obstakel gedetecteerd",
+                    "description": "Er is al dan niet een obstakel gedetecteerd",
+                    "ref": "BSTTI#1820",
+                    "comment": "#obstakelgedetecteerd: ja | nee",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    }
+                },
+                "vrijgavesignaal_ontvangen": {
+                    "title": "Vrijgave signaal ontvangen",
+                    "description": "Geeft aan of de afsluitboom (interlock) is vrijgegeven vanuit de Verkeerslichten.",
+                    "ref": "BSTTI#1820",
+                    "comment": "#vrijgavesignaal_ontvangen: ja | nee",
+                    "enum": {
+                        "ja": "Ja",
+                        "nee": "Nee"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "\/Op": {
+            "title": "Op",
+            "description": "Dit commando zorgt ervoor dat de boom naar de stand op gaat, onafhankelijk van de huidige stand en beweging.",
+            "ref": "BSTTI#1835",
+            "comment": "Op()",
+            "tags": [
+                "lfv_Afsluitboom_Verkeersbuis"
+            ],
+            "summary": "Op lfv_Afsluitboom_Verkeersbuis",
+            "operationId": "Op",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/Neer": {
+            "title": "Neer",
+            "description": "Dit commando maakt het mogelijk dat de boom naar de stand neer gaat, onafhankelijk van de huidige stand en beweging. BSTTI#16830 geeft nader aan onder welke voorwaarden de slagboom neer gaat.",
+            "ref": "BSTTI#1835",
+            "comment": "Neer()",
+            "tags": [
+                "lfv_Afsluitboom_Verkeersbuis"
+            ],
+            "summary": "Neer lfv_Afsluitboom_Verkeersbuis",
+            "operationId": "Neer",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/NeerOnvoorwaardelijk": {
+            "title": "Neer onvoorwaardelijk",
+            "description": "Laat de boom naar de stand neer gaan, onafhankelijk van de huidige stand en beweging en onafhankelijk van de voorwaarden die specifiek bij het commando Neer() zijn gesteld. Dit commando overbrugt al deze voorwaarden eenmalig en mag alleen worden aangeroepen t.g.v. een handmatige bediening (als bevestiging na beoordeling dat de situatie voldoende veilig is).",
+            "ref": "BSTTI#1835",
+            "comment": "NeerOnvoorwaardelijk()",
+            "tags": [
+                "lfv_Afsluitboom_Verkeersbuis"
+            ],
+            "summary": "NeerOnvoorwaardelijk lfv_Afsluitboom_Verkeersbuis",
+            "operationId": "NeerOnvoorwaardelijk",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        },
+        "\/Stop": {
+            "title": "Stop",
+            "description": "Stop direct het openen of sluiten van de Afsluitboom. De Afsluitboom blijft in de stand waarin deze gestopt werd. Dit commando betreft niet een Noodstop, maar moet wel voorrang hebben op de andere commando\u2019s.",
+            "ref": "BSTTI#1835",
+            "comment": "Stop()",
+            "tags": [
+                "lfv_Afsluitboom_Verkeersbuis"
+            ],
+            "summary": "Stop lfv_Afsluitboom_Verkeersbuis",
+            "operationId": "Stop",
+            "responses": {
+                "200": {
+                    "description": "successful operation"
+                },
+                "400": {
+                    "description": "Invalid ID supplied"
+                },
+                "405": {
+                    "description": "Validation Exeption"
+                }
+            },
+            "security": [
+                {
+                    "lfv_auth": [
+                        "write:lfv"
+                    ]
+                }
+            ]
+        }
+    }
+}

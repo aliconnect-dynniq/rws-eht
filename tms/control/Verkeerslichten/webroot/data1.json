@@ -1,0 +1,192 @@
+{
+    "@context": "https://rws.aliconnect.nl/api/Verkeerslichten(3443787)",
+    "@etag": "W/'MTdFRUYxMDktN0EwNi00MzBFLUI5NzMtQ0U0RkJDQjAzRTU1'",
+    "@id": "Verkeerslichten(3443787)",
+    "Id": "eyJVSUQiOiIxN0VFRjEwOS03QTA2LTQzMEUtQjk3My1DRTRGQkNCMDNFNTUiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDM5OCwic2NoZW1hIjoiVmVya2VlcnNsaWNodGVuIiwibWFzdGVySUQiOjM0NDM3NzksImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTA5VDEzOjAyOjE0Ljc1MDAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMTItMDNUMjE6MTA6MDAuMjUwMDAwMFoiLCJoYXNDaGlsZHJlbiI6MSwiaGVhZGVyIjpbIlZlcmtlZXJzbGljaHRlbiIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDQzNzg3fQ==",
+    "value": [
+        {
+            "@context": "https://rws.aliconnect.nl/api/bf_Verkeerslichten_Verkeersbuis(3443796)",
+            "@etag": "W/'QUM2Qzc5OTMtNzRBQi00MkZCLUEwMTEtNUYyNDI3MDlBNjI1'",
+            "@id": "bf_Verkeerslichten_Verkeersbuis(3443796)",
+            "Id": "eyJVSUQiOiJBQzZDNzk5My03NEFCLTQyRkItQTAxMS01RjI0MjcwOUE2MjUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0Mywic2NoZW1hIjoiYmZfVmVya2VlcnNsaWNodGVuX1ZlcmtlZXJzYnVpcyIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjAsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0wOVQxMzowMjoxNC43NzAwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTEyLTA1VDEyOjEyOjQ2Ljk5MDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJiZl9WZXJrZWVyc2xpY2h0ZW5fVmVya2VlcnNidWlzIixudWxsLCJWZXJrZWVyc2xpY2h0ZW4iXSwiaWQiOjM0NDM3OTZ9"
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3443797)",
+            "@etag": "W/'QkJDMTNGQ0ItQ0MxRi00Njc3LUE5REYtQjZCODE0Mzk0NkVE'",
+            "@id": "Verkeerslicht(3443797)",
+            "Id": "eyJVSUQiOiJCQkMxM0ZDQi1DQzFGLTQ2NzctQTlERi1CNkI4MTQzOTQ2RUQiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjEsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0wOVQxMzowMjoxNC43NzAwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE2OjU5OjMxLjU2MDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwMSIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDQzNzk3fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3443803)",
+            "@etag": "W/'NzIwOTVDNzctRTdDNi00Q0YzLUJGRTctQzIwMDFDOUQyQzg1'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3443803)",
+            "Id": "eyJVSUQiOiI3MjA5NUM3Ny1FN0M2LTRDRjMtQkZFNy1DMjAwMUM5RDJDODUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ0Mzc5NywiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMDlUMTM6MDI6MTQuNzc3MDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0xMi0wNVQxMjoxNDozNC41NDAwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsInN1Yl9mdW5jdGllIl0sImlkIjozNDQzODAzfQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslichten_Verkeersbuis(3443804)",
+            "@etag": "W/'QzY4NEE1OTMtRUQ0RS00NUM5LTkyNUItQjRGQ0Q5MTAwRDg1'",
+            "@id": "lfv_Verkeerslichten_Verkeersbuis(3443804)",
+            "Id": "eyJVSUQiOiJDNjg0QTU5My1FRDRFLTQ1QzktOTI1Qi1CNEZDRDkxMDBEODUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxMywic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRlbl9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ0Mzc5NiwiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMDlUMTM6MDI6MTQuNzc3MDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0xMi0wNVQxMjoyMDoxMS44NjMwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRlbl9WZXJrZWVyc2J1aXMiLG51bGwsImJmX1ZlcmtlZXJzbGljaHRlbl9WZXJrZWVyc2J1aXMiXSwiaWQiOjM0NDM4MDR9"
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3443813)",
+            "@etag": "W/'RjcyMDgzQjctREM5Ny00NzQwLUFGRTAtMzg1RkQwNUU5NDFB'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3443813)",
+            "Id": "eyJVSUQiOiJGNzIwODNCNy1EQzk3LTQ3NDAtQUZFMC0zODVGRDA1RTk0MUEiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NTYyMjAsImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTA5VDEzOjAyOjE0Ljc5NzAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMTEtMjdUMTM6NDU6NTYuNzMwMDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ0MzgxM30="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3456219)",
+            "@etag": "W/'MEMxMkIyQTYtNENCMy00OTM1LTlCNDUtMzAwQjg1MTREQjFC'",
+            "@id": "Verkeerslicht(3456219)",
+            "Id": "eyJVSUQiOiIwQzEyQjJBNi00Q0IzLTQ5MzUtOUI0NS0zMDBCODUxNERCMUIiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjIsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxNjozMDoxMi44NzcwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE5OjI2OjE4LjA3MDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwMiIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDU2MjE5fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3456220)",
+            "@etag": "W/'MTkyNUJFM0QtNTYwRS00NDA2LTlDNzYtQTQyNjlBMkJFRDE5'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3456220)",
+            "Id": "eyJVSUQiOiIxOTI1QkUzRC01NjBFLTQ0MDYtOUM3Ni1BNDI2OUEyQkVEMTkiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ1NjIxOSwiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMTNUMTY6MzA6MTIuODc3MDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0xMi0wM1QyMToxODoyMy40NjMwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsIlZlcmtlZXJzZ2VsZWlkaW5nLWZ1bmN0aWVzIl0sImlkIjozNDU2MjIwfQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3456221)",
+            "@etag": "W/'OUU2NEZERDItRENERi00QjRFLUJFMkUtMzI4NzZFODQ5QzI5'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3456221)",
+            "Id": "eyJVSUQiOiI5RTY0RkREMi1EQ0RGLTRCNEUtQkUyRS0zMjg3NkU4NDlDMjkiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NDM4MDMsImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTEzVDE2OjMwOjEyLjg4MDAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMDUtMTNUMTY6MzA6MTIuODgwMDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ1NjIyMX0="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3456818)",
+            "@etag": "W/'QTIzNjVFMzItQzJCRi00NzI1LUEzNEYtOTBENDdGQTg0QUU5'",
+            "@id": "Verkeerslicht(3456818)",
+            "Id": "eyJVSUQiOiJBMjM2NUUzMi1DMkJGLTQ3MjUtQTM0Ri05MEQ0N0ZBODRBRTkiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjMsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxNjo1NTo0Ni40ODMwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTExLTE5VDEyOjQ4OjU2LjkyMDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwMyIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDU2ODE4fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3456819)",
+            "@etag": "W/'NTk0OEE4NjEtNUY2OS00QUJDLTlCMDctODI2MTVBNzBGQjVF'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3456819)",
+            "Id": "eyJVSUQiOiI1OTQ4QTg2MS01RjY5LTRBQkMtOUIwNy04MjYxNUE3MEZCNUUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ1NjgxOCwiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMTNUMTY6NTU6NDYuNDg3MDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0xMi0wM1QyMToxODo1Mi42MTAwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsIlZlcmtlZXJzZ2VsZWlkaW5nLWZ1bmN0aWVzIl0sImlkIjozNDU2ODE5fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3456820)",
+            "@etag": "W/'QTY1Rjg0NjgtNDgxQi00MEFCLUIyRUYtNjBCRjA0NkY0Mjcw'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3456820)",
+            "Id": "eyJVSUQiOiJBNjVGODQ2OC00ODFCLTQwQUItQjJFRi02MEJGMDQ2RjQyNzAiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NTY4MTksImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTEzVDE2OjU1OjQ2LjQ4NzAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMDUtMTNUMTY6NTU6NDYuNDg3MDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ1NjgyMH0="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3456823)",
+            "@etag": "W/'MDREQjI0N0EtOUU4Ri00MDExLUExNjMtMTFDQjM3RTcwM0Qx'",
+            "@id": "Verkeerslicht(3456823)",
+            "Id": "eyJVSUQiOiIwNERCMjQ3QS05RThGLTQwMTEtQTE2My0xMUNCMzdFNzAzRDEiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjUsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxNjo1NTo0OC4xODMwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE5OjI2OjIxLjI3MDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwNCIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDU2ODIzfQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3456824)",
+            "@etag": "W/'NjA0QzdFNjMtQTBDNy00ODU4LUE0NkYtNTNGQzYxQjQxNzg1'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3456824)",
+            "Id": "eyJVSUQiOiI2MDRDN0U2My1BMEM3LTQ4NTgtQTQ2Ri01M0ZDNjFCNDE3ODUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ1NjgyMywiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMTNUMTY6NTU6NDguMTgzMDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0wNS0xM1QxNjo1NTo0OC4xODMwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsInN1Yl9mdW5jdGllIl0sImlkIjozNDU2ODI0fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3456825)",
+            "@etag": "W/'MDE4MjhCOEMtOEE4MS00RDRBLUJBQzktQUFDRDAzQ0M5NzQ1'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3456825)",
+            "Id": "eyJVSUQiOiIwMTgyOEI4Qy04QTgxLTRENEEtQkFDOS1BQUNEMDNDQzk3NDUiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NTY4MjQsImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTEzVDE2OjU1OjQ4LjE4MzAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMDUtMTNUMTY6NTU6NDguMTgzMDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ1NjgyNX0="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3456941)",
+            "@etag": "W/'Qzg3QjY2MTItRUQzNC00OEZELUEzRTgtMzMzRjUwMDI4M0M5'",
+            "@id": "Verkeerslicht(3456941)",
+            "Id": "eyJVSUQiOiJDODdCNjYxMi1FRDM0LTQ4RkQtQTNFOC0zMzNGNTAwMjgzQzkiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjQsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxNjo1OTozNS43MzcwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE5OjI2OjIyLjUzMDAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwNSIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDU2OTQxfQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3456942)",
+            "@etag": "W/'M0Y2RjhCOUQtQjY5NS00NzhCLThCMEUtNkEwQzE5MEI1RkIw'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3456942)",
+            "Id": "eyJVSUQiOiIzRjZGOEI5RC1CNjk1LTQ3OEItOEIwRS02QTBDMTkwQjVGQjAiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ1Njk0MSwiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMTNUMTY6NTk6MzUuNzM3MDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0wNS0xM1QxNjo1OTozNS43MzcwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsInN1Yl9mdW5jdGllIl0sImlkIjozNDU2OTQyfQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3456943)",
+            "@etag": "W/'Mzc3NTc1OTctMEQ5Qy00M0M3LUFFNUItMjlGOTg4RTUzM0NG'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3456943)",
+            "Id": "eyJVSUQiOiIzNzc1NzU5Ny0wRDlDLTQzQzctQUU1Qi0yOUY5ODhFNTMzQ0YiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NTY5NDIsImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTEzVDE2OjU5OjM1Ljc0MDAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMDUtMTNUMTY6NTk6MzUuNzQwMDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ1Njk0M30="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/Verkeerslicht(3457056)",
+            "@etag": "W/'MTE0OEY5MjMtMEJEMy00N0JBLTkwNTAtM0ExQjgwRDkwRjhG'",
+            "@id": "Verkeerslicht(3457056)",
+            "Id": "eyJVSUQiOiIxMTQ4RjkyMy0wQkQzLTQ3QkEtOTA1MC0zQTFCODBEOTBGOEYiLCJjbGFzc0lEIjoyMTA3LCJzcmNJRCI6MjgwNDMzOCwic2NoZW1hIjoiVmVya2VlcnNsaWNodCIsIm1hc3RlcklEIjozNDQzNzg3LCJpZHgiOjYsInVzZXJJRCI6MCwiY3JlYXRlZERUIjoiMjAxOS0wNS0xM1QxOToyNjowOC40NDMwMDAwWiIsIm1vZGlmaWVkRFQiOiIyMDE5LTA1LTEzVDE5OjI2OjI0LjEwNzAwMDBaIiwiaGFzQ2hpbGRyZW4iOjEsImhlYWRlciI6WyJWZXJrZWVyc2xpY2h0IDAwNiIsbnVsbCwiVHVubmVsIE1hbmFnZW1lbnQgU3lzdGVtIl0sImlkIjozNDU3MDU2fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/sf_Verkeerslicht_Verkeersbuis(3457057)",
+            "@etag": "W/'NDkxNkI1RDYtMTQzMi00QjQwLTk2Q0EtMEM0QTdDNEQwODBG'",
+            "@id": "sf_Verkeerslicht_Verkeersbuis(3457057)",
+            "Id": "eyJVSUQiOiI0OTE2QjVENi0xNDMyLTRCNDAtOTZDQS0wQzRBN0M0RDA4MEYiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMwOTc0NCwic2NoZW1hIjoic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLCJtYXN0ZXJJRCI6MzQ1NzA1NiwiaWR4IjowLCJ1c2VySUQiOjAsImNyZWF0ZWREVCI6IjIwMTktMDUtMTNUMTk6MjY6MDguNTEzMDAwMFoiLCJtb2RpZmllZERUIjoiMjAxOS0wNS0xM1QxOToyNjowOC41MTMwMDAwWiIsImhhc0NoaWxkcmVuIjoxLCJoZWFkZXIiOlsic2ZfVmVya2VlcnNsaWNodF9WZXJrZWVyc2J1aXMiLG51bGwsInN1Yl9mdW5jdGllIl0sImlkIjozNDU3MDU3fQ=="
+        },
+        {
+            "@context": "https://rws.aliconnect.nl/api/lfv_Verkeerslicht_Verkeersbuis(3457058)",
+            "@etag": "W/'OTY1NUZGNUQtRjUzQi00MUI1LTg1RjYtNjkzMjIxRjg5RDgw'",
+            "@id": "lfv_Verkeerslicht_Verkeersbuis(3457058)",
+            "Id": "eyJVSUQiOiI5NjU1RkY1RC1GNTNCLTQxQjUtODVGNi02OTMyMjFGODlEODAiLCJjbGFzc0lEIjoyMTEzLCJzcmNJRCI6MzMxODAxNCwic2NoZW1hIjoibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIiwibWFzdGVySUQiOjM0NTcwNTcsImlkeCI6MCwidXNlcklEIjowLCJjcmVhdGVkRFQiOiIyMDE5LTA1LTEzVDE5OjI2OjA4LjUzMDAwMDBaIiwibW9kaWZpZWREVCI6IjIwMTktMDUtMTNUMTk6MjY6MDguNTMwMDAwMFoiLCJoZWFkZXIiOlsibGZ2X1ZlcmtlZXJzbGljaHRfVmVya2VlcnNidWlzIixudWxsLCJzZl9WZXJrZWVyc2xpY2h0X1ZlcmtlZXJzYnVpcyJdLCJpZCI6MzQ1NzA1OH0="
+        }
+    ],
+    "Title": {
+        "value": "System",
+        "aid": 17821573,
+        "valueSource": "System",
+        "modifiedDT": "2019-05-10T17:00:34.493"
+    },
+    "Subject": {
+        "value": "Tunnel Management System",
+        "aid": 17821575,
+        "valueSource": "Tunnel Management System",
+        "modifiedDT": "2019-05-10T17:00:46.617"
+    },
+    "createdDT": {
+        "value": "2018-11-15",
+        "aid": 16925733,
+        "valueSource": "2018-11-15",
+        "modifiedDT": "2018-12-17T12:04:09.843"
+    },
+    "Product": {
+        "value": "System",
+        "aid": 17281258,
+        "valueSource": "System",
+        "modifiedDT": "2019-01-28T14:05:11.223"
+    },
+    "Master": {
+        "value": "Tunnel Management System",
+        "aid": 16895960,
+        "valueSource": "Tunnel Management System",
+        "@id": "Company(2817404)",
+        "itemID": 2817404,
+        "modifiedDT": "2018-12-17T12:04:09.913"
+    },
+    "Name": {
+        "value": "Product",
+        "aid": 16895987,
+        "valueSource": "Product",
+        "modifiedDT": "2018-11-25T19:09:54.337"
+    },
+    "Source": {
+        "value": "TMS Library",
+        "aid": 17801317,
+        "valueSource": "TMS Library",
+        "@id": "System(2804336)",
+        "itemID": 2804336,
+        "modifiedDT": "2019-04-23T15:29:29.353"
+    },
+    "clone": {
+        "value": "1",
+        "aid": 17270152,
+        "valueSource": "1",
+        "modifiedDT": "2019-01-28T08:55:52.850"
+    },
+    "title": {
+        "value": "Verkeerslichten",
+        "aid": 17926377,
+        "valueSource": "Verkeerslichten",
+        "modifiedDT": "2019-11-22T21:45:56.507"
+    },
+    "hasChildren": {
+        "value": "",
+        "aid": 17927523,
+        "valueSource": "",
+        "modifiedDT": "2019-12-03T21:10:00.250"
+    }
+}

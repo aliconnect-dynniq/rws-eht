@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+	<title>EHT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="manifest" href="/manifest.json" crossorigin="anonymous">
+	<link rel="stylesheet" href="/lib/css/aim.css" />
+	<script type="text/javascript" charset="UTF-8" src="/api/js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/lib/js/aim.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="/lib/js/web.js"></script>
+	<base target="doc">
+</head>
+<body onload="AIM.Doc.createIndex();">
+	<div class="row top fixed np">
+		<div class="Row btnBar inner" id="btnBar">
+			<span>EHT</span>
+		</div>
+	</div>
+	<div id="responsepanel" class="np"></div>
+	<div class="mc-sidebar-left mc-menu np">
+		<div><b class="ac-header">Documents</b></div>
+	</div>
+	<div class="mc-sidebar-right mc-menu no-print">
+		<ul id="index"></ul>
+	</div>
+	<div id="content" class="page doc-content counter">
+		<h1>Referentie documenten</h1>
+		<ol>
+			<li>
+			<a href="/eht/tms/webroot/docs/vraagspecificatie_eisen_reht.html">
+			Vraagspecificatie Eisen REHT</a>, gegenereerd met hyperlinks vanuit
+			(<a href="/eht/tms/webroot/docs/vraagspecificatie_eisen_reht.json">Vraagspecificatie
+			Eisen REHT.json</a> /
+			<a href="/eht/tms/webroot/docs/vraagspecificatie_eisen_reht.yml">
+			Vraagspecificatie Eisen REHT.yml</a>)</li>
+			<li>
+			AIM TMS EHT Configuratie (<a href="../config.local.yml">config.yml</a>)<br>
+			Deze configuratie file bevat de gehele configuratie van alle AIM
+			schemas voor het project EHT.</li>
+		</ol>
+		<h1>Top-klanteisen 3BT (REH3BT project specifiek)</h1>
+		<ol>
+			<li>Het generiek bouwblok 3BT dient te voldoen aan de eisen van de
+			LTS V1.2 SP2 batch2 met de specifieke keuze ‘<b>zeer hoge
+			beschikbaarheid</b>’ voor het RWS tunnelsysteem.</li>
+			<li>Het generiek bouwblok 3BT dient minimaal geschikt te zijn voor
+			<b>toepassing</b> in de 1e Heinenoordtunnel en in de <b>7 tunnels</b>
+			van het Project Tunnelrenovaties Zuid-Holland (PTZ).</li>
+			<li>Het generiek bouwblok 3BT dient in <b>Q3</b> van <b>2022</b> zo
+			ontwikkeld en gedocumenteerd te zijn, dat de levering van een
+			specifieke 3BT op basis van het generiek bouwblok 3BT in de
+			contractdocumenten voor de renovatie van de 7 tunnels van PTZ
+			opgenomen kan worden, voor een feitelijke levering voor een 2e
+			tunnel in 2025.</li>
+			<li>Het generiek bouwblok 3BT dient te passen in een <b>integraal
+			tunnelontwerp</b>, conform de LTS met alle bouwblokken en overige
+			componenten samen. Dit integraal ontwerp moet herbruikbaar zijn voor
+			toepassing bij minimaal de 7 tunnels die door PTZ gerenoveerd worden
+			en beheerbaar zijn door RWS. De huidige stand van van zaken van de
+			ontwikkeling van de bouwstenen is gedocumenteerd in de volgende
+			Bouwblok Ontwerp Nota’s (BONO):<ol>
+				<li>BONO 3BT</li>
+				<li>BONO Werkplek (UWW/UKVC)</li>
+				<li>BONO Netwerk (LAN/WAN)</li>
+				<li>BONO Audio</li>
+				<li>BONO Video</li>
+			</ol>
+			</li>
+			<li>Het generiek bouwblok 3BT dient gerealiseerd te worden op basis
+			van een <b>PLC/SCADA</b> systeem architectuur, gebruik makend van
+			zoveel als mogelijk Commercial Of The Shelf (<b>COTS</b>) producten.</li>
+			<li>De raakvlakken van het generiek bouwblok 3BT met de tunnel
+			technische installaties dienen zo ontworpen te worden dat de tunnel
+			technische installaties door <b>meerdere leveranciers</b> geleverd
+			kunnen worden.</li>
+			<li>Het generiek bouwblok 3BT dient getest te worden in een <b>
+			bouwblokken-testomgeving</b> op de integrale werking met de overige
+			generieke IA-bouwblokken.</li>
+			<li>De Opdrachtnemer dient gedurende 2 jaar na de oplevering (in
+			dec. 2024) van het project REH3BT en met een optie voor verlenging
+			voor onbepaalde tijd het <b>beheer en onderhoud </b>voor het <b>
+			generiek bouwblok 3BT </b>in te richten en uit te voeren als
+			onderdeel van het beheer van alle IA bouwblokken gezamenlijk.</li>
+			<li>Levering van een generieke 3BT omgeving zodanig dat de <b>
+			doorontwikkeling </b>en specifieke implementaties voor andere
+			Rijkstunnels onafhankelijk van de ontwikkelaar/leverancier van de
+			generieke 3BT <b>kan worden uitgevoerd</b>. Alle benodigde middelen
+			die hiervoor nodig zijn worden hiertoe eigendom van RWS en moeten
+			aan RWS beschikbaar worden gesteld. Te denken valt aan: het
+			intellectueel eigendom van zowel het generiek bouwblok 3BT, de
+			generieke functionele architectuur, de generieke systeemarchitectuur
+			en de specifieke 3BT bouwblokken en alle bij het generieke 3BT
+			behorende documentatie.</li>
+		</ol>
+		<h2>Antwoord</h2>
+		<p>Hieruit volgen een aantal vragen die RWS richting de techniek kan
+		stellen. Als wij deze vragen voor zijn dan draagt dit bij aan ons
+		positieve imago. Ik kan de volgende vragen bedenken:</p>
+		<ol>
+			<li>Wat is de beschikbaarheid van het 3BT bouwblok?<br>
+			Als we dit kunnen aantonen d.m.v. een FTA op basis van een PLC en
+			SCADA platform met een hoge beschikbaarheid dan scoren we denk ik.
+			Ook valt te denken aan het koppelen van TOPAAS en het opschepmodel
+			voor menselijk falen. Ik ben geen specialist maar het lijkt mij goed
+			hier een RAMS specialist bij te halen.</li>
+			<li>Hoe borgen we dat documentatie tijdig op orde is voor
+			aanbesteding van andere contracten?<br>
+			Stel dat wij de documentatie van het bouwblok automatisch kunnen
+			genereren dan helpt dat bij het onderbouwen van onze belofte</li>
+			<li>Kunnen wij aantoonbaar koppelen of integreren met andere
+			bouwblokken?<br>
+			Volgens mij is Max hier al ver mee. We kunnen dit aantonen door een
+			goede analyse van de interface specificaties en een oplossing aan te
+			geven.</li>
+			<li>Hoe robuust en flexibel is ons ontwikkel- , realisatie- en
+			beheerproces?<br>
+			Dit verdient nadere uitwerking. In mijn optiek kunnen we hier goed
+			scoren als we afstemmen met het tenderonderdeel voor de renovatie
+			EHT. In mijn beeld zouden we ons agile ontwikkelproces en SE proces
+			als samenwerkend hybride proces moeten uitwerken. Bij dit proces
+			zouden validatie en samenwerking hierin goed gemarkeerd moeten
+			worden. We kunnen nog zulke goede techniek voorstellen maar als wij
+			het proces niet aantoonbaar goed beheersen dan is dat zonde van de
+			meerwaarde die wij technisch hebben. Het proces moet dus zeer
+			degelijk zijn en hier moeten we nog goed over nadenken.</li>
+		</ol>
+		<h1>&nbsp;</h1>
+		<p>&nbsp;</div>
+</body>
+
+</html>

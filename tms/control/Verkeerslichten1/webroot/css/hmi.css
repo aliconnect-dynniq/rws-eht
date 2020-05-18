@@ -1,0 +1,25 @@
+.Verkeerslicht {
+  display: inline-block;
+  margin: 5px;
+  background: #000;
+  border-radius: 200px;
+  padding: 5px;
+  border: solid 10px #CCC;
+}
+.Verkeerslicht > div {
+  width: 30px;
+  height: 30px;
+  border-radius: 200px;
+  background: #666;
+  margin: 5px;
+}
+.Verkeerslicht[stand='rood'] .rood {
+  background: rgb(255,0,0);
+}
+.Verkeerslicht[stand='geel_knipperen'] .geel,
+.Verkeerslicht[stand='geel'] .geel {
+  background: rgb(255,255,0);
+}
+.Verkeerslicht[stand='groen'] .groen {
+  background: rgb(0,255,0);
+}

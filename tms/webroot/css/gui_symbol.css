@@ -1,0 +1,148 @@
+﻿@font-face {
+	font-family: 'TmsIcon';
+	src: url('fonts/tmsicon.woff') format('woff'), url('fonts/tmsicon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.detail {
+}
+
+	.detail li {
+		list-style: none;
+	}
+
+	.detail .disable {
+		display: inline-block;
+		visibility: hidden;
+		position: absolute;
+		left: -2px;
+		top: -5px;
+		width: 12px;
+		height: 12px;
+		/*-webkit-box-shadow: 0px 0px 5px 2px #FF0000;*/
+		background: radial-gradient(#FF0000 0%, #FF0000 10%, transparent);
+		border-radius: 4px;
+		text-align: center;
+		z-index: 10;
+		color: black;
+		line-height: 12px;
+		font-size: 8px;
+	}
+
+		.detail .disable::after {
+			content: 'x';
+			font-weight: bold;
+			font-size: 10pt;
+		}
+
+	.detail [PlaatselijkeBedieningsStatus="ja"] .hand,
+	.detail [BedieningsStatus="hand"] .hand {
+		display: inline-block;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: -7px;
+		height: 3px;
+		background: #00B000;
+		border: solid 1px black;
+	}
+
+	.detail [beschikbaarheid="niet_beschikbaar"] .storing,
+	.detail [beschikbaarheid="beperkt_beschikbaar"] .storing,
+	.detail [Storing_Algemeen="ja"] .storing {
+		display: inline-block;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: -7px;
+		height: 3px;
+		border: solid 1px transparent;
+		background-position: center left;
+	}
+
+	.detail [Storing_Algemeen="ja"] .storing {
+		background-image: url('../img/storing.png');
+	}
+
+	.detail [beschikbaarheid="niet_beschikbaar"] .storing {
+		background-color: black;
+		border-color: white;
+	}
+
+	.detail [beschikbaarheid="beperkt_beschikbaar"] .storing {
+		background-color: #ccc;
+		border-color: gray;
+	}
+
+
+
+	.overview li > div,
+	.detail li > div {
+		/*display: inline-block;*/
+	}
+
+
+
+.overview li {
+	/*transform: scale(0.5);*/
+}
+
+
+
+. .bf_flow {
+	white-space: nowrap;
+	font-size: 8pt;
+}
+
+.bf_flow::after {
+	content: '';
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: no-repeat center center url(../img/sym/flow_aan.png);
+}
+
+.bf_door {
+	width: 20px;
+	height: 20px;
+	background: yellow;
+	border-radius: 20px;
+	white-space: nowrap;
+}
+
+.bf_vlucht {
+	padding-left: 10px;
+	border-radius: 10px;
+	border: solid 2px #23353D;
+	background: #4C575B;
+	color: #CCC;
+	background: no-repeat left center url(../img/sym/person.png) #4B5659;
+	height: 10px;
+	white-space: nowrap;
+	font-size: 8pt;
+}
+
+	.bf_vlucht::after {
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		background: no-repeat center center url(../img/sym/arrow.png);
+	}
+
+	.bf_vlucht[lock]::after {
+		background-image: url(../img/sym/lock.png);
+	}
+
+
+
+.bf_bord {
+	width: 20px;
+	height: 20px;
+	background: black;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+}

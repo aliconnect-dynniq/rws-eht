@@ -1,0 +1,13 @@
+{
+  "config": {
+    "debug": true,
+    "aim": {
+      "sub": "2804394",
+      "sub": "3443787",
+      "aud": "3443787",
+      "sub": "3443779",
+      "aud": "3443779",
+      "url": "https://rws.aliconnect.nl/eht/tms/webroot/api"
+    }
+  }
+}

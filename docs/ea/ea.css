@@ -1,0 +1,17 @@
+.StateNode {
+  background-color: gray !important;
+  border-radius: 10px;
+  border: solid 1px gray;
+}
+.Action {
+  background-image: linear-gradient(to right, #FCF0D8, #F9DEA7);
+  border-radius:10px;
+  border:solid 1px gray;
+}
+
+.Object {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.8em;
+}

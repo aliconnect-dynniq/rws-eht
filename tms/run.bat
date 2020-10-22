@@ -14,7 +14,8 @@ rem start node control --config.aim.aud=3448873 --info.title="A2M VeiligeRuimte 
 rem start node control --config.aim.aud=3448537 --info.title="A2M Dienstgebouw 1"
 rem start node control --config.aim.aud=3448575 --info.title="A2M Dienstgebouw 2"
 
-rem START "" %BROWSER% --app="http://rws.localhost/a2m/webroot/" --disable-web-security --allow-file-access-from-files --kiosk --disable-application-cache
+START "" %BROWSER% --app="http://rws.localhost/eht/tms/webroot/" --disable-web-security --allow-file-access-from-files --kiosk --disable-application-cache
+rem START "" %BROWSER% --app="http://localhost:9001" --disable-web-security --allow-file-access-from-files --kiosk --disable-application-cache
 
 :node
 cls

@@ -3,40 +3,25 @@
 <head>
 	<title>TMS GUI</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="manifest" href="manifest.json" crossorigin="anonymous">
+	<!-- <link rel="manifest" href="manifest.json" crossorigin="anonymous"> -->
 	<link rel="shortcut icon" type="image/png" id="favicon" href="https://aliconnect.nl/favicon.ico" />
-	<link rel="stylesheet" href="/lib/css/app.css" />
-	<link rel="stylesheet" href="css/guibody.css" />
-	<link rel="stylesheet" href="css/gui.css" />
-	<link rel="stylesheet" href="css/gui_symbol.css" />
-	<link rel="stylesheet" href="css/gui_object.css" />
+	<link rel="stylesheet" href="/api/css/web.css" />
 
-	<script type="text/javascript" charset="UTF-8" src="https://aliconnect.nl/api/js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/lib/js/aim.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/lib/js/web.js"></script>
+	<link rel="stylesheet" href="/api/lib/tms/css/guibody.css" />
+	<link rel="stylesheet" href="/api/lib/tms/css/gui.css" />
+	<link rel="stylesheet" href="/api/lib/tms/css/gui_symbol.css" />
+	<link rel="stylesheet" href="/api/lib/tms/css/gui_object.css" />
 
-	<script type="text/javascript" charset="UTF-8" src="js/tms.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="js/tms.gui.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="js/config.gui.js"></script>
+	<!-- <script src="https://aliconnect.nl/api/js/config"></script> -->
+	<script src="/api/js/aim.js"></script>
+	<script src="/api/js/web.js"></script>
+	<script src="/api/js/auth.js"></script>
 
-	<!-- <script src="/api/v1/js?app=gui&auth&local=api"></script> -->
-	<!-- <script type="text/javascript" charset="UTF-8" src="js/lib.js"></script> -->
-	<!-- <script type="text/javascript" charset="UTF-8" src="/lib/js/lib/crypto-js.js"></script> -->
+	<script src="/api/lib/tms/js/tunnel.config.js"></script>
+	<script src="/api/lib/tms/js/tms.js"></script>
+	<script src="/api/lib/tms/js/tms.gui.js"></script>
+	<script src="/api/lib/tms/js/config.gui.js"></script>
 
-	<!-- <script type="text/javascript" charset="UTF-8" src="/api/js/def/aim.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/api/js/def/web.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/api/js/def/shop.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/api/js/def/crm.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/api/js/def/mse.js"></script>
-	<script type="text/javascript" charset="UTF-8" src="/api/js/def/se.js"></script> -->
-
-
-	<!-- <script type="text/javascript" charset="UTF-8" src="/node_modules/aim-tms/js/tms.js"></script> -->
-	<!-- <script src="/node_modules/aim-tms/js/cfg/config.project.js"></script> -->
-	<!-- <script src="/node_modules/aim-tms/js/cfg/config.tms.js"></script> -->
-	<!-- <script src="/node_modules/aim-tms/js/cfg/config.lfv.js"></script> -->
-	<!-- <script src="/node_modules/aim-tms/js/cfg/config.softwarefunction.js"></script> -->
-	<!-- <script src="/node_modules/aim-tms/js/cfg/config.system.js"></script> -->
 </head>
 <body class="col gui">
 	<div class="row bartop" id="elBartop"></div>
@@ -47,13 +32,13 @@
 			<div class="viewpanel" id="targetpanel"></div>
 		</ul>
 	</div>
-	<div class="row aco" style="height:0;">
+	<div class="row aco">
 		<div class="row tabsControl" id="elTabsLeftControl"></div>
-		<div class="row tabsleft">
+		<div class="row aco tabsleft">
 			<ul class="col panel" id="elPanelTree"></ul>
-			<ul class="col panel" id="elPanel"></ul>
+			<ul class="col panel aco" id="elPanel"></ul>
 		</div>
-		<div class="col aco panelright">
+		<div class="col panelright">
 			<div class="col aco signals">
 				<div class="row" id="elSignalButtons"><span>Onbevestigde meldingen</span></div>
 				<ul class="col signalrows">
@@ -67,7 +52,7 @@
 					<ul class="col signalrows aco" id="elSignalsBev"></ul>
 				</div>
 			</div>
-			<div id="elTabsBottom" class="col   "></div>
+			<div id="elTabsBottom" class="col"></div>
 			<ul class="row tabsControl" id="elTabsBottomControl"></ul>
 		</div>
 	</div>

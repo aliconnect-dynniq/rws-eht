@@ -1,4 +1,5 @@
 **secret**
+**private**
 .remote*
 .vs
 
@@ -23,7 +24,7 @@ _**
 **desktop**
 cert/**
 /js/min
-/node_modules
+**node_modules**
 /api/sql
 /app
 /inc
